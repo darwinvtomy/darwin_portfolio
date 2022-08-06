@@ -21,6 +21,7 @@ class AboutMe extends StatelessWidget {
       return ContentPlaceHolder(
           title: 'GET TO KNOW',
           subTitle: 'ABOUT ME',
+          bgColor: ColorManager.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

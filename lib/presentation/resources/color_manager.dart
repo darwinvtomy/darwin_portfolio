@@ -41,6 +41,7 @@ class ColorManager {
   static Color title_font_color_light = HexColor.fromHex('#333333');
   static Color content_font_color_light = HexColor.fromHex('#5f6f81');
   static Color content_bg_color_light = HexColor.fromHex('#f7f7f7');
+  static Color content_bg_color_dark_light = HexColor.fromHex('#f6f6f6');
   static Color border_color_light = HexColor.fromHex('#dee2e6');
   static Color card_bordercolor_light = HexColor.fromHex('#eeeeee');
 }

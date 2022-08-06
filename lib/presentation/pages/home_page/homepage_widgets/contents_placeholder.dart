@@ -37,10 +37,14 @@ class ContentPlaceHolder extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: centerAligned
-              ? CrossAxisAlignment.start
+              ? CrossAxisAlignment.center
               : CrossAxisAlignment.start,
           children: [
-            TitleAndSub(title: title, subTitle: subTitle),
+            TitleAndSub(
+              title: title,
+              subTitle: subTitle,
+              centeraligned: centerAligned,
+            ),
             verticalSpace(30),
             child
           ],
