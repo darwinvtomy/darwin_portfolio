@@ -38,6 +38,11 @@ class ColorManager {
   static Color photo_border_color = HexColor.fromHex('#ed4242');
   static Color button_bg_color = HexColor.fromHex('#fd735a');
   static Color dark_bg_color = HexColor.fromHex('#25252d');
+  static Color title_font_color_light = HexColor.fromHex('#333333');
+  static Color content_font_color_light = HexColor.fromHex('#5f6f81');
+  static Color content_bg_color_light = HexColor.fromHex('#f7f7f7');
+  static Color border_color_light = HexColor.fromHex('#dee2e6');
+  static Color card_bordercolor_light = HexColor.fromHex('#eeeeee');
 }
 
 class GradientManager {

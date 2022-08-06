@@ -1,6 +1,7 @@
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/top_banner.dart';
 import 'package:flutter/material.dart';
 
+import 'homepage_contents/about_me.dart';
 import 'homepage_widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,6 +20,7 @@ class HomePage extends StatelessWidget {
                   name: 'DARWIN V TOMY',
                   scrollController: controller,
                   imageLink: 'assets/images/banner.jpg'),
+              AboutMe()
             ],
           ),
         ),
