@@ -1,3 +1,4 @@
+import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/skills_card.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -23,8 +24,6 @@ class ResumeContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Expanded(
-                  child: Container(
-                padding: EdgeInsets.only(right: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -40,9 +39,10 @@ class ResumeContent extends StatelessWidget {
                       ),
                     ),
                     for (int i = 0; i <= 3; i++)
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.only(bottom: AppPadding.p24),
                         child: ServiceExpCard(
+                          width: (sizeInfo.screenSize.width - 90) / 2,
                           year: '2013 - 2015 | Facebook Inc',
                           title: 'Senior Architect',
                           description:
@@ -59,16 +59,17 @@ class ResumeContent extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                     ),
-                    SkillsCard()
+                    const SkillsCard()
                   ],
                 ),
-              )),
+              ),
+              horizontalSpace(30),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
+                    Container(
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'My Experience',
@@ -79,9 +80,10 @@ class ResumeContent extends StatelessWidget {
                       ),
                     ),
                     for (int i = 0; i <= 3; i++)
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.only(bottom: AppPadding.p24),
                         child: ServiceExpCard(
+                          width: (sizeInfo.screenSize.width - 90) / 2,
                           year: '2013 - 2015 | Facebook Inc',
                           title: 'Senior Architect',
                           description:
@@ -98,7 +100,7 @@ class ResumeContent extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                     ),
-                    SkillsCard()
+                    const SkillsCard()
                   ],
                 ),
               )

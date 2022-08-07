@@ -34,6 +34,7 @@ class ServiceExpCard extends StatelessWidget {
         padding: 0,
         color: Colors.white,
         child: Stack(
+          //  fit: StackFit.expand,
           children: [
             Container(
               padding: const EdgeInsets.all(25.0),
