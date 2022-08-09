@@ -42,60 +42,56 @@ class _PortFolioState extends State<PortFolio> {
         centerAligned: true,
         child: Column(
           children: [
-            Column(
-              children: [
-                SizedBox(
-                  height: 500,
-                  child: InfiniteCarousel.builder(
-                    itemCount: kDemoImages.length,
-                    itemExtent: _itemExtent,
-                    center: true,
-                    anchor: 0.0,
-                    velocityFactor: 1.0,
-                    scrollBehavior: kIsWeb
-                        ? ScrollConfiguration.of(context).copyWith(
-                            dragDevices: {
-                              PointerDeviceKind.touch,
-                              PointerDeviceKind.mouse
-                            },
-                          )
-                        : null,
-                    controller: _controller,
-                    itemBuilder: (context, itemIndex, realIndex) {
-                      final currentOffset = _itemExtent * realIndex;
-                      return AnimatedBuilder(
-                        animation: _controller,
-                        builder: (context, child) {
-                          final diff = (_controller.offset - currentOffset);
-                          final maxPadding = 18.0;
-                          final _carouselRatio = _itemExtent / maxPadding;
-
-                          return Padding(
-                            padding: EdgeInsets.only(
-                              top: (diff / _carouselRatio).abs(),
-                              bottom: (diff / _carouselRatio).abs(),
-                            ),
-                            child: child,
-                          );
+            SizedBox(
+              height: 500,
+              child: InfiniteCarousel.builder(
+                itemCount: kDemoImages.length,
+                itemExtent: _itemExtent,
+                center: true,
+                anchor: 0.0,
+                velocityFactor: 1.0,
+                scrollBehavior: kIsWeb
+                    ? ScrollConfiguration.of(context).copyWith(
+                        dragDevices: {
+                          PointerDeviceKind.touch,
+                          PointerDeviceKind.mouse
                         },
-                        child: Padding(
-                          padding: const EdgeInsets.all(0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              boxShadow: kElevationToShadow[2],
-                              image: DecorationImage(
-                                image: NetworkImage(kDemoImages[itemIndex]),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
+                      )
+                    : null,
+                controller: _controller,
+                itemBuilder: (context, itemIndex, realIndex) {
+                  final currentOffset = _itemExtent * realIndex;
+                  return AnimatedBuilder(
+                    animation: _controller,
+                    builder: (context, child) {
+                      final diff = (_controller.offset - currentOffset);
+                      final maxPadding = 18.0;
+                      final _carouselRatio = _itemExtent / maxPadding;
+
+                      return Padding(
+                        padding: EdgeInsets.only(
+                          top: (diff / _carouselRatio).abs(),
+                          bottom: (diff / _carouselRatio).abs(),
                         ),
+                        child: child,
                       );
                     },
-                  ),
-                ),
-              ],
+                    child: Padding(
+                      padding: const EdgeInsets.all(0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          boxShadow: kElevationToShadow[2],
+                          image: DecorationImage(
+                            image: NetworkImage(kDemoImages[itemIndex]),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),

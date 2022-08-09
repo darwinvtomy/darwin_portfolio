@@ -40,10 +40,14 @@ class ContentPlaceHolder extends StatelessWidget {
               ? CrossAxisAlignment.center
               : CrossAxisAlignment.start,
           children: [
-            TitleAndSub(
-              title: title,
-              subTitle: subTitle,
-              centeraligned: centerAligned,
+            Padding(
+              padding: EdgeInsets.only(
+                  left: (paddingHorizontal == 0 && !centerAligned) ? 30 : 0),
+              child: TitleAndSub(
+                title: title,
+                subTitle: subTitle,
+                centeraligned: centerAligned,
+              ),
             ),
             verticalSpace(30),
             child

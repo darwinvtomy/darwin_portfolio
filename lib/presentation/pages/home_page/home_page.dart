@@ -5,6 +5,7 @@ import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/t
 import 'package:flutter/material.dart';
 
 import 'homepage_contents/about_me.dart';
+import 'homepage_contents/contact_me.dart';
 import 'homepage_contents/hire_me.dart';
 import 'homepage_contents/resume_content.dart';
 import 'homepage_contents/testimonial.dart';
@@ -32,7 +33,8 @@ class HomePage extends StatelessWidget {
               PortFolio(),
               Testimonial(),
               const HireMeWidget(),
-              PersonalBlog()
+              PersonalBlog(),
+              ContactMe()
             ],
           ),
         ),
