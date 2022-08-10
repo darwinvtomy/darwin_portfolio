@@ -21,7 +21,7 @@ class AboutMe extends StatelessWidget {
       return ContentPlaceHolder(
           title: 'GET TO KNOW',
           subTitle: 'ABOUT ME',
-          bgColor: ColorManager.white,
+          bgColor: Theme.of(context).canvasColor,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -39,17 +39,12 @@ class AboutMe extends StatelessWidget {
                 children: [
                   Text(
                     'I\'m Darwin V Tomy ',
-                    style: getLightStyle(
-                        color: ColorManager.title_font_color_light,
-                        fontSize: 32),
+                    style: Theme.of(context).textTheme.subtitle1,
                     textAlign: TextAlign.left,
                   ),
                   Text(
                     'Proin laoreet elementum ligula, ac tincidunt lorem accumsan nec. Fusce eget urna ante. Donec massa velit, varius a accumsan ac, tempor iaculis massa. Sed placerat justo sed libero varius vulputate. Ut a mi tempus massa malesuada fermentum.',
-                    style: getLightStyle(
-                            color: ColorManager.content_font_color_light,
-                            fontSize: 17)
-                        .copyWith(height: 1.8),
+                    style: Theme.of(context).textTheme.bodyText2,
                     textAlign: TextAlign.left,
                   ),
                   verticalSpace(16),

@@ -16,7 +16,7 @@ class ResumeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return ContentPlaceHolder(
-          bgColor: ColorManager.white,
+          bgColor: Theme.of(context).canvasColor,
           title: 'MY RESUME',
           subTitle: 'MY EXPERTISES',
           child: Row(

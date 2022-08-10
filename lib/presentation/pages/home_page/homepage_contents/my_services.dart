@@ -49,7 +49,7 @@ class MyServices extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return ContentPlaceHolder(
-        bgColor: ColorManager.content_bg_color_light,
+        //  bgColor: ColorManager.content_bg_color_light,
         title: 'WHAT I DO',
         subTitle: 'MY SERVICES',
         child: Wrap(

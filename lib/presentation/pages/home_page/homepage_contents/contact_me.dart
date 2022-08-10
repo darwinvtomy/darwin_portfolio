@@ -24,7 +24,7 @@ class ContactMe extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ContentPlaceHolder(
-            bgColor: ColorManager.white,
+            bgColor: Theme.of(context).canvasColor,
             title: 'SAY HELLO',
             subTitle: 'CONTACT',
             child:
@@ -64,7 +64,6 @@ class ContactMe extends StatelessWidget {
             ]),
           ),
           Container(
-            color: ColorManager.content_bg_color_light,
             padding: const EdgeInsets.only(right: 30, left: 30, bottom: 48),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +98,8 @@ class ContactMe extends StatelessWidget {
                   ),
                 ),
                 verticalSpace(48),
-                ContactForm()
+                ContactForm(),
+                verticalSpace(48),
               ],
             ),
           ),

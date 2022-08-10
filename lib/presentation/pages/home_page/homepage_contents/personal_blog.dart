@@ -14,14 +14,14 @@ class PersonalBlog extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return ContentPlaceHolder(
-        bgColor: ColorManager.content_bg_color_light,
         title: 'MY PERSONAL',
         subTitle: 'BLOG',
         paddingHorizontal: 0,
         child: SizedBox(
-          height: 430,
+          height: 435,
           width: sizeInfo.screenSize.width,
           child: ListView.separated(
+            padding: EdgeInsets.symmetric(horizontal: 30),
             scrollDirection: Axis.horizontal,
             itemCount: kDemoImages.length,
             controller: PageController(

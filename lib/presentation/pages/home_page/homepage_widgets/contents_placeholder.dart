@@ -30,7 +30,7 @@ class ContentPlaceHolder extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return Container(
         width: sizeInfo.screenSize.width,
-        color: bgColor ?? ColorManager.content_bg_color_light,
+        color: bgColor,
         padding: EdgeInsets.symmetric(
             vertical: AppPadding.p60,
             horizontal: paddingHorizontal ?? (sizeInfo.isMobile ? 16 : 30)),

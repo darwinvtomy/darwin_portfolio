@@ -23,9 +23,9 @@ class ColorManager {
   static Color green = HexColor.fromHex("#28a745");
   static Color teal = HexColor.fromHex("#20c997");
   static Color cyan = HexColor.fromHex("#17a2b8");
-  static Color white = HexColor.fromHex("#ffff");
+  static Color white = Colors.white;
   static Color gray = HexColor.fromHex("#6c757d");
-  static Color gray_dark = HexColor.fromHex("#343a40");
+  // static Color gray_dark = HexColor.fromHex("#343a40");
   static Color primary1 = HexColor.fromHex("#007bff");
   static Color secondary = HexColor.fromHex("#6c757d");
   static Color success = HexColor.fromHex("#28a745");
@@ -34,13 +34,20 @@ class ColorManager {
   static Color danger = HexColor.fromHex("#dc3545");
   static Color light = HexColor.fromHex("#f8f9fa");
   static Color dark = HexColor.fromHex("#343a40");
-  static Color drawer_color = HexColor.fromHex('#2a2d35');
+
+  static Color dark_gray = HexColor.fromHex('#333333');
+  static Color very_Light_gray = HexColor.fromHex('#dedde0');
+  static Color gray_bg_color = HexColor.fromHex('#2a2d35');
+  static Color darkgray_bg_color = HexColor.fromHex('#25252d');
+  static Color lightgray_bg_color = HexColor.fromHex('#F7f7f7');
+
+  static Color drawer_color = gray_bg_color;
   static Color photo_border_color = HexColor.fromHex('#ed4242');
   static Color button_bg_color = HexColor.fromHex('#fd735a');
   static Color dark_bg_color = HexColor.fromHex('#25252d');
-  static Color title_font_color_light = HexColor.fromHex('#333333');
+  static Color title_font_color_light = dark_gray;
   static Color content_font_color_light = HexColor.fromHex('#5f6f81');
-  static Color content_bg_color_light = HexColor.fromHex('#f7f7f7');
+  static Color content_bg_color_light = lightgray_bg_color;
   static Color content_bg_color_dark_light = HexColor.fromHex('#f6f6f6');
   static Color border_color_light = HexColor.fromHex('#dee2e6');
   static Color card_bordercolor_light = HexColor.fromHex('#eeeeee');

@@ -36,7 +36,6 @@ class _PortFolioState extends State<PortFolio> {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return ContentPlaceHolder(
         paddingHorizontal: 0,
-        bgColor: ColorManager.content_bg_color_light,
         title: 'PORTFOLIO',
         subTitle: 'MY WORKS',
         centerAligned: true,

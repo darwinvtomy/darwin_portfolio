@@ -17,7 +17,7 @@ class Testimonial extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return ContentPlaceHolder(
         paddingHorizontal: 0,
-        bgColor: ColorManager.white,
+        bgColor: Theme.of(context).canvasColor,
         title: 'KIND WORDS',
         subTitle: 'TESTIMONIAL',
         centerAligned: true,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'color_manager.dart';
 import 'font_manager.dart';
 
 TextStyle _getTextStyle(
@@ -47,4 +48,17 @@ TextStyle getMediumStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.fontFamily, FontWeightManager.medium, color);
+}
+
+InputDecoration getInputDecoration({required String labletext}) {
+  return InputDecoration(
+    floatingLabelBehavior: FloatingLabelBehavior.never,
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: HexColor.fromHex('#80BDFF'), width: 3.0),
+    ),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(4),
+    ),
+    labelText: labletext,
+  );
 }
