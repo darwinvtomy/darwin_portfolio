@@ -16,7 +16,8 @@ class ServiceExpCard extends StatelessWidget {
       this.index,
       this.height,
       this.width,
-      this.year})
+      this.year,
+      this.color})
       : super(key: key);
   final String title;
   final String description;
@@ -25,6 +26,7 @@ class ServiceExpCard extends StatelessWidget {
   final double? height;
   final double? width;
   final String? year;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class ServiceExpCard extends StatelessWidget {
         width: width,
         height: height,
         padding: 0,
-        color: Colors.white,
+        color: color ?? Theme.of(context).scaffoldBackgroundColor,
         child: Stack(
           //  fit: StackFit.expand,
           children: [
@@ -51,9 +53,7 @@ class ServiceExpCard extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: AppPadding.p16),
                     child: Text(
                       title,
-                      style: getMediumStyle(
-                          color: ColorManager.title_font_color_light,
-                          fontSize: 14),
+                      style: Theme.of(context).textTheme.subtitle2,
                       textAlign: TextAlign.left,
                     ),
                   ),
@@ -75,9 +75,7 @@ class ServiceExpCard extends StatelessWidget {
                     ),
                   Text(
                     description,
-                    style: getLightStyle(
-                        color: ColorManager.content_font_color_light,
-                        fontSize: 14),
+                    style: Theme.of(context).textTheme.bodyText2,
                     textAlign: TextAlign.left,
                     maxLines: 3,
                   ),
@@ -90,12 +88,12 @@ class ServiceExpCard extends StatelessWidget {
                 right: 20,
                 child: Text(
                   index!,
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w100,
-                      color:
-                          ColorManager.title_font_color_light.withOpacity(0.1),
-                      fontSize: 90,
-                      height: 0),
+                  style: Theme.of(context).textTheme.headline1!.copyWith(
+                        color: (Theme.of(context).brightness == Brightness.dark)
+                            ? ColorManager.border_color_light.withOpacity(0.1)
+                            : ColorManager.title_font_color_light
+                                .withOpacity(0.1),
+                      ),
                   textAlign: TextAlign.left,
                 ),
               ),

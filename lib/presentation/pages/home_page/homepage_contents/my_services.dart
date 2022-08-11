@@ -48,6 +48,7 @@ class MyServices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
+      double halfsize = (sizeInfo.screenSize.width / 2) - 50;
       return ContentPlaceHolder(
         //  bgColor: ColorManager.content_bg_color_light,
         title: 'WHAT I DO',
@@ -61,7 +62,10 @@ class MyServices extends StatelessWidget {
           children: [
             for (Service service in services)
               ServiceExpCard(
-                  width: (sizeInfo.screenSize.width - 90) / 2,
+                  color: Theme.of(context).backgroundColor,
+                  width: sizeInfo.isMobile
+                      ? sizeInfo.screenSize.width * 0.99
+                      : halfsize,
                   height: sizeInfo.isMobile ? 280 : 250,
                   title: service.title,
                   description: service.description,

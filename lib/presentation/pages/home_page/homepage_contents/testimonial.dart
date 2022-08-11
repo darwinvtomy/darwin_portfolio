@@ -86,12 +86,13 @@ class CardSlide extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return Padding(
         padding: EdgeInsets.symmetric(
-            horizontal:
-                sizeInfo.isMobile ? sizeInfo.screenSize.width * 0.1 : 80),
+            horizontal: sizeInfo.isMobile
+                ? sizeInfo.screenSize.width * 0.12
+                : sizeInfo.screenSize.width * 0.1),
         child: ContentCard(
           height: sizeInfo.isMobile ? 200 : 150,
           width: sizeInfo.screenSize.width * 0.7,
-          color: HexColor.fromHex('#f8fafb'),
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -115,7 +116,9 @@ class CardSlide extends StatelessWidget {
                 child: Text(
                   '\"Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.\"',
                   style: getLightStyle(
-                      color: ColorManager.content_font_color_light,
+                      color: (Theme.of(context).brightness == Brightness.dark)
+                          ? ColorManager.border_color_light
+                          : ColorManager.dark,
                       fontSize: 14),
                   textAlign: TextAlign.center,
                   maxLines: 3,
@@ -126,7 +129,10 @@ class CardSlide extends StatelessWidget {
                 child: Text(
                   '- Anj Joseph, Web Developer',
                   style: getMediumStyle(
-                      color: ColorManager.title_font_color_light, fontSize: 14),
+                      color: (Theme.of(context).brightness == Brightness.dark)
+                          ? ColorManager.border_color_light
+                          : ColorManager.dark,
+                      fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
               ),

@@ -1,8 +1,5 @@
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/content_card.dart';
-import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
-import 'package:darwin_portfolio/presentation/resources/font_manager.dart';
-import 'package:darwin_portfolio/presentation/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,16 +7,19 @@ class ContactWidget extends StatelessWidget {
   final String contact;
   final String title;
   final IconData icon;
+  final double? width;
   const ContactWidget(
       {Key? key,
       required this.contact,
       required this.title,
-      required this.icon})
+      required this.icon,
+      this.width})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ContentCard(
+        width: width,
         padding: 25,
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -29,16 +29,14 @@ class ContactWidget extends StatelessWidget {
             verticalSpace(12),
             Text(
               contact,
-              style:
-                  getMediumStyle(color: Colors.black, fontSize: FontSize.s18),
+              style: Theme.of(context).textTheme.bodyText1!.copyWith(height: 1),
               maxLines: 1,
             ),
             verticalSpace(12),
             Text(
               title,
-              style: getLightStyle(
-                  color: ColorManager.content_font_color_light,
-                  fontSize: FontSize.s14),
+              style:
+                  Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 14),
               maxLines: 1,
             ),
           ],

@@ -21,8 +21,7 @@ class ContactForm extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'Contact Form',
-              style: getMediumStyle(
-                  color: ColorManager.title_font_color_light, fontSize: 20),
+              style: Theme.of(context).textTheme.subtitle1,
               textAlign: TextAlign.left,
             ),
           ),

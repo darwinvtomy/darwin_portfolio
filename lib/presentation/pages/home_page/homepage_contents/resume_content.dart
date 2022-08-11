@@ -32,9 +32,7 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'My Experience',
-                        style: getMediumStyle(
-                            color: ColorManager.title_font_color_light,
-                            fontSize: 20),
+                        style: Theme.of(context).textTheme.subtitle1,
                         textAlign: TextAlign.left,
                       ),
                     ),
@@ -42,6 +40,7 @@ class ResumeContent extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: AppPadding.p24),
                         child: ServiceExpCard(
+                          color: Theme.of(context).scaffoldBackgroundColor,
                           width: (sizeInfo.screenSize.width - 90) / 2,
                           year: '2013 - 2015 | Facebook Inc',
                           title: 'Senior Architect',
@@ -53,9 +52,7 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'Design Skills',
-                        style: getMediumStyle(
-                            color: ColorManager.title_font_color_light,
-                            fontSize: 20),
+                        style: Theme.of(context).textTheme.subtitle1,
                         textAlign: TextAlign.left,
                       ),
                     ),
@@ -73,9 +70,7 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'My Experience',
-                        style: getMediumStyle(
-                            color: ColorManager.title_font_color_light,
-                            fontSize: 20),
+                        style: Theme.of(context).textTheme.subtitle1,
                         textAlign: TextAlign.left,
                       ),
                     ),
@@ -83,6 +78,7 @@ class ResumeContent extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: AppPadding.p24),
                         child: ServiceExpCard(
+                          color: Theme.of(context).scaffoldBackgroundColor,
                           width: (sizeInfo.screenSize.width - 90) / 2,
                           year: '2013 - 2015 | Facebook Inc',
                           title: 'Senior Architect',
@@ -94,9 +90,7 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'Design Skills',
-                        style: getMediumStyle(
-                            color: ColorManager.title_font_color_light,
-                            fontSize: 20),
+                        style: Theme.of(context).textTheme.subtitle1,
                         textAlign: TextAlign.left,
                       ),
                     ),

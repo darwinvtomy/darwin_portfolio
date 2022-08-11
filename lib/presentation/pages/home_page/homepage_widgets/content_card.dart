@@ -23,10 +23,12 @@ class ContentCard extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-          color: color,
+          color: color ?? Theme.of(context).backgroundColor,
           borderRadius: BorderRadius.circular(5),
           border: Border.all(
-            color: ColorManager.card_bordercolor_light,
+            color: (Theme.of(context).brightness == Brightness.dark)
+                ? ColorManager.card_bordercolor_dark
+                : ColorManager.card_bordercolor_light,
           )),
       padding: EdgeInsets.all(padding ?? AppPadding.p8),
       child: child,

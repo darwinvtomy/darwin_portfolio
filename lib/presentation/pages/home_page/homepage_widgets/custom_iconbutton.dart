@@ -18,22 +18,25 @@ class CustomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      label: Text(buttonText),
+      label: Text(
+        buttonText,
+        style: getMediumStyle(color: Colors.white, fontSize: 14),
+      ),
       onPressed: onPressed,
       icon: icon ?? const SizedBox(),
       style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.circular(24.0),
                 side: BorderSide(color: ColorManager.button_bg_color)),
           ),
           elevation: MaterialStateProperty.all(6),
           backgroundColor:
               MaterialStateProperty.all(ColorManager.button_bg_color),
           padding: MaterialStateProperty.all(const EdgeInsets.symmetric(
-              vertical: AppPadding.p16, horizontal: AppPadding.p30)),
+              vertical: AppPadding.p18, horizontal: AppPadding.p40)),
           textStyle: MaterialStateProperty.all(
-              getRegularStyle(color: Colors.white, fontSize: 12))),
+              getRegularStyle(color: Colors.white, fontSize: 14))),
     );
   }
 }

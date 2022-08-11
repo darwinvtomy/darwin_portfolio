@@ -16,7 +16,7 @@ class SkillsCard extends StatelessWidget {
     return ContentCard(
       padding: AppPadding.p16,
       width: width,
-      color: Colors.white,
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: Column(
         children: const [
           SkillItem(
@@ -56,7 +56,10 @@ class SkillItem extends StatelessWidget {
         Text(
           skillTitle,
           style: getRegularStyle(
-              fontSize: 14, color: ColorManager.title_font_color_light),
+              fontSize: 14,
+              color: (Theme.of(context).brightness == Brightness.dark)
+                  ? ColorManager.border_color_light
+                  : ColorManager.dark),
           textAlign: TextAlign.left,
         ),
         ClipRRect(

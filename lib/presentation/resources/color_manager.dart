@@ -46,11 +46,13 @@ class ColorManager {
   static Color button_bg_color = HexColor.fromHex('#fd735a');
   static Color dark_bg_color = HexColor.fromHex('#25252d');
   static Color title_font_color_light = dark_gray;
+  static Color title_font_color_dark = very_Light_gray;
   static Color content_font_color_light = HexColor.fromHex('#5f6f81');
   static Color content_bg_color_light = lightgray_bg_color;
   static Color content_bg_color_dark_light = HexColor.fromHex('#f6f6f6');
   static Color border_color_light = HexColor.fromHex('#dee2e6');
   static Color card_bordercolor_light = HexColor.fromHex('#eeeeee');
+  static Color card_bordercolor_dark = HexColor.fromHex('#3b3b42');
 }
 
 class GradientManager {

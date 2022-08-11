@@ -30,7 +30,7 @@ class PersonalBlog extends StatelessWidget {
               return ContentCard(
                   padding: 0,
                   width: 300,
-                  color: Colors.white,
+                  color: Theme.of(context).cardColor,
                   child: Column(
                     children: [
                       Container(
@@ -50,22 +50,21 @@ class PersonalBlog extends StatelessWidget {
                         padding: const EdgeInsets.all(AppPadding.p16),
                         child: Text(
                           'Loren im parameter must not be null.some random text randum ',
-                          style: getRegularStyle(
-                                  color: ColorManager.title_font_color_light,
-                                  fontSize: 18)
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText1!
                               .copyWith(height: 1),
                           maxLines: 2,
                         ),
                       ),
                       Container(
-                        alignment: Alignment.center,
-                        width: 300,
-                        padding: const EdgeInsets.all(AppPadding.p16),
-                        child: Text('Design',
-                            style: getLightStyle(
-                                color: ColorManager.content_font_color_light,
-                                fontSize: 18)),
-                      )
+                          alignment: Alignment.center,
+                          width: 300,
+                          padding: const EdgeInsets.all(AppPadding.p16),
+                          child: Text(
+                            'Design',
+                            style: Theme.of(context).textTheme.bodyText2,
+                          ))
                     ],
                   ));
             },

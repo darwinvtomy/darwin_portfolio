@@ -13,6 +13,7 @@ class TopDrawer extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return Container(
         height: sizeInfo.screenSize.height,
+        width: sizeInfo.isMobile ? sizeInfo.screenSize.width * 0.6 : null,
         color: ColorManager.drawer_color,
         child: Stack(
           alignment: Alignment.center,

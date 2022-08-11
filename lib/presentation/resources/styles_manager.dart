@@ -54,10 +54,11 @@ InputDecoration getInputDecoration({required String labletext}) {
   return InputDecoration(
     floatingLabelBehavior: FloatingLabelBehavior.never,
     focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(5),
       borderSide: BorderSide(color: HexColor.fromHex('#80BDFF'), width: 3.0),
     ),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
+      borderRadius: BorderRadius.circular(5),
     ),
     labelText: labletext,
   );
