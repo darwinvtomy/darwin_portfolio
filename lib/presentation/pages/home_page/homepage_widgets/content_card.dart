@@ -1,3 +1,4 @@
+import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,6 @@ class ContentCard extends StatelessWidget {
           )),
       padding: EdgeInsets.all(padding ?? AppPadding.p8),
       child: child,
-    );
+    ).moveUpOnHover;
   }
 }

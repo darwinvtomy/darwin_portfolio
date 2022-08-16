@@ -27,50 +27,65 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       drawer: const TopDrawer(),
       body: ResponsiveBuilder(builder: (context, sizeInfo) {
-        return Stack(
+        double drawerSize = sizeInfo.screenSize.width * 0.18;
+        return Row(
           children: [
-            Container(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    TopBanner(
-                        name: 'DARWIN V TOMY',
-                        scrollController: controller,
-                        imageLink: 'assets/images/banner.jpg'),
-                    const AboutMe(),
-                    MyServices(),
-                    const ResumeContent(),
-                    PortFolio(),
-                    Testimonial(),
-                    const HireMeWidget(),
-                    PersonalBlog(),
-                    const ContactMe(),
-                    Credits(sizeInfo.screenSize.width)
-                  ],
-                ),
+            if (!sizeInfo.isMobile)
+              TopDrawer(
+                width: sizeInfo.screenSize.width * 0.18,
               ),
-            ),
-            Positioned(
-                top: 20,
-                right: 20,
-                child: IconButton(
-                    hoverColor:
-                        themeChange.darkTheme ? Colors.white54 : Colors.black54,
-                    onPressed: () {
-                      themeChange.darkTheme = !themeChange.darkTheme;
-                    },
-                    icon: FaIcon(themeChange.darkTheme
-                        ? FontAwesomeIcons.solidSun
-                        : FontAwesomeIcons.solidMoon))),
-            Positioned(
-              left: 10,
-              top: 10,
-              child: IconButton(
-                icon: const Icon(
-                  Icons.menu,
-                  size: 45,
-                ),
-                onPressed: () => Scaffold.of(context).openDrawer(),
+            SizedBox(
+              height: sizeInfo.screenSize.height,
+              width: sizeInfo.isMobile
+                  ? sizeInfo.screenSize.width
+                  : sizeInfo.screenSize.width - drawerSize,
+              child: Stack(
+                children: [
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        TopBanner(
+                            name: 'DARWIN V TOMY',
+                            scrollController: controller,
+                            imageLink: 'assets/images/banner.jpg'),
+                        const AboutMe(),
+                        MyServices(),
+                        const ResumeContent(),
+                        PortFolio(),
+                        Testimonial(),
+                        const HireMeWidget(),
+                        PersonalBlog(),
+                        const ContactMe(),
+                        Credits(sizeInfo.screenSize.width)
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                      top: 20,
+                      right: 20,
+                      child: IconButton(
+                          hoverColor: themeChange.darkTheme
+                              ? Colors.white54
+                              : Colors.black54,
+                          onPressed: () {
+                            themeChange.darkTheme = !themeChange.darkTheme;
+                          },
+                          icon: FaIcon(themeChange.darkTheme
+                              ? FontAwesomeIcons.solidSun
+                              : FontAwesomeIcons.solidMoon))),
+                  if (sizeInfo.isMobile)
+                    Positioned(
+                      left: 10,
+                      top: 10,
+                      child: IconButton(
+                        icon: const Icon(
+                          Icons.menu,
+                          size: 36,
+                        ),
+                        onPressed: () => Scaffold.of(context).openDrawer(),
+                      ),
+                    ),
+                ],
               ),
             ),
           ],
