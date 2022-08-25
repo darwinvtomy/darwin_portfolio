@@ -1,0 +1,302 @@
+{
+    "en": {
+        "name": "DARWIN V TOMY",
+        "label": "Senior Software Engineer (Flutter)",
+        "address1": "Bengaluru , India 560068",
+        "pno1": "919-895-007888",
+        "pno2": "919-911-3835612",
+        "email": "darwinvtomy@gmail.com",
+        "dob": "20th October 1988",
+        "about_picture": "assets/images/about.jpg",
+        "avatar_picture": "assets/images/avatar.jpg",
+        "banner_picture": "assets/images/banner.jpg",
+        "freelance_picture": "assets/images/freelance.jpg",
+        "professional_summary": "Senior Software Engineer offering 9 years of expertise in App Development. Seasoned professional with background in full software development lifecycle. Quickly learns and masters new technologies while working in both team and self-directed settings.",
+        "skills": [
+            "OTT",
+            "Smart TV App Development",
+            "IOT",
+            "DRM in VOD",
+            "Firebase",
+            "Flutter Plugins For Android"
+        ],
+        "profiles": [
+            {
+                "network": "Website",
+                "username": "darwinvtomy",
+                "url": "https://darwinvtomy.xyz"
+            },
+            {
+                "network": "Skype",
+                "username": "darwinvtomy",
+                "url": "darwinvtomy"
+            },
+            {
+                "network": "Whatssap",
+                "username": "darwinvtomy",
+                "url": "Whatssaplink"
+            },
+            {
+                "network": "Stackoverflow",
+                "username": "darwinvtomy",
+                "url": "https://stackoverflow.com/users/5662389/darwin-v-tomy"
+            },
+            {
+                "network": "Facebook",
+                "username": "darwinvtomy",
+                "url": "https://www.facebook.com/darwin.v.tomy"
+            },
+            {
+                "network": "Github",
+                "username": "darwinvtomy",
+                "url": "https://github.com/darwinvtomy"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "darwinvtomy",
+                "url": "https://www.linkedin.com/in/darwin-v-tomy-15177711"
+            }
+        ],
+        "services": [
+            {
+                "icon": "Mobile App Development",
+                "title": "Mobile App Development",
+                "description": "Service Description"
+            },
+            {
+                "icon": "Desktop App Development",
+                "title": "Desktop App Development",
+                "description": "Service Description"
+            },
+            {
+                "icon": "Smart TV App Development",
+                "title": "Smart TV App Development",
+                "description": "Service Description"
+            },
+            {
+                "icon": "Web App Development",
+                "title": "Web App Development",
+                "description": "Service Description"
+            }
+        ],
+        "coding": [
+            {
+                "skill": "Dart",
+                "level": 5
+            },
+            {
+                "skill": "Flutter",
+                "level": 4
+            },
+            {
+                "skill": "Android",
+                "level": 2
+            },
+            {
+                "skill": "IOS",
+                "level": 1
+            },
+            {
+                "skill": "Kotlin",
+                "level": 2
+            }
+        ],
+        "languages": [
+            {
+                "language": "English",
+                "level": 5
+            },
+            {
+                "language": "Malayalam",
+                "level": 5
+            },
+            {
+                "language": "Hindi",
+                "level": 2
+            },
+            {
+                "language": "Kannada",
+                "level": 1
+            },
+            {
+                "language": "Telugu",
+                "level": 1
+            }
+        ],
+        "work_history": [
+            {
+                "start_date": "March 2021",
+                "end_date": "January 2022",
+                "company_name": "LEAD School",
+                "location": "Bengaluru , Karnataka",
+                "summary": "Company Summery",
+                "website": "https://company.co",
+                "role": "Senior Software Engineer",
+                "descripton": [
+                    "Adjusted design parameters to boost performance and incorporate new features.",
+                    "Contributed ideas and suggestions in team meetings and delivered updates on deadlines, designs and enhancements.",
+                    "Integrated UI features complying with prescribed code standards and technical design guidelines"
+                ]
+            },
+            {
+                "start_date": "August 2019",
+                "end_date": "March 2021",
+                "company_name": "Wiked Ride (Bounce)",
+                "location": "Bengaluru , Karnataka",
+                "summary": "Company Summery",
+                "website": "https://company.co",
+                "role": "Senior Software Engineer",
+                "descripton": [
+                    "Gathered and defined customer requirements to develop clear specifications for project plans.",
+                    "Developed UI For Entire Front End App",
+                    "Communicated with product managers and UX designers to translate project requirements and business objectives into polished user interfaces"
+                ]
+            },
+            {
+                "start_date": "March 2016",
+                "end_date": "August 2019",
+                "company_name": "Orion Digital Edutainment Pvt Ltd",
+                "location": "Bengaluru , Karnataka",
+                "summary": "Company Summery",
+                "website": "https://company.co",
+                "role": "Senior Software Engineer",
+                "descripton": [
+                    "Trained and mentored junior developers and engineers, teaching skills in Android and working to improve overall team performance.",
+                    "Revised, modularized and updated old code bases to modern development standards, reducing operating costs and improving functionality."
+                ]
+            },
+            {
+                "start_date": "October 2015",
+                "end_date": "March 2016",
+                "company_name": "PlanetSurf Creations Pvt Ltd",
+                "location": "Bengaluru , Karnataka",
+                "summary": "Company Summery",
+                "website": "https://company.co",
+                "role": "Junior Android Developer",
+                "descripton": [
+                    "Created custom mobile applications using native technologies.",
+                    "Designed user interfaces that engaged multiple senses and produced immersive experiences."
+                ]
+            },
+            {
+                "start_date": "September 2013",
+                "end_date": "September 2015",
+                "company_name": "Tenet Technetronics",
+                "location": "Bengaluru , Karnataka",
+                "summary": "Company Summery",
+                "website": "https://company.co",
+                "role": "Junior Android Developer",
+                "descripton": [
+                    "Utilized comprehensive knowledge of mobile landscape, emerging technologies and innovations to remain on cutting edge of Android market."
+                ]
+            }
+        ],
+        "education": [
+            {
+                "instution": "Anna University Chennai Coimbatore",
+                "degree": "Master of Engineering Software Engineering",
+                "location": "Coimbatore-India"
+            },
+            {
+                "instution": "Vinayaka Missions University Salem",
+                "degree": "Bachelor of Engineering Computer Science",
+                "location": "Salem-India"
+            }
+        ],
+        "interests": [
+            "Mobile App Development",
+            "Smart TV App Development",
+            "Quantum Computing",
+            "Artificial intelligence and Machine learning",
+            "Game Development",
+            "Virtual Reality",
+            "IOT"
+        ],
+        "hobbies": [
+            "Swimming",
+            "Travelling",
+            "Drawing",
+            "Gardening",
+            "Watching Movies",
+            "Photography"
+        ],
+        "portfolio": [
+            {
+                "image": "image of portfolio",
+                "title": "Title",
+                "url": "Salem-India"
+            },
+            {
+                "image": "image of portfolio",
+                "title": "Title",
+                "url": "Salem-India"
+            },
+            {
+                "image": "image of portfolio",
+                "title": "Title",
+                "url": "Salem-India"
+            },
+            {
+                "image": "image of portfolio",
+                "title": "Title",
+                "url": "Salem-India"
+            }
+        ],
+        "testimonial": [
+            {
+                "image": "image of portfolio",
+                "name": "Title",
+                "description": "Salem-India"
+            },
+            {
+                "image": "image of portfolio",
+                "name": "Title",
+                "description": "Salem-India"
+            },
+            {
+                "image": "image of portfolio",
+                "name": "Title",
+                "description": "Salem-India"
+            },
+            {
+                "image": "image of portfolio",
+                "name": "Title",
+                "description": "Salem-India"
+            }
+        ],
+        "blog": [
+            {
+                "image": "image of portfolio",
+                "name": "Title",
+                "description": "Salem-India",
+                "imageurl": "Image Url here",
+                "url": "url-link here"
+            }
+        ],
+        "current_locstion": {
+            "lat": "latitudes",
+            "long": "longtitudes"
+        },
+        "contact": {
+            "form_details": [
+                {
+                    "title": "Name",
+                    "hint": "Your Name*"
+                },
+                {
+                    "title": "Email",
+                    "hint": "Your Email*"
+                },
+                {
+                    "title": "Subject",
+                    "hint": "Your Subject*"
+                },
+                {
+                    "title": "message",
+                    "hint": "Your Message*"
+                }
+            ],
+            "submit_mail": "darwinvtomy@gmail.com"
+        }
+    }
+}
