@@ -1,3 +1,4 @@
+import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/content_card.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/contents_placeholder.dart';
@@ -66,7 +67,7 @@ class PersonalBlog extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyText2,
                           ))
                     ],
-                  ));
+                  )).moveUpOnHover;
             },
             separatorBuilder: (BuildContext context, int index) {
               return horizontalSpace(32);

@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/styles_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
@@ -37,6 +38,6 @@ class CustomIconButton extends StatelessWidget {
               vertical: AppPadding.p18, horizontal: AppPadding.p40)),
           textStyle: MaterialStateProperty.all(
               getRegularStyle(color: Colors.white, fontSize: 14))),
-    );
+    ).moveUpOnHover;
   }
 }

@@ -1,3 +1,4 @@
+import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/skills_card.dart';
 import 'package:flutter/material.dart';
@@ -19,11 +20,12 @@ class ResumeContent extends StatelessWidget {
           bgColor: Theme.of(context).canvasColor,
           title: 'MY RESUME',
           subTitle: 'MY EXPERTISES',
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
+          child: Flex(
+            mainAxisSize: MainAxisSize.min,
+            direction: sizeInfo.isMobile ? Axis.vertical : Axis.horizontal,
             children: [
-              Expanded(
+              Flexible(
+                flex: sizeInfo.isMobile ? 0 : 1,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -41,12 +43,12 @@ class ResumeContent extends StatelessWidget {
                         padding: EdgeInsets.only(bottom: AppPadding.p24),
                         child: ServiceExpCard(
                           color: Theme.of(context).scaffoldBackgroundColor,
-                          width: (sizeInfo.screenSize.width - 90) / 2,
+                          //     width: (sizeInfo.screenSize.width - 90) / 2,
                           year: '2013 - 2015 | Facebook Inc',
                           title: 'Senior Architect',
                           description:
                               'Collaborate with creative and development teams on the execution of ideas.',
-                        ),
+                        ).moveUpOnHover,
                       ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
@@ -56,12 +58,13 @@ class ResumeContent extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                     ),
-                    const SkillsCard()
+                    const SkillsCard().moveUpOnHover
                   ],
                 ),
               ),
-              horizontalSpace(30),
-              Expanded(
+              sizeInfo.isMobile ? verticalSpace(30) : horizontalSpace(30),
+              Flexible(
+                flex: sizeInfo.isMobile ? 0 : 1,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -79,12 +82,12 @@ class ResumeContent extends StatelessWidget {
                         padding: EdgeInsets.only(bottom: AppPadding.p24),
                         child: ServiceExpCard(
                           color: Theme.of(context).scaffoldBackgroundColor,
-                          width: (sizeInfo.screenSize.width - 90) / 2,
+                          //  width: (sizeInfo.screenSize.width - 90) / 2,
                           year: '2013 - 2015 | Facebook Inc',
                           title: 'Senior Architect',
                           description:
                               'Collaborate with creative and development teams on the execution of ideas.',
-                        ),
+                        ).moveUpOnHover,
                       ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
@@ -94,7 +97,7 @@ class ResumeContent extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                     ),
-                    const SkillsCard()
+                    const SkillsCard().moveUpOnHover
                   ],
                 ),
               )

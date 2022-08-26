@@ -13,7 +13,7 @@ class ContactForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       double? boxSize =
-          sizeInfo.isMobile ? null : (sizeInfo.screenSize.width - 90) / 2;
+          sizeInfo.isMobile ? null : (sizeInfo.screenSize.width / 2) - 160;
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -26,19 +26,20 @@ class ContactForm extends StatelessWidget {
             ),
           ),
           verticalSpace(24),
-          Wrap(
+          Flex(
+            mainAxisSize: MainAxisSize.min,
+            direction: sizeInfo.isMobile ? Axis.vertical : Axis.horizontal,
             children: [
-              SizedBox(
-                width: boxSize,
+              Flexible(
+                flex: sizeInfo.isMobile ? 0 : 1,
                 child: TextFormField(
                   cursorColor: Colors.black,
                   decoration: getInputDecoration(labletext: 'Your Name*'),
                 ),
               ),
-              horizontalSpace(30),
-              verticalSpace(30),
-              SizedBox(
-                width: boxSize,
+              sizeInfo.isMobile ? verticalSpace(30) : horizontalSpace(30),
+              Flexible(
+                flex: sizeInfo.isMobile ? 0 : 1,
                 child: TextFormField(
                   cursorColor: Colors.black,
                   decoration: getInputDecoration(labletext: 'Your Email*'),

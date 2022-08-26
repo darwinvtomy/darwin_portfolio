@@ -1,3 +1,4 @@
+import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/contents_placeholder.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/service_card.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
@@ -53,24 +54,35 @@ class MyServices extends StatelessWidget {
         //  bgColor: ColorManager.content_bg_color_light,
         title: 'WHAT I DO',
         subTitle: 'MY SERVICES',
-        child: Wrap(
-          spacing: 30,
-          runSpacing: 30,
-          alignment: WrapAlignment.center,
-          runAlignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
+        child: GridView(
+          shrinkWrap: true,
+
+          physics: const NeverScrollableScrollPhysics(),
+          // spacing: 30,
+          // runSpacing: 30,
+          // alignment: WrapAlignment.center,
+          // runAlignment: WrapAlignment.center,
+          // crossAxisAlignment: WrapCrossAlignment.center,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: sizeInfo.isMobile ? 1 : 2,
+            crossAxisSpacing: 30,
+            mainAxisSpacing: 30,
+            mainAxisExtent: sizeInfo.isMobile ? 280 : 250, //
+            // childAspectRatio: 0.8,
+          ),
+          // crossAxisCount: 3,
           children: [
             for (Service service in services)
               ServiceExpCard(
-                  color: Theme.of(context).backgroundColor,
-                  width: sizeInfo.isMobile
-                      ? sizeInfo.screenSize.width * 0.99
-                      : halfsize,
-                  height: sizeInfo.isMobile ? 280 : 250,
-                  title: service.title,
-                  description: service.description,
-                  icon: FaIcon(service.icondata),
-                  index: service.index)
+                      color: Theme.of(context).backgroundColor,
+                      width: sizeInfo.isMobile
+                          ? sizeInfo.screenSize.width * 0.99
+                          : halfsize,
+                      title: service.title,
+                      description: service.description,
+                      icon: FaIcon(service.icondata),
+                      index: service.index)
+                  .moveUpOnHover
           ],
         ),
       );

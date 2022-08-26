@@ -33,6 +33,6 @@ class ContentCard extends StatelessWidget {
           )),
       padding: EdgeInsets.all(padding ?? AppPadding.p8),
       child: child,
-    ).moveUpOnHover;
+    );
   }
 }

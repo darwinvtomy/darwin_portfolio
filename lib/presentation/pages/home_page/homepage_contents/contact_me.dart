@@ -1,3 +1,4 @@
+import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -72,25 +73,35 @@ class ContactMe extends StatelessWidget {
                 verticalSpace(24),
                 SizedBox(
                   width: sizeInfo.screenSize.width,
-                  child: Wrap(
-                    spacing: 30,
-                    runSpacing: 30,
+                  child: Flex(
+                    mainAxisSize: MainAxisSize.min,
+                    direction:
+                        sizeInfo.isMobile ? Axis.vertical : Axis.horizontal,
                     children: [
-                      ContactWidget(
-                        width: sizeInfo.isMobile
-                            ? halfsize
-                            : (sizeInfo.screenSize.width / 2) - 50,
-                        contact: '+91-9895007888',
-                        title: 'Call Us',
-                        icon: FontAwesomeIcons.mobileScreen,
+                      Flexible(
+                        flex: sizeInfo.isMobile ? 0 : 1,
+                        child: ContactWidget(
+                          width: sizeInfo.isMobile
+                              ? halfsize
+                              : (sizeInfo.screenSize.width / 2) - 50,
+                          contact: '+91-9895007888',
+                          title: 'Call Us',
+                          icon: FontAwesomeIcons.mobileScreen,
+                        ).moveUpOnHover,
                       ),
-                      ContactWidget(
-                        width: sizeInfo.isMobile
-                            ? halfsize
-                            : (sizeInfo.screenSize.width / 2) - 50,
-                        contact: 'darwinvtomy@gmail.com',
-                        title: 'Email Us',
-                        icon: FontAwesomeIcons.solidEnvelope,
+                      sizeInfo.isMobile
+                          ? verticalSpace(30)
+                          : horizontalSpace(30),
+                      Flexible(
+                        flex: sizeInfo.isMobile ? 0 : 1,
+                        child: ContactWidget(
+                          width: sizeInfo.isMobile
+                              ? halfsize
+                              : (sizeInfo.screenSize.width / 2) - 50,
+                          contact: 'darwinvtomy@gmail.com',
+                          title: 'Email Us',
+                          icon: FontAwesomeIcons.solidEnvelope,
+                        ).moveUpOnHover,
                       ),
                     ],
                   ),
