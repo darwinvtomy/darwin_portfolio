@@ -27,8 +27,6 @@ class Testimonial extends StatelessWidget {
               height: sizeInfo.isMobile ? 400 : 300,
               width: sizeInfo.screenSize.width,
               child: PageView(
-                /// [PageView.scrollDirection] defaults to [Axis.horizontal].
-                /// Use [Axis.vertical] to scroll vertically.
                 controller: controller,
                 children: const <Widget>[
                   CardSlide(itemIndex: 1),
@@ -50,8 +48,11 @@ class Testimonial extends StatelessWidget {
                     height: 60,
                     width: 40,
                   ),
-                  onPressed: null //do something,
-                  ),
+                  onPressed: () {
+                    controller.nextPage(
+                        duration: Duration(milliseconds: 200),
+                        curve: Curves.easeIn);
+                  }),
             ),
             Positioned(
               left: 0,
@@ -64,8 +65,11 @@ class Testimonial extends StatelessWidget {
                     height: 60,
                     width: 40,
                   ),
-                  onPressed: null //do something,
-                  ),
+                  onPressed: () {
+                    controller.previousPage(
+                        duration: Duration(milliseconds: 200),
+                        curve: Curves.easeIn);
+                  }),
             ),
           ],
         ),

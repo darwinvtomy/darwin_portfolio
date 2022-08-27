@@ -6,15 +6,20 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class TopDrawer extends StatelessWidget {
-  final double? width;
-  const TopDrawer({Key? key, this.width}) : super(key: key);
+  const TopDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
+      double drawerwidth = sizeInfo.screenSize.width * 0.18;
+      print('Width is $drawerwidth');
       return Container(
         height: sizeInfo.screenSize.height,
-        width: sizeInfo.isMobile ? sizeInfo.screenSize.width * 0.43 : width,
+        width: sizeInfo.isMobile
+            ? sizeInfo.screenSize.width * 0.59
+            : drawerwidth <= 181.44
+                ? 181.44
+                : drawerwidth,
         decoration: BoxDecoration(
             color: ColorManager.gray_bg_color,
             borderRadius: BorderRadius.circular(5),

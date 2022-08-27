@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 import 'content_card.dart';
+import 'skill_item.dart';
 
 class SkillsCard extends StatelessWidget {
   const SkillsCard({Key? key, this.width, this.year}) : super(key: key);
@@ -37,45 +38,6 @@ class SkillsCard extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class SkillItem extends StatelessWidget {
-  final String skillTitle;
-  final double skillValue;
-  const SkillItem(
-      {Key? key, required this.skillTitle, required this.skillValue})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          skillTitle,
-          style: getRegularStyle(
-              fontSize: 14,
-              color: (Theme.of(context).brightness == Brightness.dark)
-                  ? ColorManager.border_color_light
-                  : ColorManager.dark),
-          textAlign: TextAlign.left,
-        ),
-        ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          child: LinearProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(
-              HexColor.fromHex('#D36453'),
-            ),
-            backgroundColor: HexColor.fromHex('#2A2D35'),
-            minHeight: 8,
-            value: skillValue,
-            semanticsLabel: 'Linear progress indicator',
-          ),
-        ),
-        verticalSpace(24)
-      ],
     );
   }
 }

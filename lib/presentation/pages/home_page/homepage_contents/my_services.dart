@@ -51,26 +51,17 @@ class MyServices extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       double halfsize = (sizeInfo.screenSize.width / 2) - 50;
       return ContentPlaceHolder(
-        //  bgColor: ColorManager.content_bg_color_light,
         title: 'WHAT I DO',
         subTitle: 'MY SERVICES',
         child: GridView(
           shrinkWrap: true,
-
           physics: const NeverScrollableScrollPhysics(),
-          // spacing: 30,
-          // runSpacing: 30,
-          // alignment: WrapAlignment.center,
-          // runAlignment: WrapAlignment.center,
-          // crossAxisAlignment: WrapCrossAlignment.center,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: sizeInfo.isMobile ? 1 : 2,
             crossAxisSpacing: 30,
             mainAxisSpacing: 30,
             mainAxisExtent: sizeInfo.isMobile ? 280 : 250, //
-            // childAspectRatio: 0.8,
           ),
-          // crossAxisCount: 3,
           children: [
             for (Service service in services)
               ServiceExpCard(

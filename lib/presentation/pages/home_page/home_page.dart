@@ -30,10 +30,7 @@ class HomePage extends StatelessWidget {
         double drawerSize = sizeInfo.screenSize.width * 0.18;
         return Row(
           children: [
-            if (!sizeInfo.isMobile)
-              TopDrawer(
-                width: sizeInfo.screenSize.width * 0.18,
-              ),
+            if (!sizeInfo.isMobile) TopDrawer(),
             SizedBox(
               height: sizeInfo.screenSize.height,
               width: sizeInfo.isMobile
@@ -53,7 +50,7 @@ class HomePage extends StatelessWidget {
                         const ResumeContent(),
                         PortFolio(),
                         Testimonial(),
-                        const HireMeWidget(),
+                        HireMeWidget(),
                         PersonalBlog(),
                         const ContactMe(),
                         Credits(sizeInfo.screenSize.width)

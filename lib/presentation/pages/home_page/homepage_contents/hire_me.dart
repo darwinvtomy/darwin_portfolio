@@ -4,9 +4,11 @@ import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
 
-class HireMeWidget extends StatelessWidget {
-  const HireMeWidget({Key? key}) : super(key: key);
+import '../../../../utils/parallax_flow_delegate.dart';
 
+class HireMeWidget extends StatelessWidget {
+  HireMeWidget({Key? key}) : super(key: key);
+  final GlobalKey _backgroundImageKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,9 +18,19 @@ class HireMeWidget extends StatelessWidget {
         alignment: Alignment.center,
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            'assets/images/freelance.jpg',
-            fit: BoxFit.fitWidth,
+          Flow(
+            delegate: ParallaxFlowDelegate(
+              scrollable: Scrollable.of(context)!,
+              listItemContext: context,
+              backgroundImageKey: _backgroundImageKey,
+            ),
+            children: [
+              Image.asset(
+                'assets/images/freelance.jpg',
+                fit: BoxFit.fitWidth,
+                key: _backgroundImageKey,
+              )
+            ],
           ),
           Container(
             color: ColorManager.title_font_color_light.withOpacity(0.9),

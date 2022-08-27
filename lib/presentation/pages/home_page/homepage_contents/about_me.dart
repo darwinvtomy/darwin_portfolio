@@ -1,16 +1,12 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/custom_iconbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/content_card.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/contents_placeholder.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
-
-import '../../../resources/styles_manager.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({Key? key}) : super(key: key);
@@ -18,12 +14,15 @@ class AboutMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
-      double imageSize = sizeInfo.screenSize.width * 0.4;
+      double imageSize = sizeInfo.screenSize.width * 0.3;
       return ContentPlaceHolder(
           title: 'GET TO KNOW',
           subTitle: 'ABOUT ME',
           bgColor: Theme.of(context).canvasColor,
           child: Wrap(
+            direction: Axis.horizontal,
+            runSpacing: 30,
+            spacing: 30,
             alignment: WrapAlignment.start,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
@@ -43,13 +42,13 @@ class AboutMe extends StatelessWidget {
                         : imageSize,
                     fit: BoxFit.fitWidth,
                   )),
-              verticalSpace(sizeInfo.isMobile ? AppPadding.p40 : 0.0),
+              // verticalSpace(sizeInfo.isMobile ? AppPadding.p40 : 0.0),
               Container(
                 padding: EdgeInsets.only(
                     left: sizeInfo.isMobile ? 0.0 : AppPadding.p30),
                 width: sizeInfo.isMobile
                     ? sizeInfo.screenSize.width - 30
-                    : sizeInfo.screenSize.width * 0.5,
+                    : sizeInfo.screenSize.width * 0.4,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
