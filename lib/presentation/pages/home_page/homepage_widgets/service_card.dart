@@ -7,7 +7,7 @@ import '../../../common/space.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 
-class ServiceExpCard extends StatelessWidget {
+class ServiceExpCard extends StatefulWidget {
   const ServiceExpCard(
       {Key? key,
       required this.title,
@@ -29,75 +29,95 @@ class ServiceExpCard extends StatelessWidget {
   final Color? color;
 
   @override
+  State<ServiceExpCard> createState() => _ServiceExpCardState();
+}
+
+class _ServiceExpCardState extends State<ServiceExpCard> {
+  bool showindex = false;
+
+  @override
   Widget build(BuildContext context) {
-    return ContentCard(
-        width: width,
-        height: height,
-        padding: 0,
-        color: color ?? Theme.of(context).scaffoldBackgroundColor,
-        child: Stack(
-          //  fit: StackFit.expand,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(25.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (icon != null)
+    return MouseRegion(
+      onEnter: (_) => {
+        setState(() {
+          showindex = true;
+        })
+      },
+      onExit: (_) => {
+        setState(() {
+          showindex = false;
+        })
+      },
+      child: ContentCard(
+          width: widget.width,
+          height: widget.height,
+          padding: 0,
+          color: widget.color ?? Theme.of(context).scaffoldBackgroundColor,
+          child: Stack(
+            //  fit: StackFit.expand,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (widget.icon != null)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: AppPadding.p16),
+                        child: widget.icon ?? SizedBox(),
+                      ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(vertical: AppPadding.p16),
-                      child: icon ?? SizedBox(),
+                      padding: const EdgeInsets.only(bottom: AppPadding.p16),
+                      child: Text(
+                        widget.title,
+                        style: Theme.of(context).textTheme.subtitle2,
+                        textAlign: TextAlign.left,
+                      ),
                     ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: AppPadding.p16),
-                    child: Text(
-                      title,
-                      style: Theme.of(context).textTheme.subtitle2,
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                  if (year != null)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 16),
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: AppPadding.p8),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            gradient: GradientManager.commonGradient),
-                        child: Text(
-                          year!,
-                          style: getBoldStyle(color: Colors.white),
-                          textAlign: TextAlign.left,
+                    if (widget.year != null)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 16),
+                        child: Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: AppPadding.p8),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              gradient: GradientManager.commonGradient),
+                          child: Text(
+                            widget.year!,
+                            style: getBoldStyle(color: Colors.white),
+                            textAlign: TextAlign.left,
+                          ),
                         ),
                       ),
+                    Text(
+                      widget.description,
+                      style: Theme.of(context).textTheme.bodyText2,
+                      textAlign: TextAlign.left,
+                      maxLines: 3,
                     ),
-                  Text(
-                    description,
-                    style: Theme.of(context).textTheme.bodyText2,
-                    textAlign: TextAlign.left,
-                    maxLines: 3,
-                  ),
-                ],
-              ),
-            ),
-            if (index != null)
-              Positioned(
-                top: -40,
-                right: 20,
-                child: Text(
-                  index!,
-                  style: Theme.of(context).textTheme.headline1!.copyWith(
-                        color: (Theme.of(context).brightness == Brightness.dark)
-                            ? ColorManager.border_color_light.withOpacity(0.1)
-                            : ColorManager.title_font_color_light
-                                .withOpacity(0.1),
-                      ),
-                  textAlign: TextAlign.left,
+                  ],
                 ),
               ),
-          ],
-        ));
+              if (widget.index != null && showindex)
+                Positioned(
+                  top: -40,
+                  right: 20,
+                  child: Text(
+                    widget.index!,
+                    style: Theme.of(context).textTheme.headline1!.copyWith(
+                          color: (Theme.of(context).brightness ==
+                                  Brightness.dark)
+                              ? ColorManager.border_color_light.withOpacity(0.1)
+                              : ColorManager.title_font_color_light
+                                  .withOpacity(0.1),
+                        ),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+            ],
+          )),
+    );
   }
 }
