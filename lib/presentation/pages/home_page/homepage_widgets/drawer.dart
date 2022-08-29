@@ -1,8 +1,11 @@
+import 'package:darwin_portfolio/models/navigation_item.dart';
+import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/styles_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class TopDrawer extends StatelessWidget {
@@ -10,6 +13,8 @@ class TopDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final navigationItems = context.watch<List<NavigationItem>>();
+    final scrollController = context.watch<ScrollController>();
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       double drawerwidth = sizeInfo.screenSize.width * 0.18;
       print('Width is $drawerwidth');
@@ -51,38 +56,25 @@ class TopDrawer extends StatelessWidget {
                           width: 160,
                         )),
                   ),
-                  DrawerTextButton(
-                    text: 'HOME',
-                    onClick: () {},
-                  ),
-                  DrawerTextButton(
-                    text: 'ABOUT',
-                    onClick: () {},
-                  ),
-                  DrawerTextButton(
-                    text: 'SERVICES',
-                    onClick: () {},
-                  ),
-                  DrawerTextButton(
-                    text: 'RESUME',
-                    onClick: () {},
-                  ),
-                  DrawerTextButton(
-                    text: 'PORTFOLIO',
-                    onClick: () {},
-                  ),
-                  DrawerTextButton(
-                    text: 'BLOG',
-                    onClick: () {},
-                  ),
-                  DrawerTextButton(
-                    text: 'CONTACT',
-                    onClick: () {},
-                  ),
+                  for (var item in navigationItems)
+                    DrawerTextButton(
+                      text: item.text,
+                      onClick: () {
+                        print('On Click is Called');
+                        scrollController.animateTo(item.position,
+                            duration: const Duration(milliseconds: 700),
+                            curve: Curves.easeInOut);
+                      },
+                    ).moveUpOnHoverWithoutshadow,
                 ],
               ),
             ),
-            Positioned(bottom: 0, left: 0, right: 0, child: LinkButtons())
+            const Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: LinkButtons(),
+            )
           ],
         ),
       );
@@ -97,7 +89,7 @@ class LinkButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(gradient: GradientManager.commonGradient),
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -135,7 +127,7 @@ class LinkIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      padding: EdgeInsets.all(AppPadding.p8),
+      padding: const EdgeInsets.all(AppPadding.p8),
       icon: FaIcon(iconData),
       onPressed: onPressed,
       color: Colors.white,
@@ -144,21 +136,44 @@ class LinkIconButton extends StatelessWidget {
   }
 }
 
-class DrawerTextButton extends StatelessWidget {
+class DrawerTextButton extends StatefulWidget {
   final String text;
   final Function onClick;
+
   const DrawerTextButton({Key? key, required this.text, required this.onClick})
       : super(key: key);
 
   @override
+  State<DrawerTextButton> createState() => _DrawerTextButtonState();
+}
+
+class _DrawerTextButtonState extends State<DrawerTextButton> {
+  Color textColor = Colors.white54;
+
+  @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onClick(),
-      child: Padding(
-        padding: const EdgeInsets.all(AppPadding.p10),
-        child: Text(
-          text,
-          style: getRegularStyle(color: Colors.white).copyWith(fontSize: 14),
+    return MouseRegion(
+      onEnter: (_) => {
+        setState(() {
+          textColor = Colors.white;
+        })
+      },
+      onExit: (_) => {
+        setState(() {
+          textColor = Colors.white54;
+        })
+      },
+      child: TextButton(
+        onPressed: () {
+          print('On Click is Called in Drawer Text Button ${widget.text}');
+          widget.onClick();
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(AppPadding.p10),
+          child: Text(
+            widget.text,
+            style: getRegularStyle(color: textColor).copyWith(fontSize: 14),
+          ),
         ),
       ),
     );

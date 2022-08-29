@@ -46,6 +46,8 @@ dependencies:
   flutter_map: ^2.2.0
   provider: ^6.0.3
   shared_preferences: ^2.0.15
+  url_launcher: ^6.1.5
+  after_layout: ^1.2.0
 
 dev_dependencies:
   flutter_test:

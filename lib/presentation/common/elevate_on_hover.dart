@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class ElevateOnHover extends StatefulWidget {
   final Widget child;
+  final bool enableShadow;
   const ElevateOnHover({
     Key? key,
     required this.child,
+    this.enableShadow = true,
   }) : super(key: key);
   @override
   _ElevateOnHoverState createState() => _ElevateOnHoverState();
@@ -23,18 +25,21 @@ class _ElevateOnHoverState extends State<ElevateOnHover> {
         curve: Curves.easeIn,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          boxShadow: [
-            BoxShadow(
-              color:
-                  hovering ? Colors.grey.withOpacity(0.3) : Colors.transparent,
-              offset: const Offset(
-                0.7,
-                0.4,
-              ),
-              blurRadius: 3.0,
-              spreadRadius: 0.5,
-            ), //BoxShadow
-          ],
+          boxShadow: widget.enableShadow
+              ? [
+                  BoxShadow(
+                    color: hovering
+                        ? Colors.grey.withOpacity(0.3)
+                        : Colors.transparent,
+                    offset: const Offset(
+                      0.7,
+                      0.4,
+                    ),
+                    blurRadius: 3.0,
+                    spreadRadius: 0.5,
+                  ), //BoxShadow
+                ]
+              : null,
         ),
         duration: Duration(milliseconds: 200),
         child: widget.child,
