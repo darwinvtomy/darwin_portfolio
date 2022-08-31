@@ -1,7 +1,9 @@
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/custom_iconbutton.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
+import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/styles_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utils/parallax_flow_delegate.dart';
@@ -40,11 +42,12 @@ class HireMeWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'LET\'S WORK TOGETHER!',
+                AppStrings.lets_work_together.tr(),
                 style: getRegularStyle(color: Colors.white, fontSize: 30),
               ),
               verticalSpace(48),
-              CustomIconButton(onPressed: () {}, buttonText: 'HIRE ME!')
+              CustomIconButton(
+                  onPressed: () {}, buttonText: AppStrings.hire_me.tr())
             ],
           )
         ],

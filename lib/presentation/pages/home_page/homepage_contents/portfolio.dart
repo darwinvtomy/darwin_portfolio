@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
@@ -35,8 +37,8 @@ class _PortFolioState extends State<PortFolio> {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return ContentPlaceHolder(
         paddingHorizontal: 0,
-        title: 'PORTFOLIO',
-        subTitle: 'MY WORKS',
+        title: AppStrings.portfolio.tr(),
+        subTitle: AppStrings.my_works.tr(),
         centerAligned: true,
         child: Column(
           children: [

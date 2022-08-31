@@ -1,4 +1,6 @@
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/custom_iconbutton.dart';
+import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -18,7 +20,7 @@ class ContactForm extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Contact Form',
+              AppStrings.contact_form.tr(),
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.left,
             ),
@@ -32,7 +34,8 @@ class ContactForm extends StatelessWidget {
                 flex: sizeInfo.isMobile ? 0 : 1,
                 child: TextFormField(
                   cursorColor: Colors.black,
-                  decoration: getInputDecoration(labletext: 'Your Name*'),
+                  decoration:
+                      getInputDecoration(labletext: AppStrings.your_name.tr()),
                 ),
               ),
               sizeInfo.isMobile ? verticalSpace(30) : horizontalSpace(30),
@@ -40,7 +43,8 @@ class ContactForm extends StatelessWidget {
                 flex: sizeInfo.isMobile ? 0 : 1,
                 child: TextFormField(
                   cursorColor: Colors.black,
-                  decoration: getInputDecoration(labletext: 'Your Email*'),
+                  decoration:
+                      getInputDecoration(labletext: AppStrings.your_email.tr()),
                 ),
               ),
             ],
@@ -48,16 +52,19 @@ class ContactForm extends StatelessWidget {
           verticalSpace(30),
           TextFormField(
             cursorColor: Colors.black,
-            decoration: getInputDecoration(labletext: 'Your Subject...'),
+            decoration:
+                getInputDecoration(labletext: AppStrings.your_subject.tr()),
           ),
           verticalSpace(30),
           TextFormField(
             cursorColor: Colors.black,
-            decoration: getInputDecoration(labletext: 'Your message...'),
+            decoration:
+                getInputDecoration(labletext: AppStrings.your_message.tr()),
             maxLines: 4,
           ),
           verticalSpace(40),
-          CustomIconButton(onPressed: () {}, buttonText: 'SUBMIT'),
+          CustomIconButton(
+              onPressed: () {}, buttonText: AppStrings.submit.tr()),
         ],
       );
     });
@@ -79,7 +86,7 @@ class Credits extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 50),
       color: Theme.of(context).canvasColor,
       child: Text(
-        'Designed and Developed By Darwin V Tomy',
+        AppStrings.designed_and_developedby.tr(),
         style: getLightStyle(
             color: ColorManager.content_font_color_light, fontSize: 16),
         textAlign: TextAlign.left,

@@ -1,5 +1,7 @@
 import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/common/space.dart';
+import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -23,14 +25,14 @@ class ContactMe extends StatelessWidget {
         children: [
           ContentPlaceHolder(
             bgColor: Theme.of(context).canvasColor,
-            title: 'SAY HELLO',
-            subTitle: 'CONTACT',
+            title: AppStrings.say_hello.tr(),
+            subTitle: AppStrings.contact.tr(),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Container(
                 padding: const EdgeInsets.only(bottom: AppPadding.p24),
                 child: Text(
-                  'My Location',
+                  AppStrings.my_location.tr(),
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
@@ -67,7 +69,7 @@ class ContactMe extends StatelessWidget {
               children: [
                 verticalSpace(30),
                 Text(
-                  'Get in Touch',
+                  AppStrings.get_in_touch.tr(),
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 verticalSpace(24),
@@ -85,7 +87,7 @@ class ContactMe extends StatelessWidget {
                               ? halfsize
                               : (sizeInfo.screenSize.width / 2) - 50,
                           contact: '+91-9895007888',
-                          title: 'Call Us',
+                          title: AppStrings.call_us.tr(),
                           icon: FontAwesomeIcons.mobileScreen,
                         ).moveUpOnHover,
                       ),
@@ -99,7 +101,7 @@ class ContactMe extends StatelessWidget {
                               ? halfsize
                               : (sizeInfo.screenSize.width / 2) - 50,
                           contact: 'darwinvtomy@gmail.com',
-                          title: 'Email Us',
+                          title: AppStrings.email_us.tr(),
                           icon: FontAwesomeIcons.solidEnvelope,
                         ).moveUpOnHover,
                       ),

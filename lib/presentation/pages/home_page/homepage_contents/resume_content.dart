@@ -1,6 +1,8 @@
 import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/skills_card.dart';
+import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../../../resources/values_manager.dart';
@@ -15,8 +17,8 @@ class ResumeContent extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return ContentPlaceHolder(
           bgColor: Theme.of(context).canvasColor,
-          title: 'MY RESUME',
-          subTitle: 'MY EXPERTISES',
+          title: AppStrings.my_resume.tr(),
+          subTitle: AppStrings.my_expertises.tr(),
           child: Flex(
             mainAxisSize: MainAxisSize.min,
             direction: sizeInfo.isMobile ? Axis.vertical : Axis.horizontal,
@@ -30,7 +32,7 @@ class ResumeContent extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
-                        'My Experience',
+                        AppStrings.my_experience.tr(),
                         style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.left,
                       ),
@@ -69,7 +71,7 @@ class ResumeContent extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
-                        'My Experience',
+                        AppStrings.my_experience.tr(),
                         style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.left,
                       ),

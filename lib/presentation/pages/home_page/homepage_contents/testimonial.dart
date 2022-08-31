@@ -1,3 +1,5 @@
+import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/content_card.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +20,8 @@ class Testimonial extends StatelessWidget {
       return ContentPlaceHolder(
         paddingHorizontal: 0,
         bgColor: Theme.of(context).canvasColor,
-        title: 'KIND WORDS',
-        subTitle: 'TESTIMONIAL',
+        title: AppStrings.kind_words.tr(),
+        subTitle: AppStrings.testimonial.tr(),
         centerAligned: true,
         child: Stack(
           children: [

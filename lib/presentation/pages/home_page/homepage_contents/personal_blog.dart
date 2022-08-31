@@ -3,8 +3,11 @@ import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/content_card.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/contents_placeholder.dart';
 import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
+import '../../../resources/strings_manager.dart';
 
 class PersonalBlog extends StatelessWidget {
   const PersonalBlog({Key? key}) : super(key: key);
@@ -13,8 +16,8 @@ class PersonalBlog extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       return ContentPlaceHolder(
-        title: 'MY PERSONAL',
-        subTitle: 'BLOG',
+        title: AppStrings.my_personal.tr(),
+        subTitle: AppStrings.blog.tr(),
         paddingHorizontal: 0,
         child: SizedBox(
           height: 435,

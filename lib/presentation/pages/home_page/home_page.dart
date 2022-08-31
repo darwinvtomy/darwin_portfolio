@@ -6,6 +6,7 @@ import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/personal_blog.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/portfolio.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/top_banner.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../../models/navigation_item.dart';
 import '../../../notifiers/dark_theme_provider.dart';
+import '../../resources/strings_manager.dart';
 import 'homepage_contents/about_me.dart';
 import 'homepage_contents/contact_me.dart';
 import 'homepage_contents/hire_me.dart';
@@ -49,15 +51,15 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
   FutureOr<void> afterFirstLayout(BuildContext context) {
     setState(() {
       navigationItems = [
-        NavigationItem(key: topBannerkey, text: 'HOME'),
-        NavigationItem(key: aboutMekey, text: 'ABOUT'),
-        NavigationItem(key: myServiceskey, text: 'SERVICES'),
-        NavigationItem(key: resumeContentkey, text: 'RESUME'),
-        NavigationItem(key: portFoliokey, text: 'PORTFOLIO'),
-        NavigationItem(key: testimonialkey, text: 'TESTIMONIAL'),
-        NavigationItem(key: hireMeWidget, text: 'HIRE ME'),
-        NavigationItem(key: personalBlogkey, text: 'BLOG'),
-        NavigationItem(key: contactMekey, text: 'CONTACT'),
+        NavigationItem(key: topBannerkey, text: AppStrings.home.tr()),
+        NavigationItem(key: aboutMekey, text: AppStrings.about.tr()),
+        NavigationItem(key: myServiceskey, text: AppStrings.services.tr()),
+        NavigationItem(key: resumeContentkey, text: AppStrings.resume.tr()),
+        NavigationItem(key: portFoliokey, text: AppStrings.portfolio.tr()),
+        NavigationItem(key: testimonialkey, text: AppStrings.testimonial.tr()),
+        NavigationItem(key: hireMeWidget, text: AppStrings.hire_me.tr()),
+        NavigationItem(key: personalBlogkey, text: AppStrings.blog.tr()),
+        NavigationItem(key: contactMekey, text: AppStrings.contact.tr()),
       ];
     });
   }

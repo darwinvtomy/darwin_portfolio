@@ -1,4 +1,6 @@
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/custom_iconbutton.dart';
+import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -16,8 +18,8 @@ class AboutMe extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
       double imageSize = sizeInfo.screenSize.width * 0.3;
       return ContentPlaceHolder(
-          title: 'GET TO KNOW',
-          subTitle: 'ABOUT ME',
+          title: AppStrings.get_to_know.tr(),
+          subTitle: AppStrings.about_me.tr(),
           bgColor: Theme.of(context).canvasColor,
           child: Wrap(
             direction: Axis.horizontal,
@@ -54,7 +56,7 @@ class AboutMe extends StatelessWidget {
                   children: [
                     verticalSpace(sizeInfo.isMobile ? AppPadding.p40 : 0.0),
                     Text(
-                      'I\'m Darwin V Tomy ',
+                      '${AppStrings.i_am.tr()} Darwin V Tomy ',
                       style: Theme.of(context).textTheme.headlineMedium,
                       textAlign: TextAlign.left,
                     ),
@@ -81,14 +83,17 @@ class AboutMe extends StatelessWidget {
                               spacing: 30,
                               runSpacing: 30,
                               crossAxisAlignment: WrapCrossAlignment.center,
-                              children: const [
+                              children: [
                                 BioDetails(
-                                    title: 'From', detail: 'Bengaluru India'),
-                                BioDetails(title: 'Age', detail: '33'),
+                                    title: AppStrings.from.tr(),
+                                    detail: 'Bengaluru India'),
                                 BioDetails(
-                                    title: 'Phone', detail: '+91-9113835612'),
+                                    title: AppStrings.age.tr(), detail: '33'),
                                 BioDetails(
-                                    title: 'Email',
+                                    title: AppStrings.phone.tr(),
+                                    detail: '+91-9113835612'),
+                                BioDetails(
+                                    title: AppStrings.email.tr(),
                                     detail: 'darwinvtomy@gmail.com'),
                               ],
                             ),
@@ -99,7 +104,7 @@ class AboutMe extends StatelessWidget {
                     verticalSpace(30),
                     CustomIconButton(
                       onPressed: () {},
-                      buttonText: 'DOWNLOAD CV',
+                      buttonText: AppStrings.download_cv.tr(),
                       icon: const FaIcon(
                         FontAwesomeIcons.download,
                         color: Colors.white,
