@@ -21,13 +21,13 @@ class TitleAndSub extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 10),
           child: Text(
             title,
-            style: Theme.of(context).textTheme.caption,
+            style: Theme.of(context).textTheme.bodySmall,
             textAlign: TextAlign.left,
           ),
         ),
         Text(
           subTitle,
-          style: Theme.of(context).textTheme.headline4,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
       ],
     );

@@ -51,7 +51,7 @@ class PersonalBlog extends StatelessWidget {
                           'Loren im parameter must not be null.some random text randum ',
                           style: Theme.of(context)
                               .textTheme
-                              .bodyText1!
+                              .bodyLarge!
                               .copyWith(height: 1),
                           maxLines: 2,
                         ),
@@ -62,7 +62,7 @@ class PersonalBlog extends StatelessWidget {
                           padding: const EdgeInsets.all(AppPadding.p16),
                           child: Text(
                             'Design',
-                            style: Theme.of(context).textTheme.bodyText2,
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ))
                     ],
                   )).moveUpOnHover;

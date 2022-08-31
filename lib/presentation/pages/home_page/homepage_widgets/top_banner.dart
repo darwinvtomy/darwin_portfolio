@@ -55,7 +55,7 @@ class TopBanner extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               name,
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
               textAlign: TextAlign.center,
             ),
           ),

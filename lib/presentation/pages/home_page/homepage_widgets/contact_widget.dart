@@ -29,14 +29,16 @@ class ContactWidget extends StatelessWidget {
             verticalSpace(12),
             Text(
               contact,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(height: 1),
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(height: 1),
               maxLines: 1,
             ),
             verticalSpace(12),
             Text(
               title,
-              style:
-                  Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 14),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(fontSize: 14),
               maxLines: 1,
             ),
           ],

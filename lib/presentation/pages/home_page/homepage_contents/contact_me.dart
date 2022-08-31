@@ -31,7 +31,7 @@ class ContactMe extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: AppPadding.p24),
                 child: Text(
                   'My Location',
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
               SizedBox(
@@ -68,7 +68,7 @@ class ContactMe extends StatelessWidget {
                 verticalSpace(30),
                 Text(
                   'Get in Touch',
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 verticalSpace(24),
                 SizedBox(
@@ -107,7 +107,7 @@ class ContactMe extends StatelessWidget {
                   ),
                 ),
                 verticalSpace(48),
-                ContactForm(),
+                const ContactForm(),
                 verticalSpace(48),
               ],
             ),

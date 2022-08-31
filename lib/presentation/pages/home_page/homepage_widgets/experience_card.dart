@@ -61,7 +61,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
                   children: [
                     Text(
                       widget.title,
-                      style: Theme.of(context).textTheme.subtitle2,
+                      style: Theme.of(context).textTheme.titleSmall,
                       textAlign: TextAlign.left,
                     ),
                     verticalSpace(16),
@@ -86,7 +86,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
                     verticalSpace(16),
                     Text(
                       widget.description,
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                       textAlign: TextAlign.left,
                       maxLines: 3,
                     ),

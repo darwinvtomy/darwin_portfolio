@@ -55,14 +55,14 @@ class AboutMe extends StatelessWidget {
                     verticalSpace(sizeInfo.isMobile ? AppPadding.p40 : 0.0),
                     Text(
                       'I\'m Darwin V Tomy ',
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headlineMedium,
                       textAlign: TextAlign.left,
                     ),
                     Text(
                       'Proin laoreet elementum ligula, ac tincidunt lorem accumsan nec. Fusce eget urna ante. Donec massa velit, varius a accumsan ac, tempor iaculis massa. Sed placerat justo sed libero varius vulputate. Ut a mi tempus massa malesuada fermentum.',
                       style: Theme.of(context)
                           .textTheme
-                          .bodyText2!
+                          .bodyMedium!
                           .copyWith(height: 2),
                       textAlign: TextAlign.left,
                     ),
@@ -131,7 +131,7 @@ class BioDetails extends StatelessWidget {
       children: [
         Text(
           '$title : ',
-          style: Theme.of(context).textTheme.subtitle2,
+          style: Theme.of(context).textTheme.titleSmall,
           textAlign: TextAlign.left,
         ),
         horizontalSpace(4),
@@ -139,7 +139,7 @@ class BioDetails extends StatelessWidget {
           width: 210,
           child: Text(
             detail,
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.left,
           ),
         ),

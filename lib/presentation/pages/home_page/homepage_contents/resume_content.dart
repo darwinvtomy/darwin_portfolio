@@ -31,7 +31,7 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'My Experience',
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.left,
                       ),
                     ),
@@ -51,7 +51,7 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'Design Skills',
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.left,
                       ),
                     ),
@@ -70,7 +70,7 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'My Experience',
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.left,
                       ),
                     ),
@@ -90,7 +90,7 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: Text(
                         'Design Skills',
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.left,
                       ),
                     ),

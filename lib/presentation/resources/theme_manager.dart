@@ -56,7 +56,7 @@ ThemeData getApplicationTheme(
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
               textStyle: getRegularStyle(color: ColorManager.white),
-              primary: ColorManager.primary,
+              backgroundColor: ColorManager.primary,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppSize.s12)))),
       textSelectionTheme: TextSelectionThemeData(
@@ -67,21 +67,21 @@ ThemeData getApplicationTheme(
       ),
       // Text theme
       textTheme: TextTheme(
-        headline1: GoogleFonts.poppins(
+        displayLarge: GoogleFonts.poppins(
             color: ColorManager.very_Light_gray,
             fontSize: 90,
             fontWeight: FontWeight.w100),
-        headline2: GoogleFonts.poppins(
+        displayMedium: GoogleFonts.poppins(
             color: isDarkTheme ? Colors.white : ColorManager.darkGrey,
             fontSize: 14,
             fontWeight: FontWeight.w300),
-        headline3:
+        displaySmall:
             getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s16),
-        headline4: GoogleFonts.poppins(
+        headlineMedium: GoogleFonts.poppins(
             color: isDarkTheme ? Colors.white : ColorManager.darkGrey,
             fontSize: 30,
             fontWeight: FontWeight.w300),
-        button: GoogleFonts.poppins(
+        labelLarge: GoogleFonts.poppins(
             color: isDarkTheme ? Colors.white : ColorManager.darkGrey,
             fontSize: 16,
             fontWeight: FontWeight.w300),
@@ -90,22 +90,22 @@ ThemeData getApplicationTheme(
         //     color: isDarkTheme ? Colors.white : ColorManager.darkGrey,
         //     fontSize: 32,
         //     fontWeight: FontWeight.w300),
-        subtitle1: GoogleFonts.poppins(
+        titleMedium: GoogleFonts.poppins(
             color: isDarkTheme ? Colors.white : ColorManager.darkGrey,
             fontSize: 20,
             fontWeight: FontWeight.w500),
-        subtitle2: GoogleFonts.poppins(
+        titleSmall: GoogleFonts.poppins(
             color: isDarkTheme ? Colors.white : ColorManager.darkGrey,
             fontSize: 18,
             fontWeight: FontWeight.w500),
-        bodyText2: GoogleFonts.poppins(
+        bodyMedium: GoogleFonts.poppins(
             color: isDarkTheme
                 ? ColorManager.very_Light_gray
                 : ColorManager.darkGrey,
             fontSize: 16,
             height: 1.8,
             fontWeight: FontWeight.w300),
-        bodyText1: GoogleFonts.poppins(
+        bodyLarge: GoogleFonts.poppins(
             color: isDarkTheme
                 ? ColorManager.very_Light_gray
                 : ColorManager.darkGrey,
@@ -114,7 +114,7 @@ ThemeData getApplicationTheme(
             fontWeight: FontWeight.w500),
 
         // bodyText2: getMediumStyle(color: ColorManager.lightGrey),
-        caption: GoogleFonts.poppins(
+        bodySmall: GoogleFonts.poppins(
             color: isDarkTheme
                 ? ColorManager.very_Light_gray
                 : ColorManager.darkGrey,

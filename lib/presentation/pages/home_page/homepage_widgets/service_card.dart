@@ -62,13 +62,13 @@ class _ServiceCardState extends State<ServiceCard> {
                     verticalSpace(35),
                     Text(
                       widget.title,
-                      style: Theme.of(context).textTheme.subtitle2,
+                      style: Theme.of(context).textTheme.titleSmall,
                       textAlign: TextAlign.left,
                     ),
                     verticalSpace(15),
                     Text(
                       widget.description,
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                       textAlign: TextAlign.left,
                       maxLines: 3,
                     ),
@@ -81,7 +81,7 @@ class _ServiceCardState extends State<ServiceCard> {
                   right: 20,
                   child: Text(
                     widget.index!,
-                    style: Theme.of(context).textTheme.headline1!.copyWith(
+                    style: Theme.of(context).textTheme.displayLarge!.copyWith(
                           color: (Theme.of(context).brightness ==
                                   Brightness.dark)
                               ? ColorManager.border_color_light.withOpacity(0.1)
