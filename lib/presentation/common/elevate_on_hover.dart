@@ -41,9 +41,9 @@ class _ElevateOnHoverState extends State<ElevateOnHover> {
                 ]
               : null,
         ),
-        duration: Duration(milliseconds: 200),
-        child: widget.child,
+        duration: const Duration(milliseconds: 200),
         transform: hovering ? hoverTransform : nonHoverTransform,
+        child: widget.child,
       ),
     );
   }

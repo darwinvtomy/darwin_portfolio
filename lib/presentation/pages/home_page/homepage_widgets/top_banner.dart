@@ -1,13 +1,6 @@
-import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
-import 'package:darwin_portfolio/presentation/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:particles_flutter/particles_flutter.dart';
-import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
-import '../../../../notifiers/dark_theme_provider.dart';
 
 class TopBanner extends StatelessWidget {
   final String name;
@@ -41,7 +34,7 @@ class TopBanner extends StatelessWidget {
           width: sizeInfo.screenSize.width,
           onTapAnimation: true,
           particleColor: Colors.white.withAlpha(100),
-          awayAnimationDuration: Duration(milliseconds: 900),
+          awayAnimationDuration: const Duration(milliseconds: 900),
           maxParticleSize: 3,
           isRandSize: true,
           isRandomColor: true,

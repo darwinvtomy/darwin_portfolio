@@ -6,79 +6,120 @@ import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+
+import 'drawer_icon.dart';
 
 class TopDrawer extends StatelessWidget {
-  const TopDrawer({Key? key}) : super(key: key);
-
+  final double drawerwidth;
+  final isamobileScreen;
+  final GlobalKey<ScaffoldState> scaffoldKey;
+  const TopDrawer(
+      {Key? key,
+      required this.drawerwidth,
+      this.isamobileScreen,
+      required this.scaffoldKey})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     final navigationItems = context.watch<List<NavigationItem>>();
     final scrollController = context.watch<ScrollController>();
-    return ResponsiveBuilder(builder: (context, sizeInfo) {
-      double drawerwidth = sizeInfo.screenSize.width * 0.18;
-      print('Width is $drawerwidth');
-      return Container(
-        height: sizeInfo.screenSize.height,
-        width: sizeInfo.isMobile
-            ? sizeInfo.screenSize.width * 0.59
-            : drawerwidth <= 181.44
-                ? 181.44
-                : drawerwidth,
-        decoration: BoxDecoration(
-            color: ColorManager.gray_bg_color,
-            borderRadius: BorderRadius.circular(5),
-            border: Border.all(color: ColorManager.card_bordercolor_dark)),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.all(AppPadding.p10),
-                    padding: const EdgeInsets.all(AppPadding.p10),
-                    height: 160,
-                    width: 160,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(80),
-                        border: Border.all(
-                          color: ColorManager.photo_border_color,
-                          style: BorderStyle.solid,
-                          width: 1.0,
-                        )),
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(80),
-                        child: Image.asset(
-                          'assets/images/about.jpg',
-                          height: 160,
-                          width: 160,
-                        )),
-                  ),
-                  for (var item in navigationItems)
-                    DrawerTextButton(
-                      text: item.text,
-                      onClick: () {
-                        print('On Click is Called');
-                        scrollController.animateTo(item.position,
-                            duration: const Duration(milliseconds: 700),
-                            curve: Curves.easeInOut);
-                      },
-                    ).moveUpOnHoverWithoutshadow,
-                ],
-              ),
+    if (isamobileScreen) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          DrawerContent(
+              drawerwidth: drawerwidth,
+              navigationItems: navigationItems,
+              scrollController: scrollController),
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: DrawerIcon(
+              isDraweropen: true,
+              scaffoldKey: scaffoldKey,
             ),
-            const Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: LinkButtons(),
-            )
-          ],
-        ),
+          )
+        ],
       );
-    });
+    } else {
+      return DrawerContent(
+          drawerwidth: drawerwidth,
+          navigationItems: navigationItems,
+          scrollController: scrollController);
+    }
+  }
+}
+
+class DrawerContent extends StatelessWidget {
+  const DrawerContent({
+    super.key,
+    required this.drawerwidth,
+    required this.navigationItems,
+    required this.scrollController,
+  });
+
+  final double drawerwidth;
+  final List<NavigationItem> navigationItems;
+  final ScrollController scrollController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: drawerwidth,
+      height: MediaQuery.of(context).size.height,
+      decoration: BoxDecoration(
+          color: ColorManager.gray_bg_color,
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(color: ColorManager.card_bordercolor_dark)),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.all(AppPadding.p10),
+                  padding: const EdgeInsets.all(AppPadding.p10),
+                  height: 160,
+                  width: 160,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(80),
+                      border: Border.all(
+                        color: ColorManager.photo_border_color,
+                        style: BorderStyle.solid,
+                        width: 1.0,
+                      )),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(80),
+                      child: Image.asset(
+                        'assets/images/about.jpg',
+                        height: 160,
+                        width: 160,
+                      )),
+                ),
+                for (var item in navigationItems)
+                  DrawerTextButton(
+                    text: item.text,
+                    onClick: () {
+                      scrollController.animateTo(item.position,
+                          duration: const Duration(milliseconds: 700),
+                          curve: Curves.easeInOut);
+                    },
+                  ).moveUpOnHoverWithoutshadow,
+              ],
+            ),
+          ),
+          const Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: LinkButtons(),
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -165,7 +206,6 @@ class _DrawerTextButtonState extends State<DrawerTextButton> {
       },
       child: TextButton(
         onPressed: () {
-          print('On Click is Called in Drawer Text Button ${widget.text}');
           widget.onClick();
         },
         child: Padding(

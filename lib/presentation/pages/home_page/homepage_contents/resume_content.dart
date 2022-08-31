@@ -3,12 +3,9 @@ import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/skills_card.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
-import '../../../resources/color_manager.dart';
-import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../homepage_widgets/contents_placeholder.dart';
-import '../homepage_widgets/service_card.dart';
+import '../homepage_widgets/experience_card.dart';
 
 class ResumeContent extends StatelessWidget {
   const ResumeContent({Key? key}) : super(key: key);
@@ -40,8 +37,8 @@ class ResumeContent extends StatelessWidget {
                     ),
                     for (int i = 0; i <= 3; i++)
                       Padding(
-                        padding: EdgeInsets.only(bottom: AppPadding.p24),
-                        child: ServiceExpCard(
+                        padding: const EdgeInsets.only(bottom: AppPadding.p24),
+                        child: ExperienceCard(
                           color: Theme.of(context).scaffoldBackgroundColor,
                           //     width: (sizeInfo.screenSize.width - 90) / 2,
                           year: '2013 - 2015 | Facebook Inc',
@@ -79,8 +76,8 @@ class ResumeContent extends StatelessWidget {
                     ),
                     for (int i = 0; i <= 3; i++)
                       Padding(
-                        padding: EdgeInsets.only(bottom: AppPadding.p24),
-                        child: ServiceExpCard(
+                        padding: const EdgeInsets.only(bottom: AppPadding.p24),
+                        child: ExperienceCard(
                           color: Theme.of(context).scaffoldBackgroundColor,
                           //  width: (sizeInfo.screenSize.width - 90) / 2,
                           year: '2013 - 2015 | Facebook Inc',

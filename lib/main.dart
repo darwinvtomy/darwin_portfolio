@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
           darkTheme: getApplicationTheme(
               context: context, isDarkTheme: themeChangeProvider.darkTheme),
           //   themeMode: ThemeMode.light,
-          home: HomePage(),
+          home: const HomePage(),
         );
       }),
     );

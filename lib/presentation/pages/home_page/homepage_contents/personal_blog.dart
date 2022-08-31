@@ -2,14 +2,12 @@ import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/content_card.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/contents_placeholder.dart';
-import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
-import 'package:darwin_portfolio/presentation/resources/styles_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class PersonalBlog extends StatelessWidget {
-  PersonalBlog({Key? key}) : super(key: key);
+  const PersonalBlog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,7 @@ class PersonalBlog extends StatelessWidget {
           height: 435,
           width: sizeInfo.screenSize.width,
           child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             scrollDirection: Axis.horizontal,
             itemCount: kDemoImages.length,
             controller: PageController(

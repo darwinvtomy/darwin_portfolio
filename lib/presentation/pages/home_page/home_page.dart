@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
+import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/my_services.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/personal_blog.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/portfolio.dart';
@@ -19,15 +20,17 @@ import 'homepage_contents/resume_content.dart';
 import 'homepage_contents/testimonial.dart';
 import 'homepage_widgets/contact_form.dart';
 import 'homepage_widgets/drawer.dart';
+import 'homepage_widgets/drawer_icon.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> with AfterLayoutMixin {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   final topBannerkey = GlobalKey();
   final aboutMekey = GlobalKey();
   final myServiceskey = GlobalKey();
@@ -38,7 +41,9 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
   final personalBlogkey = GlobalKey();
   final contactMekey = GlobalKey();
   List<NavigationItem> navigationItems = [];
-  final ScrollController controller = ScrollController();
+  final ScrollController controller = ScrollController(
+    initialScrollOffset: 0,
+  );
 
   @override
   FutureOr<void> afterFirstLayout(BuildContext context) {
@@ -60,7 +65,6 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
   @override
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
-
     return MultiProvider(
       providers: [
         ProxyProvider0<List<NavigationItem>>(update: (_, __) {
@@ -70,21 +74,38 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
           return controller;
         }),
       ],
-      child: Scaffold(
-        drawer: const TopDrawer(),
-        body: ResponsiveBuilder(builder: (context, sizeInfo) {
-          double drawerSize = sizeInfo.screenSize.width * 0.18;
-          return Row(
+      child: ResponsiveBuilder(builder: (_, sizeInfo) {
+        final double width = sizeInfo.screenSize.width;
+        double drawerwidth = width * 0.18;
+        final double drawerWidth = sizeInfo.isMobile
+            ? width * 0.59
+            : drawerwidth <= 181.44
+                ? 181.44
+                : drawerwidth;
+        return Scaffold(
+          key: _scaffoldKey,
+          drawer: TopDrawer(
+            drawerwidth: drawerWidth,
+            isamobileScreen: true,
+            scaffoldKey: _scaffoldKey,
+          ),
+          body: Row(
             children: [
-              if (!sizeInfo.isMobile) TopDrawer(),
+              if (!sizeInfo.isMobile)
+                TopDrawer(
+                  drawerwidth: drawerWidth,
+                  isamobileScreen: false,
+                  scaffoldKey: _scaffoldKey,
+                ),
               SizedBox(
                 height: sizeInfo.screenSize.height,
                 width: sizeInfo.isMobile
                     ? sizeInfo.screenSize.width
-                    : sizeInfo.screenSize.width - drawerSize,
+                    : sizeInfo.screenSize.width - drawerWidth,
                 child: Stack(
                   children: [
                     SingleChildScrollView(
+                      key: const Key('long_list'),
                       controller: controller,
                       child: Column(
                         children: [
@@ -108,9 +129,11 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                       ),
                     ),
                     Positioned(
-                        top: 20,
-                        right: 20,
-                        child: IconButton(
+                      top: 20,
+                      right: 20,
+                      child: Column(
+                        children: [
+                          IconButton(
                             hoverColor: themeChange.darkTheme
                                 ? Colors.white54
                                 : Colors.black54,
@@ -119,26 +142,33 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                             },
                             icon: FaIcon(themeChange.darkTheme
                                 ? FontAwesomeIcons.solidSun
-                                : FontAwesomeIcons.solidMoon))),
+                                : FontAwesomeIcons.solidMoon),
+                          ),
+                          verticalSpace(10),
+                          TextButton(
+                              onPressed: () {},
+                              child: Text('EN',
+                                  style:
+                                      Theme.of(context).textTheme.bodySmall!))
+                        ],
+                      ),
+                    ),
                     if (sizeInfo.isMobile)
                       Positioned(
                         left: 10,
                         top: 10,
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.menu,
-                            size: 36,
-                          ),
-                          onPressed: () => Scaffold.of(context).openDrawer(),
+                        child: DrawerIcon(
+                          scaffoldKey: _scaffoldKey,
+                          isDraweropen: false,
                         ),
                       ),
                   ],
                 ),
               ),
             ],
-          );
-        }),
-      ),
+          ),
+        );
+      }),
     );
   }
 }

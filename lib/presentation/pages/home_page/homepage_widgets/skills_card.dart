@@ -1,8 +1,5 @@
-import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
-import '../../../resources/color_manager.dart';
-import '../../../resources/styles_manager.dart';
 import 'content_card.dart';
 import 'skill_item.dart';
 

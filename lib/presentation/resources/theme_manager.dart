@@ -144,7 +144,7 @@ ThemeData getApplicationTheme(
                     ? ColorManager.card_bordercolor_dark
                     : ColorManager.card_bordercolor_light,
                 width: AppSize.s0),
-            borderRadius: BorderRadius.all(Radius.circular(AppSize.s5))),
+            borderRadius: const BorderRadius.all(Radius.circular(AppSize.s5))),
 
         // focused border
         focusedBorder: OutlineInputBorder(

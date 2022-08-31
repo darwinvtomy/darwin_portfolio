@@ -1,11 +1,12 @@
+import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/content_card.dart';
+import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
-
-import '../../../common/space.dart';
 import '../../../resources/color_manager.dart';
+import '../../../resources/styles_manager.dart';
 
-class ServiceCard extends StatefulWidget {
-  const ServiceCard(
+class ExperienceCard extends StatefulWidget {
+  const ExperienceCard(
       {Key? key,
       required this.title,
       required this.description,
@@ -26,10 +27,10 @@ class ServiceCard extends StatefulWidget {
   final Color? color;
 
   @override
-  State<ServiceCard> createState() => _ServiceCardState();
+  State<ExperienceCard> createState() => _ExperienceCardState();
 }
 
-class _ServiceCardState extends State<ServiceCard> {
+class _ExperienceCardState extends State<ExperienceCard> {
   bool showindex = false;
 
   @override
@@ -58,14 +59,31 @@ class _ServiceCardState extends State<ServiceCard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (widget.icon != null) widget.icon ?? const SizedBox(),
-                    verticalSpace(35),
                     Text(
                       widget.title,
                       style: Theme.of(context).textTheme.subtitle2,
                       textAlign: TextAlign.left,
                     ),
-                    verticalSpace(15),
+                    verticalSpace(16),
+                    Container(
+                      // height: 20,
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: AppPadding.p6),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          gradient: GradientManager.commonGradient),
+                      child: Text(
+                        widget.year!,
+                        style: getBoldStyle(
+                          color: Colors.white,
+                        ).copyWith(
+                          height: 0,
+                        ),
+                        textAlign: TextAlign.left,
+                        softWrap: true,
+                      ),
+                    ),
+                    verticalSpace(16),
                     Text(
                       widget.description,
                       style: Theme.of(context).textTheme.bodyText2,
@@ -75,22 +93,6 @@ class _ServiceCardState extends State<ServiceCard> {
                   ],
                 ),
               ),
-              if (widget.index != null && showindex)
-                Positioned(
-                  top: -40,
-                  right: 20,
-                  child: Text(
-                    widget.index!,
-                    style: Theme.of(context).textTheme.headline1!.copyWith(
-                          color: (Theme.of(context).brightness ==
-                                  Brightness.dark)
-                              ? ColorManager.border_color_light.withOpacity(0.1)
-                              : ColorManager.title_font_color_light
-                                  .withOpacity(0.1),
-                        ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
             ],
           )),
     );

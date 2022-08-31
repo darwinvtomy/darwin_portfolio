@@ -50,7 +50,7 @@ class Testimonial extends StatelessWidget {
                   ),
                   onPressed: () {
                     controller.nextPage(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeIn);
                   }),
             ),
@@ -67,7 +67,7 @@ class Testimonial extends StatelessWidget {
                   ),
                   onPressed: () {
                     controller.previousPage(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeIn);
                   }),
             ),

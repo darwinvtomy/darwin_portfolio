@@ -1,7 +1,6 @@
 import 'package:darwin_portfolio/presentation/common/hover_extensions.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/contents_placeholder.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/service_card.dart';
-import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -60,11 +59,11 @@ class MyServices extends StatelessWidget {
             crossAxisCount: sizeInfo.isMobile ? 1 : 2,
             crossAxisSpacing: 30,
             mainAxisSpacing: 30,
-            mainAxisExtent: sizeInfo.isMobile ? 280 : 250, //
+            mainAxisExtent: sizeInfo.isMobile ? 240 : 240, //
           ),
           children: [
             for (Service service in services)
-              ServiceExpCard(
+              ServiceCard(
                       color: Theme.of(context).backgroundColor,
                       width: sizeInfo.isMobile
                           ? sizeInfo.screenSize.width * 0.99

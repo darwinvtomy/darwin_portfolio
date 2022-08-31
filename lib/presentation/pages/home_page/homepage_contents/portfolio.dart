@@ -5,11 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import '../../../resources/color_manager.dart';
 import '../homepage_widgets/contents_placeholder.dart';
 
 class PortFolio extends StatefulWidget {
-  PortFolio({Key? key}) : super(key: key);
+  const PortFolio({Key? key}) : super(key: key);
 
   @override
   State<PortFolio> createState() => _PortFolioState();
@@ -64,13 +63,13 @@ class _PortFolioState extends State<PortFolio> {
                     animation: _controller,
                     builder: (context, child) {
                       final diff = (_controller.offset - currentOffset);
-                      final maxPadding = 18.0;
-                      final _carouselRatio = _itemExtent / maxPadding;
+                      const maxPadding = 18.0;
+                      final carouselRatio = _itemExtent / maxPadding;
 
                       return Padding(
                         padding: EdgeInsets.only(
-                          top: (diff / _carouselRatio).abs(),
-                          bottom: (diff / _carouselRatio).abs(),
+                          top: (diff / carouselRatio).abs(),
+                          bottom: (diff / carouselRatio).abs(),
                         ),
                         child: child,
                       );

@@ -298,5 +298,17 @@
             ],
             "submit_mail": "darwinvtomy@gmail.com"
         }
+    },
+    "de": {
+        "label": "Leitender Softwareingenieur (Flutter)",
+        "dob": "20. Oktober 1988",
+        "skills": [
+            "OTT",
+            "Entwicklung von Smart-TV-Apps",
+            "IOT",
+            "DRM in VOD",
+            "Firebase",
+            "Flutter-Plugins für Android"
+        ]
     }
 }

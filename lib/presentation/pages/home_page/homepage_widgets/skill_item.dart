@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/space.dart';
@@ -15,28 +18,18 @@ class SkillItem extends StatefulWidget {
   State<SkillItem> createState() => _SkillItemState();
 }
 
-class _SkillItemState extends State<SkillItem> with TickerProviderStateMixin {
+class _SkillItemState extends State<SkillItem>
+    with TickerProviderStateMixin, AfterLayoutMixin {
   late AnimationController controller;
   late Animation _animation;
-  int count = 0;
   @override
   void initState() {
     controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 5),
-    )..addListener(() {
-        if (_animation.value == count / 5) {
-          controller.stop(canceled: false);
-        }
+        duration: const Duration(milliseconds: 2000), vsync: this);
+    _animation = Tween(begin: 0.0, end: widget.skillValue).animate(controller)
+      ..addListener(() {
         setState(() {});
       });
-    // ignore: avoid_single_cascade_in_expression_statements
-    controller.addStatusListener((AnimationStatus status) {});
-    _animation = Tween<double>(
-      begin: 0,
-      end: widget.skillValue,
-    ).animate(controller);
-    controller.forward();
     super.initState();
   }
 
@@ -61,7 +54,7 @@ class _SkillItemState extends State<SkillItem> with TickerProviderStateMixin {
           textAlign: TextAlign.left,
         ),
         ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
           child: LinearProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(
               HexColor.fromHex('#D36453'),
@@ -75,5 +68,10 @@ class _SkillItemState extends State<SkillItem> with TickerProviderStateMixin {
         verticalSpace(24)
       ],
     );
+  }
+
+  @override
+  FutureOr<void> afterFirstLayout(BuildContext context) {
+    controller.forward();
   }
 }

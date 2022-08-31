@@ -1,5 +1,3 @@
-import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
-import 'package:darwin_portfolio/presentation/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
 
 class TitleAndSub extends StatelessWidget {

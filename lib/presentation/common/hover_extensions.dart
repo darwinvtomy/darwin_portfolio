@@ -9,8 +9,8 @@ extension HoverExtension1 on Widget {
 
   Widget get moveUpOnHoverWithoutshadow {
     return ElevateOnHover(
-      child: this,
       enableShadow: false,
+      child: this,
     );
   }
 }

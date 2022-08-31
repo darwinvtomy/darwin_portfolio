@@ -12,8 +12,6 @@ class ContactForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
-      double? boxSize =
-          sizeInfo.isMobile ? null : (sizeInfo.screenSize.width / 2) - 160;
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
