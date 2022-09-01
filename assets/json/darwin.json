@@ -1,5 +1,5 @@
 {
-    "en": {
+    "en_US": {
         "name": "DARWIN V TOMY",
         "label": "Senior Software Engineer (Flutter)",
         "address1": "Bengaluru , India 560068",
@@ -224,21 +224,25 @@
             {
                 "image": "image of portfolio",
                 "title": "Title",
+                "type": "Mobile App",
                 "url": "Salem-India"
             },
             {
                 "image": "image of portfolio",
                 "title": "Title",
+                "type": "Mobile App",
                 "url": "Salem-India"
             },
             {
                 "image": "image of portfolio",
                 "title": "Title",
+                "type": "Mobile App",
                 "url": "Salem-India"
             },
             {
                 "image": "image of portfolio",
                 "title": "Title",
+                "type": "Mobile App",
                 "url": "Salem-India"
             }
         ],
@@ -299,7 +303,7 @@
             "submit_mail": "darwinvtomy@gmail.com"
         }
     },
-    "de": {
+    "de_DE": {
         "label": "Leitender Softwareingenieur (Flutter)",
         "dob": "20. Oktober 1988",
         "skills": [

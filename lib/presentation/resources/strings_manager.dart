@@ -42,4 +42,5 @@ class AppStrings {
   static const String services = 'services';
   static const String resume = 'resume';
   static const String i_am = 'i_am';
+  static const String data_location = 'assets/json/darwin.json';
 }

@@ -89,7 +89,7 @@ class Credits extends StatelessWidget {
         AppStrings.designed_and_developedby.tr(),
         style: getLightStyle(
             color: ColorManager.content_font_color_light, fontSize: 16),
-        textAlign: TextAlign.left,
+        textAlign: TextAlign.center,
       ),
     );
   }

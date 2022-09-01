@@ -44,6 +44,7 @@ class HireMeWidget extends StatelessWidget {
               Text(
                 AppStrings.lets_work_together.tr(),
                 style: getRegularStyle(color: Colors.white, fontSize: 30),
+                textAlign: TextAlign.center,
               ),
               verticalSpace(48),
               CustomIconButton(

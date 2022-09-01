@@ -1,11 +1,15 @@
+import 'dart:convert';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'app/app_prefs.dart';
 import 'notifiers/dark_theme_provider.dart';
 import 'presentation/pages/home_page/home_page.dart';
 import 'presentation/resources/language_manager.dart';
+import 'presentation/resources/strings_manager.dart';
 import 'presentation/resources/theme_manager.dart';
 
 void main() async {
@@ -35,6 +39,17 @@ class _MyAppState extends State<MyApp> {
     getCurrentAppTheme();
   }
 
+  late List data;
+
+  Future<String> loadJsonData() async {
+    var jsonText = await rootBundle.loadString(AppStrings.data_location);
+    setState(() {
+      print(jsonText);
+      data = json.decode(jsonText);
+    });
+    return 'success';
+  }
+
   void getCurrentAppTheme() async {
     themeChangeProvider.darkTheme =
         await themeChangeProvider.darkThemePreference.getTheme();
@@ -42,6 +57,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    loadJsonData();
     return ChangeNotifierProvider(
       create: (BuildContext context) {
         return themeChangeProvider;

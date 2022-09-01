@@ -8,6 +8,7 @@ import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../homepage_widgets/contents_placeholder.dart';
+import '../homepage_widgets/portfolio_item.dart';
 
 class PortFolio extends StatefulWidget {
   const PortFolio({Key? key}) : super(key: key);
@@ -78,15 +79,10 @@ class _PortFolioState extends State<PortFolio> {
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          boxShadow: kElevationToShadow[2],
-                          image: DecorationImage(
-                            image: NetworkImage(kDemoImages[itemIndex]),
-                            fit: BoxFit.fill,
-                          ),
-                        ),
+                      child: PortfolioItem(
+                        title: 'TITLE',
+                        type: 'App Type',
+                        imageUrl: kDemoImages[itemIndex],
                       ),
                     ),
                   );
