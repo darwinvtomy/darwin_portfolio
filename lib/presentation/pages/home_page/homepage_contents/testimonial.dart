@@ -10,9 +10,9 @@ import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../homepage_widgets/contents_placeholder.dart';
 
-class Testimonial extends StatelessWidget {
+class TestimonialSection extends StatelessWidget {
   final PageController controller = PageController();
-  Testimonial({Key? key}) : super(key: key);
+  TestimonialSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

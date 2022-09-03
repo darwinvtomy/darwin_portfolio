@@ -1,15 +1,10 @@
-import 'dart:convert';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
-import 'app/app_prefs.dart';
 import 'notifiers/dark_theme_provider.dart';
 import 'presentation/pages/home_page/home_page.dart';
+import 'presentation/pages/home_page/homepage_providers/resume_provider.dart';
 import 'presentation/resources/language_manager.dart';
-import 'presentation/resources/strings_manager.dart';
 import 'presentation/resources/theme_manager.dart';
 
 void main() async {
@@ -32,36 +27,38 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   DarkThemeProvider themeChangeProvider = DarkThemeProvider();
-
+  Resumeprovider resumeProvider = Resumeprovider();
   @override
   void initState() {
     super.initState();
     getCurrentAppTheme();
-  }
-
-  late List data;
-
-  Future<String> loadJsonData() async {
-    var jsonText = await rootBundle.loadString(AppStrings.data_location);
-    setState(() {
-      print(jsonText);
-      data = json.decode(jsonText);
-    });
-    return 'success';
+    getResumeData();
   }
 
   void getCurrentAppTheme() async {
-    themeChangeProvider.darkTheme =
+    themeChangeProvider.isDarkTheme =
         await themeChangeProvider.darkThemePreference.getTheme();
+  }
+
+  void getResumeData() async {
+    resumeProvider.getAllResumeDetails();
   }
 
   @override
   Widget build(BuildContext context) {
-    loadJsonData();
-    return ChangeNotifierProvider(
-      create: (BuildContext context) {
-        return themeChangeProvider;
-      },
+    // loadJsonData();
+    return MultiProvider(
+      // create: (BuildContext context) {
+      //   return themeChangeProvider;
+      // },
+      providers: [
+        ChangeNotifierProvider<DarkThemeProvider>(create: (_) {
+          return themeChangeProvider;
+        }),
+        ChangeNotifierProvider<Resumeprovider>(create: (_) {
+          return resumeProvider;
+        }),
+      ],
       child: Consumer<DarkThemeProvider>(
           builder: (BuildContext context, value, Widget? child) {
         return MaterialApp(
@@ -70,9 +67,9 @@ class _MyAppState extends State<MyApp> {
           locale: context.locale,
           title: 'DARWIN V TOMY',
           theme: getApplicationTheme(
-              context: context, isDarkTheme: themeChangeProvider.darkTheme),
+              context: context, isDarkTheme: themeChangeProvider.isDarkTheme),
           darkTheme: getApplicationTheme(
-              context: context, isDarkTheme: themeChangeProvider.darkTheme),
+              context: context, isDarkTheme: themeChangeProvider.isDarkTheme),
           //   themeMode: ThemeMode.light,
           home: const HomePage(),
         );

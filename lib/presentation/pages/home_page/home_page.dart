@@ -5,9 +5,13 @@ import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/my_services.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/personal_blog.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/portfolio.dart';
+import 'package:darwin_portfolio/presentation/pages/home_page/homepage_models/resume_model.dart';
+import 'package:darwin_portfolio/presentation/pages/home_page/homepage_providers/resume_provider.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/top_banner.dart';
+import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -46,6 +50,7 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
   final ScrollController controller = ScrollController(
     initialScrollOffset: 0,
   );
+  // final Resumeprovider resumeprovider = Resumeprovider();
 
   @override
   FutureOr<void> afterFirstLayout(BuildContext context) {
@@ -67,110 +72,128 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
   @override
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
+    //  final resume = Provider.of<Resumeprovider>(context);
+    //print(resume.resume.enUs!.aboutPicture);
+
     return MultiProvider(
-      providers: [
-        ProxyProvider0<List<NavigationItem>>(update: (_, __) {
-          return navigationItems;
-        }),
-        ChangeNotifierProvider<ScrollController>(create: (_) {
-          return controller;
-        }),
-      ],
-      child: ResponsiveBuilder(builder: (_, sizeInfo) {
-        final double width = sizeInfo.screenSize.width;
-        double drawerwidth = width * 0.18;
-        final double drawerWidth = sizeInfo.isMobile
-            ? width * 0.59
-            : drawerwidth <= 181.44
-                ? 181.44
-                : drawerwidth;
-        return Scaffold(
-          key: _scaffoldKey,
-          drawer: TopDrawer(
-            drawerwidth: drawerWidth,
-            isamobileScreen: true,
-            scaffoldKey: _scaffoldKey,
-          ),
-          body: Row(
-            children: [
-              if (!sizeInfo.isMobile)
-                TopDrawer(
-                  drawerwidth: drawerWidth,
-                  isamobileScreen: false,
-                  scaffoldKey: _scaffoldKey,
-                ),
-              SizedBox(
-                height: sizeInfo.screenSize.height,
-                width: sizeInfo.isMobile
-                    ? sizeInfo.screenSize.width
-                    : sizeInfo.screenSize.width - drawerWidth,
-                child: Stack(
-                  children: [
-                    SingleChildScrollView(
-                      key: const Key('long_list'),
-                      controller: controller,
-                      child: Column(
-                        children: [
-                          TopBanner(
-                              name: 'DARWIN V TOMY',
-                              scrollController: controller,
-                              imageLink: 'assets/images/banner.jpg',
-                              key: topBannerkey),
-                          AboutMe(key: aboutMekey),
-                          MyServices(key: myServiceskey),
-                          ResumeContent(key: resumeContentkey),
-                          PortFolio(key: portFoliokey),
-                          Testimonial(key: testimonialkey),
-                          HireMeWidget(key: hireMeWidget),
-                          PersonalBlog(key: personalBlogkey),
-                          ContactMe(key: contactMekey),
-                          Credits(
-                            sizeInfo.screenSize.width,
-                          )
-                        ],
-                      ),
-                    ),
-                    Positioned(
-                      top: 20,
-                      right: 20,
-                      child: Column(
-                        children: [
-                          IconButton(
-                            hoverColor: themeChange.darkTheme
-                                ? Colors.white54
-                                : Colors.black54,
-                            onPressed: () {
-                              themeChange.darkTheme = !themeChange.darkTheme;
-                            },
-                            icon: FaIcon(themeChange.darkTheme
-                                ? FontAwesomeIcons.solidSun
-                                : FontAwesomeIcons.solidMoon),
-                          ),
-                          verticalSpace(10),
-                          TextButton(
-                              onPressed: () {},
-                              child: Text('EN',
-                                  style:
-                                      Theme.of(context).textTheme.bodySmall!))
-                        ],
-                      ),
-                    ),
-                    if (sizeInfo.isMobile)
-                      Positioned(
-                        left: 10,
-                        top: 10,
-                        child: DrawerIcon(
+        providers: [
+          ProxyProvider0<List<NavigationItem>>(update: (_, __) {
+            return navigationItems;
+          }),
+          ChangeNotifierProvider<ScrollController>(create: (_) {
+            return controller;
+          }),
+        ],
+        child: Consumer<Resumeprovider>(
+          builder: (context, value, child) {
+            if (value.isLoading) {
+              return Scaffold(
+                  body: Center(
+                      child: SpinKitSquareCircle(
+                color: ColorManager.button_bg_color,
+                size: 70.0,
+              )));
+            } else {
+              print(value.resume.enUs!.aboutPicture);
+              return ResponsiveBuilder(builder: (_, sizeInfo) {
+                final double width = sizeInfo.screenSize.width;
+                double drawerwidth = width * 0.18;
+                final double drawerWidth = sizeInfo.isMobile
+                    ? width * 0.59
+                    : drawerwidth <= 181.44
+                        ? 181.44
+                        : drawerwidth;
+                return Scaffold(
+                  key: _scaffoldKey,
+                  drawer: TopDrawer(
+                    drawerwidth: drawerWidth,
+                    isamobileScreen: true,
+                    scaffoldKey: _scaffoldKey,
+                  ),
+                  body: Row(
+                    children: [
+                      if (!sizeInfo.isMobile)
+                        TopDrawer(
+                          drawerwidth: drawerWidth,
+                          isamobileScreen: false,
                           scaffoldKey: _scaffoldKey,
-                          isDraweropen: false,
+                        ),
+                      SizedBox(
+                        height: sizeInfo.screenSize.height,
+                        width: sizeInfo.isMobile
+                            ? sizeInfo.screenSize.width
+                            : sizeInfo.screenSize.width - drawerWidth,
+                        child: Stack(
+                          children: [
+                            SingleChildScrollView(
+                              key: const Key('long_list'),
+                              controller: controller,
+                              child: Column(
+                                children: [
+                                  TopBanner(
+                                      name: 'DARWIN V TOMY',
+                                      scrollController: controller,
+                                      imageLink: 'assets/images/banner.jpg',
+                                      key: topBannerkey),
+                                  AboutMe(key: aboutMekey),
+                                  MyServices(key: myServiceskey),
+                                  ResumeContent(key: resumeContentkey),
+                                  PortFolio(key: portFoliokey),
+                                  TestimonialSection(key: testimonialkey),
+                                  HireMeWidget(key: hireMeWidget),
+                                  PersonalBlog(key: personalBlogkey),
+                                  ContactMe(key: contactMekey),
+                                  Credits(
+                                    sizeInfo.screenSize.width,
+                                  )
+                                ],
+                              ),
+                            ),
+                            Positioned(
+                              top: 20,
+                              right: 20,
+                              child: Column(
+                                children: [
+                                  IconButton(
+                                    hoverColor: themeChange.isDarkTheme
+                                        ? Colors.white54
+                                        : Colors.black54,
+                                    onPressed: () {
+                                      themeChange.isDarkTheme =
+                                          !themeChange.isDarkTheme;
+                                    },
+                                    icon: FaIcon(themeChange.isDarkTheme
+                                        ? FontAwesomeIcons.solidSun
+                                        : FontAwesomeIcons.solidMoon),
+                                  ),
+                                  verticalSpace(10),
+                                  TextButton(
+                                      onPressed: () {},
+                                      child: Text('EN',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall!))
+                                ],
+                              ),
+                            ),
+                            if (sizeInfo.isMobile)
+                              Positioned(
+                                left: 10,
+                                top: 10,
+                                child: DrawerIcon(
+                                  scaffoldKey: _scaffoldKey,
+                                  isDraweropen: false,
+                                ),
+                              ),
+                          ],
                         ),
                       ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        );
-      }),
-    );
+                    ],
+                  ),
+                );
+              });
+            }
+          },
+        ));
   }
 }
