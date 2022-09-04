@@ -1,48 +1,10 @@
-// To parse this JSON data, do
-//
-//     final resume = resumeFromJson(jsonString);
-
 import 'dart:convert';
 
 Resume resumeFromJson(String str) => Resume.fromJson(json.decode(str));
 
 class Resume {
   Resume({
-    this.enUs,
-    this.deDe,
-  });
-
-  final EnUs? enUs;
-  final DeDe? deDe;
-
-  factory Resume.fromJson(Map<String, dynamic> json) => Resume(
-        enUs: EnUs.fromJson(json["en_US"]),
-        deDe: DeDe.fromJson(json["de_DE"]),
-      );
-}
-
-class DeDe {
-  DeDe({
-    this.label,
-    this.dob,
-    this.skills,
-  });
-
-  final String? label;
-  final String? dob;
-  final List<String>? skills;
-
-  factory DeDe.fromJson(Map<String, dynamic> json) => DeDe(
-        label: json["label"],
-        dob: json["dob"],
-        skills: List<String>.from(json["skills"].map((x) => x)),
-      );
-}
-
-class EnUs {
-  EnUs({
     this.name,
-    this.label,
     this.address1,
     this.pno1,
     this.pno2,
@@ -52,11 +14,84 @@ class EnUs {
     this.avatarPicture,
     this.bannerPicture,
     this.freelancePicture,
+    this.languages,
+    this.coding,
+    this.enUs,
+    this.deDe,
+  });
+
+  final String? name;
+  final String? address1;
+  final String? pno1;
+  final String? pno2;
+  final String? email;
+  final String? dob;
+  final String? aboutPicture;
+  final String? avatarPicture;
+  final String? bannerPicture;
+  final String? freelancePicture;
+  final List<ResumeLanguage>? languages;
+  final List<Coding>? coding;
+  final EnUs? enUs;
+  final DeDe? deDe;
+
+  factory Resume.fromJson(Map<String, dynamic> json) => Resume(
+        name: json["name"],
+        address1: json["address1"],
+        pno1: json["pno1"],
+        pno2: json["pno2"],
+        email: json["email"],
+        dob: json["dob"],
+        aboutPicture: json["about_picture"],
+        avatarPicture: json["avatar_picture"],
+        bannerPicture: json["banner_picture"],
+        freelancePicture: json["freelance_picture"],
+        languages: List<ResumeLanguage>.from(
+            json["languages"].map((x) => ResumeLanguage.fromJson(x))),
+        coding:
+            List<Coding>.from(json["coding"].map((x) => Coding.fromJson(x))),
+        enUs: EnUs.fromJson(json["en_US"]),
+        deDe: DeDe.fromJson(json["de_DE"]),
+      );
+}
+
+class Coding {
+  Coding({
+    this.skill,
+    this.level,
+  });
+
+  final String? skill;
+  final int? level;
+
+  factory Coding.fromJson(Map<String, dynamic> json) => Coding(
+        skill: json["skill"],
+        level: json["level"],
+      );
+}
+
+class DeDe {
+  DeDe({
+    this.label,
+    this.skills,
+  });
+
+  final String? label;
+  final List<String>? skills;
+
+  factory DeDe.fromJson(Map<String, dynamic> json) => DeDe(
+        label: json["label"],
+        skills: List<String>.from(json["skills"].map((x) => x)),
+      );
+}
+
+class EnUs {
+  EnUs({
+    this.label,
     this.professionalSummary,
     this.skills,
     this.profiles,
     this.services,
-    this.coding,
     this.languages,
     this.workHistory,
     this.education,
@@ -69,23 +104,12 @@ class EnUs {
     this.contact,
   });
 
-  final String? name;
   final String? label;
-  final String? address1;
-  final String? pno1;
-  final String? pno2;
-  final String? email;
-  final String? dob;
-  final String? aboutPicture;
-  final String? avatarPicture;
-  final String? bannerPicture;
-  final String? freelancePicture;
   final String? professionalSummary;
   final List<String>? skills;
   final List<Profile>? profiles;
   final List<Service>? services;
-  final List<Coding>? coding;
-  final List<Language>? languages;
+  final List<EnUsLanguage>? languages;
   final List<WorkHistory>? workHistory;
   final List<Education>? education;
   final List<String>? interests;
@@ -97,27 +121,15 @@ class EnUs {
   final Contact? contact;
 
   factory EnUs.fromJson(Map<String, dynamic> json) => EnUs(
-        name: json["name"],
         label: json["label"],
-        address1: json["address1"],
-        pno1: json["pno1"],
-        pno2: json["pno2"],
-        email: json["email"],
-        dob: json["dob"],
-        aboutPicture: json["about_picture"],
-        avatarPicture: json["avatar_picture"],
-        bannerPicture: json["banner_picture"],
-        freelancePicture: json["freelance_picture"],
         professionalSummary: json["professional_summary"],
         skills: List<String>.from(json["skills"].map((x) => x)),
         profiles: List<Profile>.from(
             json["profiles"].map((x) => Profile.fromJson(x))),
         services: List<Service>.from(
             json["services"].map((x) => Service.fromJson(x))),
-        coding:
-            List<Coding>.from(json["coding"].map((x) => Coding.fromJson(x))),
-        languages: List<Language>.from(
-            json["languages"].map((x) => Language.fromJson(x))),
+        languages: List<EnUsLanguage>.from(
+            json["languages"].map((x) => EnUsLanguage.fromJson(x))),
         workHistory: List<WorkHistory>.from(
             json["work_history"].map((x) => WorkHistory.fromJson(x))),
         education: List<Education>.from(
@@ -154,22 +166,6 @@ class Blog {
         name: json["name"],
         description: json["description"],
         imageurl: json["imageurl"],
-        url: json["url"],
-      );
-}
-
-class Coding {
-  Coding({
-    this.skill,
-    this.level,
-  });
-
-  final String? skill;
-  final int? level;
-
-  factory Coding.fromJson(Map<String, dynamic> json) => Coding(
-        skill: json["skill"],
-        level: json["level"],
       );
 }
 
@@ -238,8 +234,8 @@ class Education {
       );
 }
 
-class Language {
-  Language({
+class EnUsLanguage {
+  EnUsLanguage({
     this.language,
     this.level,
   });
@@ -247,7 +243,7 @@ class Language {
   final String? language;
   final int? level;
 
-  factory Language.fromJson(Map<String, dynamic> json) => Language(
+  factory EnUsLanguage.fromJson(Map<String, dynamic> json) => EnUsLanguage(
         language: json["language"],
         level: json["level"],
       );
@@ -358,5 +354,26 @@ class WorkHistory {
         website: json["website"],
         role: json["role"],
         descripton: List<String>.from(json["descripton"].map((x) => x)),
+      );
+}
+
+class ResumeLanguage {
+  ResumeLanguage({
+    this.title,
+    this.id,
+    this.languageKey,
+    this.locale,
+  });
+
+  final String? title;
+  final String? id;
+  final String? languageKey;
+  final String? locale;
+
+  factory ResumeLanguage.fromJson(Map<String, dynamic> json) => ResumeLanguage(
+        title: json["title"],
+        id: json["id"],
+        languageKey: json["language_key"],
+        locale: json["locale"],
       );
 }

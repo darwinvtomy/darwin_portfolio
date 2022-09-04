@@ -1,16 +1,52 @@
 {
+    "name": "DARWIN V TOMY",
+    "address1": "Bengaluru , India 560068",
+    "pno1": "919-895-007888",
+    "pno2": "919-911-3835612",
+    "email": "darwinvtomy@gmail.com",
+    "dob": "20th October 1988",
+    "about_picture": "assets/images/about.jpg",
+    "avatar_picture": "assets/images/avatar.jpg",
+    "banner_picture": "assets/images/banner.jpg",
+    "freelance_picture": "assets/images/freelance.jpg",
+    "languages": [
+        {
+            "title": "English",
+            "id": "en",
+            "language_key": "en_US",
+            "locale": "United States"
+        },
+        {
+            "title": "Deutsche",
+            "id": "de",
+            "language_key": "de_DE",
+            "locale": "Deutscheland"
+        }
+    ],
+    "coding": [
+        {
+            "skill": "Dart",
+            "level": 5
+        },
+        {
+            "skill": "Flutter",
+            "level": 4
+        },
+        {
+            "skill": "Android",
+            "level": 2
+        },
+        {
+            "skill": "IOS",
+            "level": 1
+        },
+        {
+            "skill": "Kotlin",
+            "level": 2
+        }
+    ],
     "en_US": {
-        "name": "DARWIN V TOMY",
         "label": "Senior Software Engineer (Flutter)",
-        "address1": "Bengaluru , India 560068",
-        "pno1": "919-895-007888",
-        "pno2": "919-911-3835612",
-        "email": "darwinvtomy@gmail.com",
-        "dob": "20th October 1988",
-        "about_picture": "assets/images/about.jpg",
-        "avatar_picture": "assets/images/avatar.jpg",
-        "banner_picture": "assets/images/banner.jpg",
-        "freelance_picture": "assets/images/freelance.jpg",
         "professional_summary": "Senior Software Engineer offering 9 years of expertise in App Development. Seasoned professional with background in full software development lifecycle. Quickly learns and masters new technologies while working in both team and self-directed settings.",
         "skills": [
             "OTT",
@@ -77,28 +113,6 @@
                 "icon": "Web App Development",
                 "title": "Web App Development",
                 "description": "Service Description"
-            }
-        ],
-        "coding": [
-            {
-                "skill": "Dart",
-                "level": 5
-            },
-            {
-                "skill": "Flutter",
-                "level": 4
-            },
-            {
-                "skill": "Android",
-                "level": 2
-            },
-            {
-                "skill": "IOS",
-                "level": 1
-            },
-            {
-                "skill": "Kotlin",
-                "level": 2
             }
         ],
         "languages": [
@@ -275,6 +289,13 @@
                 "description": "Salem-India",
                 "imageurl": "Image Url here",
                 "url": "url-link here"
+            },
+            {
+                "image": "Blog 2 Title",
+                "name": "Blog 2 TitleTitle",
+                "description": "Salem-India",
+                "imageurl": "Image Url here",
+                "url": "url-link here"
             }
         ],
         "current_locstion": {
@@ -305,7 +326,6 @@
     },
     "de_DE": {
         "label": "Leitender Softwareingenieur (Flutter)",
-        "dob": "20. Oktober 1988",
         "skills": [
             "OTT",
             "Entwicklung von Smart-TV-Apps",

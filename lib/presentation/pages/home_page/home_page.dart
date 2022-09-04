@@ -50,7 +50,6 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
   final ScrollController controller = ScrollController(
     initialScrollOffset: 0,
   );
-  // final Resumeprovider resumeprovider = Resumeprovider();
 
   @override
   FutureOr<void> afterFirstLayout(BuildContext context) {
@@ -72,9 +71,6 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
   @override
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
-    //  final resume = Provider.of<Resumeprovider>(context);
-    //print(resume.resume.enUs!.aboutPicture);
-
     return MultiProvider(
         providers: [
           ProxyProvider0<List<NavigationItem>>(update: (_, __) {
@@ -94,7 +90,7 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                 size: 70.0,
               )));
             } else {
-              print(value.resume.enUs!.aboutPicture);
+              // print("Get the values From JSON ${value.resume.aboutPicture}");
               return ResponsiveBuilder(builder: (_, sizeInfo) {
                 final double width = sizeInfo.screenSize.width;
                 double drawerwidth = width * 0.18;
