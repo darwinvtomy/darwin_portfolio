@@ -4,7 +4,8 @@
     "pno1": "919-895-007888",
     "pno2": "919-911-3835612",
     "email": "darwinvtomy@gmail.com",
-    "dob": "20th October 1988",
+    "dob": 593289000000,
+    "age": 33,
     "about_picture": "assets/images/about.jpg",
     "avatar_picture": "assets/images/avatar.jpg",
     "banner_picture": "assets/images/banner.jpg",
@@ -23,6 +24,10 @@
             "locale": "Deutscheland"
         }
     ],
+    "current_location": {
+        "lat": "latitudes",
+        "long": "longtitudes"
+    },
     "coding": [
         {
             "skill": "Dart",
@@ -298,10 +303,6 @@
                 "url": "url-link here"
             }
         ],
-        "current_locstion": {
-            "lat": "latitudes",
-            "long": "longtitudes"
-        },
         "contact": {
             "form_details": [
                 {
@@ -326,6 +327,7 @@
     },
     "de_DE": {
         "label": "Leitender Softwareingenieur (Flutter)",
+        "professional_summary": "Senior Software Developer mit 9 Jahren Erfahrung in der App-Entwicklung. Erfahrener Fachmann mit Erfahrung im gesamten Lebenszyklus der Softwareentwicklung. Lernt und beherrscht schnell neue Technologien, während er sowohl im Team als auch in selbstgesteuerten Umgebungen arbeitet.",
         "skills": [
             "OTT",
             "Entwicklung von Smart-TV-Apps",

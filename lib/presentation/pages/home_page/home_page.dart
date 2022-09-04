@@ -90,7 +90,8 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                 size: 70.0,
               )));
             } else {
-              // print("Get the values From JSON ${value.resume.aboutPicture}");
+              print(
+                  "Get the DATE From JSON ${value.resume.dob} \n  ${DateTime.fromMillisecondsSinceEpoch(value.resume.dob!)}");
               return ResponsiveBuilder(builder: (_, sizeInfo) {
                 final double width = sizeInfo.screenSize.width;
                 double drawerwidth = width * 0.18;
@@ -127,11 +128,25 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                               child: Column(
                                 children: [
                                   TopBanner(
-                                      name: 'DARWIN V TOMY',
+                                      name: value.resume.name!,
                                       scrollController: controller,
-                                      imageLink: 'assets/images/banner.jpg',
+                                      imageLink: value.resume.bannerPicture!,
                                       key: topBannerkey),
-                                  AboutMe(key: aboutMekey),
+                                  AboutMe(
+                                    key: aboutMekey,
+                                    address: value.resume.address1!,
+                                    age: value.resume.age!,
+                                    avatarLink: value.resume.avatarPicture!,
+                                    dob: value.resume.dob!,
+                                    email: value.resume.email!,
+                                    name: value.resume.name!,
+                                    phNo: value.resume.pno1!,
+                                    summery: value
+                                        .resume
+                                        .datafromLanguage!
+                                        .languageList!['en']!
+                                        .professionalSummary!,
+                                  ),
                                   MyServices(key: myServiceskey),
                                   ResumeContent(key: resumeContentkey),
                                   PortFolio(key: portFoliokey),

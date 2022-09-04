@@ -11,7 +11,26 @@ import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
 
 class AboutMe extends StatelessWidget {
-  const AboutMe({Key? key}) : super(key: key);
+  final String name;
+  final int dob;
+  final int age;
+  final String avatarLink;
+  final String phNo;
+  final String email;
+  final String address;
+  final String summery;
+
+  const AboutMe(
+      {Key? key,
+      required this.name,
+      required this.dob,
+      required this.avatarLink,
+      required this.phNo,
+      required this.email,
+      required this.address,
+      required this.summery,
+      required this.age})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +57,7 @@ class AboutMe extends StatelessWidget {
                       )),
                   padding: const EdgeInsets.all(4),
                   child: Image.asset(
-                    'assets/images/avatar.jpg',
+                    avatarLink,
                     width: sizeInfo.isMobile
                         ? sizeInfo.screenSize.width - 30
                         : imageSize,
@@ -56,12 +75,12 @@ class AboutMe extends StatelessWidget {
                   children: [
                     verticalSpace(sizeInfo.isMobile ? AppPadding.p40 : 0.0),
                     Text(
-                      '${AppStrings.i_am.tr()} Darwin V Tomy ',
+                      '${AppStrings.i_am.tr()} ${name} ',
                       style: Theme.of(context).textTheme.headlineMedium,
                       textAlign: TextAlign.left,
                     ),
                     Text(
-                      'Proin laoreet elementum ligula, ac tincidunt lorem accumsan nec. Fusce eget urna ante. Donec massa velit, varius a accumsan ac, tempor iaculis massa. Sed placerat justo sed libero varius vulputate. Ut a mi tempus massa malesuada fermentum.',
+                      summery,
                       style: Theme.of(context)
                           .textTheme
                           .bodyMedium!
@@ -86,15 +105,14 @@ class AboutMe extends StatelessWidget {
                               children: [
                                 BioDetails(
                                     title: AppStrings.from.tr(),
-                                    detail: 'Bengaluru India'),
+                                    detail: address),
                                 BioDetails(
-                                    title: AppStrings.age.tr(), detail: '33'),
+                                    title: AppStrings.age.tr(), detail: "$age"),
                                 BioDetails(
-                                    title: AppStrings.phone.tr(),
-                                    detail: '+91-9113835612'),
+                                    title: AppStrings.phone.tr(), detail: phNo),
                                 BioDetails(
                                     title: AppStrings.email.tr(),
-                                    detail: 'darwinvtomy@gmail.com'),
+                                    detail: email),
                               ],
                             ),
                           ),
