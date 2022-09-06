@@ -8,9 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../../resources/strings_manager.dart';
+import '../homepage_models/resume_model.dart';
 
 class PersonalBlog extends StatelessWidget {
-  const PersonalBlog({Key? key}) : super(key: key);
+  final List<Blog>? blog;
+  const PersonalBlog({Key? key, this.blog}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

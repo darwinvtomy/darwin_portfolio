@@ -6,11 +6,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../../../resources/values_manager.dart';
+import '../homepage_models/resume_model.dart';
 import '../homepage_widgets/contents_placeholder.dart';
 import '../homepage_widgets/experience_card.dart';
 
 class ResumeContent extends StatelessWidget {
-  const ResumeContent({Key? key}) : super(key: key);
+  final List<WorkHistory>? workHistory;
+  final List<Education>? education;
+  final List<Coding>? coding;
+  const ResumeContent({Key? key, this.workHistory, this.education, this.coding})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

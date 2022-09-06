@@ -9,12 +9,21 @@ import 'package:flutter_map/flutter_map.dart'; // Suitable for most situations
 import 'package:flutter_map/plugin_api.dart'; // Only import if required functionality is not exposed by 'flutter_map.dart'
 import 'package:latlong2/latlong.dart';
 import '../../../resources/values_manager.dart';
+import '../homepage_models/resume_model.dart';
 import '../homepage_widgets/contact_form.dart';
 import '../homepage_widgets/contact_widget.dart';
 import '../homepage_widgets/contents_placeholder.dart';
 
 class ContactMe extends StatelessWidget {
-  const ContactMe({Key? key}) : super(key: key);
+  final String contactNo;
+  final String email;
+  final CurrentLocation? currentLocation;
+  const ContactMe(
+      {Key? key,
+      required this.contactNo,
+      required this.email,
+      this.currentLocation})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

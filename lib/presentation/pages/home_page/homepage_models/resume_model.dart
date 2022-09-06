@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import '../../../resources/strings_manager.dart';
+
 Resume resumeFromJson(String str) => Resume.fromJson(json.decode(str));
 
 class Resume {
@@ -37,6 +39,8 @@ class Resume {
   final DatafromLanguage? datafromLanguage;
   final CurrentLocation? currentLocation;
 
+  Map<String, InLanguage>? get getLanguageList =>
+      datafromLanguage!.languageList!;
   factory Resume.fromJson(Map<String, dynamic> json) {
     List<ResumeLanguage>? languages = List<ResumeLanguage>.from(
         json["languages"].map((x) => ResumeLanguage.fromJson(x)));
@@ -60,6 +64,46 @@ class Resume {
         currentLocation: CurrentLocation.fromJson(json["current_location"]),
         datafromLanguage: datafromLanguage);
   }
+
+  String? getlabelfromData(String languageId) {
+    return getLanguageList![languageId]!.label ??
+        getLanguageList![AppStrings.defaultLanguage]?.label;
+  }
+
+  String? getProfessionalSummery(String languageId) {
+    return getLanguageList![languageId]!.professionalSummary ??
+        getLanguageList![AppStrings.defaultLanguage]?.professionalSummary;
+  }
+
+  List<Service>? getServicesList(String languageId) {
+    return getLanguageList![languageId]!.services ??
+        getLanguageList![AppStrings.defaultLanguage]?.services;
+  }
+
+  List<WorkHistory>? getWorkHistory(String languageId) {
+    return getLanguageList![languageId]!.workHistory ??
+        getLanguageList![AppStrings.defaultLanguage]?.workHistory;
+  }
+
+  List<Education>? getEducationHistory(String languageId) {
+    return getLanguageList![languageId]!.education ??
+        getLanguageList![AppStrings.defaultLanguage]?.education;
+  }
+
+  List<Portfolio>? getPortfolioList(String languageId) {
+    return getLanguageList![languageId]!.portfolio ??
+        getLanguageList![AppStrings.defaultLanguage]?.portfolio;
+  }
+
+  List<Testimonial>? getTestimonials(String languageId) {
+    return getLanguageList![languageId]!.testimonial ??
+        getLanguageList![AppStrings.defaultLanguage]?.testimonial;
+  }
+
+  List<Blog>? getPersonalBlogs(String languageId) {
+    return getLanguageList![languageId]!.blog ??
+        getLanguageList![AppStrings.defaultLanguage]?.blog;
+  }
 }
 
 class DatafromLanguage {
@@ -73,8 +117,6 @@ class DatafromLanguage {
     Map<String, InLanguage> languageList = {};
     for (ResumeLanguage value in languages!) {
       languageList[value.id!] = InLanguage.fromJson(json[value.languageKey]);
-      // languageList
-      //     ?.addAll({value.id!: InLanguage.fromJson(json[value.languageKey])});
       print(
           "ADDING DATA GETTING VALUE ${InLanguage.fromJson(json[value.languageKey]).professionalSummary}");
     }
@@ -399,8 +441,8 @@ class CurrentLocation {
     this.long,
   });
 
-  final String? lat;
-  final String? long;
+  final double? lat;
+  final double? long;
 
   factory CurrentLocation.fromJson(Map<String, dynamic> json) =>
       CurrentLocation(

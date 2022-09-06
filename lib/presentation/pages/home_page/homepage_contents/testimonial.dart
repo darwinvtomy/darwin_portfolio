@@ -8,11 +8,13 @@ import 'package:responsive_builder/responsive_builder.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 import '../../../resources/values_manager.dart';
+import '../homepage_models/resume_model.dart';
 import '../homepage_widgets/contents_placeholder.dart';
 
 class TestimonialSection extends StatelessWidget {
   final PageController controller = PageController();
-  TestimonialSection({Key? key}) : super(key: key);
+  final List<Testimonial>? testimonial;
+  TestimonialSection({Key? key, this.testimonial}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

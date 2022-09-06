@@ -7,40 +7,43 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import '../homepage_models/resume_model.dart';
+
 class MyServices extends StatelessWidget {
-  MyServices({Key? key}) : super(key: key);
-  final List<Service> services = [
-    Service(
+  final List<Service>? services;
+  MyServices({Key? key, this.services}) : super(key: key);
+  final List<Servicedummy> servicesdummy = [
+    Servicedummy(
         index: '01',
         icondata: FontAwesomeIcons.paintbrush,
         title: 'Graphic Design',
         description:
             'Modern and mobile-ready website that will help of your marketing.'),
-    Service(
+    Servicedummy(
         index: '02',
         icondata: FontAwesomeIcons.paintbrush,
         title: 'Graphic Design',
         description:
             'Modern and mobile-ready website that will help of your marketing.'),
-    Service(
+    Servicedummy(
         index: '03',
         icondata: FontAwesomeIcons.paintbrush,
         title: 'Graphic Design',
         description:
             'Modern and mobile-ready website that will help of your marketing.'),
-    Service(
+    Servicedummy(
         index: '04',
         icondata: FontAwesomeIcons.paintbrush,
         title: 'Graphic Design',
         description:
             'Modern and mobile-ready website that will help of your marketing.'),
-    Service(
+    Servicedummy(
         index: '05',
         icondata: FontAwesomeIcons.paintbrush,
         title: 'Graphic Design',
         description:
             'Modern and mobile-ready website that will help of your marketing.'),
-    Service(
+    Servicedummy(
         index: '06',
         icondata: FontAwesomeIcons.paintbrush,
         title: 'Graphic Design',
@@ -64,7 +67,7 @@ class MyServices extends StatelessWidget {
             mainAxisExtent: sizeInfo.isMobile ? 240 : 240, //
           ),
           children: [
-            for (Service service in services)
+            for (Servicedummy service in servicesdummy)
               ServiceCard(
                       color: Theme.of(context).backgroundColor,
                       width: sizeInfo.isMobile
@@ -82,13 +85,13 @@ class MyServices extends StatelessWidget {
   }
 }
 
-class Service {
+class Servicedummy {
   final IconData icondata;
   final String title;
   final String description;
   final String index;
 
-  Service(
+  Servicedummy(
       {required this.index,
       required this.icondata,
       required this.title,

@@ -7,11 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import '../homepage_models/resume_model.dart';
 import '../homepage_widgets/contents_placeholder.dart';
 import '../homepage_widgets/portfolio_item.dart';
 
 class PortFolio extends StatefulWidget {
-  const PortFolio({Key? key}) : super(key: key);
+  final List<Portfolio>? portfolio;
+  const PortFolio({Key? key, this.portfolio}) : super(key: key);
 
   @override
   State<PortFolio> createState() => _PortFolioState();

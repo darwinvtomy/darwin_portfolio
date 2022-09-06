@@ -92,6 +92,8 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
             } else {
               print(
                   "Get the DATE From JSON ${value.resume.dob} \n  ${DateTime.fromMillisecondsSinceEpoch(value.resume.dob!)}");
+              print(
+                  "Get LabelFrom Data ${value.resume.getlabelfromData('de')}");
               return ResponsiveBuilder(builder: (_, sizeInfo) {
                 final double width = sizeInfo.screenSize.width;
                 double drawerwidth = width * 0.18;
@@ -141,19 +143,42 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                                     email: value.resume.email!,
                                     name: value.resume.name!,
                                     phNo: value.resume.pno1!,
-                                    summery: value
-                                        .resume
-                                        .datafromLanguage!
-                                        .languageList!['en']!
-                                        .professionalSummary!,
+                                    summery: value.resume
+                                        .getProfessionalSummery('de')!,
                                   ),
-                                  MyServices(key: myServiceskey),
-                                  ResumeContent(key: resumeContentkey),
-                                  PortFolio(key: portFoliokey),
-                                  TestimonialSection(key: testimonialkey),
+                                  MyServices(
+                                    key: myServiceskey,
+                                    services:
+                                        value.resume.getServicesList('de'),
+                                  ),
+                                  ResumeContent(
+                                    key: resumeContentkey,
+                                    workHistory:
+                                        value.resume.getWorkHistory('de'),
+                                    education:
+                                        value.resume.getEducationHistory('de'),
+                                    coding: value.resume.coding,
+                                  ),
+                                  PortFolio(
+                                      key: portFoliokey,
+                                      portfolio:
+                                          value.resume.getPortfolioList('de')),
+                                  TestimonialSection(
+                                      key: testimonialkey,
+                                      testimonial:
+                                          value.resume.getTestimonials('de')),
                                   HireMeWidget(key: hireMeWidget),
-                                  PersonalBlog(key: personalBlogkey),
-                                  ContactMe(key: contactMekey),
+                                  PersonalBlog(
+                                    key: personalBlogkey,
+                                    blog: value.resume.getPersonalBlogs('de'),
+                                  ),
+                                  ContactMe(
+                                    key: contactMekey,
+                                    contactNo: value.resume.pno1!,
+                                    email: value.resume.email!,
+                                    currentLocation:
+                                        value.resume.currentLocation,
+                                  ),
                                   Credits(
                                     sizeInfo.screenSize.width,
                                   )
