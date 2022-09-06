@@ -10,6 +10,7 @@ class Resume {
     this.age,
     this.datafromLanguage,
     this.name,
+    this.profiles,
     this.address1,
     this.pno1,
     this.pno2,
@@ -34,6 +35,7 @@ class Resume {
   final String? avatarPicture;
   final String? bannerPicture;
   final String? freelancePicture;
+  final List<Profile>? profiles;
   final List<ResumeLanguage>? languages;
   final List<Coding>? coding;
   final DatafromLanguage? datafromLanguage;
@@ -59,6 +61,10 @@ class Resume {
         bannerPicture: json["banner_picture"],
         freelancePicture: json["freelance_picture"],
         languages: languages,
+        profiles: json["profiles"] == null
+            ? null
+            : List<Profile>.from(
+                json["profiles"].map((x) => Profile.fromJson(x))),
         coding:
             List<Coding>.from(json["coding"].map((x) => Coding.fromJson(x))),
         currentLocation: CurrentLocation.fromJson(json["current_location"]),
@@ -144,7 +150,6 @@ class InLanguage {
     this.label,
     this.professionalSummary,
     this.skills,
-    this.profiles,
     this.services,
     this.languages,
     this.workHistory,
@@ -161,7 +166,7 @@ class InLanguage {
   final String? label;
   final String? professionalSummary;
   final List<String>? skills;
-  final List<Profile>? profiles;
+
   final List<Service>? services;
   final List<LanguageSkill>? languages;
   final List<WorkHistory>? workHistory;
@@ -180,10 +185,7 @@ class InLanguage {
       skills: json["skills"] == null
           ? null
           : List<String>.from(json["skills"].map((x) => x)),
-      profiles: json["profiles"] == null
-          ? null
-          : List<Profile>.from(
-              json["profiles"].map((x) => Profile.fromJson(x))),
+
       services: json["services"] == null
           ? null
           : List<Service>.from(
@@ -350,6 +352,7 @@ class Portfolio {
 
 class Profile {
   Profile({
+    this.icon,
     this.network,
     this.username,
     this.url,
@@ -358,11 +361,13 @@ class Profile {
   final String? network;
   final String? username;
   final String? url;
+  final String? icon;
 
   factory Profile.fromJson(Map<String, dynamic> json) => Profile(
         network: json["network"],
         username: json["username"],
         url: json["url"],
+        icon: json["icon"],
       );
 }
 

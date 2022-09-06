@@ -7,17 +7,20 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
+import '../homepage_models/resume_model.dart';
 import 'drawer_icon.dart';
 
 class TopDrawer extends StatelessWidget {
   final double drawerwidth;
   final isamobileScreen;
   final GlobalKey<ScaffoldState> scaffoldKey;
+  final List<Profile>? profiles;
   const TopDrawer(
       {Key? key,
       required this.drawerwidth,
       this.isamobileScreen,
-      required this.scaffoldKey})
+      required this.scaffoldKey,
+      this.profiles})
       : super(key: key);
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,9 @@
 import 'dart:async';
-
 import 'package:after_layout/after_layout.dart';
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/my_services.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/personal_blog.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/portfolio.dart';
-import 'package:darwin_portfolio/presentation/pages/home_page/homepage_models/resume_model.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_providers/resume_provider.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/top_banner.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
@@ -15,7 +13,6 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
 import '../../../models/navigation_item.dart';
 import '../../../notifiers/dark_theme_provider.dart';
 import '../../resources/strings_manager.dart';
@@ -108,6 +105,7 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                     drawerwidth: drawerWidth,
                     isamobileScreen: true,
                     scaffoldKey: _scaffoldKey,
+                    profiles: value.resume.profiles,
                   ),
                   body: Row(
                     children: [
