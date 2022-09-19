@@ -19,6 +19,7 @@ class ContactWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ContentCard(
+        color: Theme.of(context).cardColor,
         width: width,
         padding: 25,
         child: Column(

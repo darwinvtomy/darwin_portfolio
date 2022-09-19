@@ -26,12 +26,6 @@ ThemeData getApplicationTheme(
       scaffoldBackgroundColor: isDarkTheme
           ? ColorManager.darkgray_bg_color
           : ColorManager.lightgray_bg_color,
-      backgroundColor:
-          isDarkTheme ? ColorManager.gray_bg_color : ColorManager.white,
-      // will be used incase of disabled button for example
-      //accentColor: ColorManager.grey,
-      colorScheme:
-          isDarkTheme ? const ColorScheme.dark() : const ColorScheme.light(),
       // card view theme
       cardTheme: CardTheme(
           color: ColorManager.white,
@@ -162,5 +156,11 @@ ThemeData getApplicationTheme(
             borderSide:
                 BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
             borderRadius: const BorderRadius.all(Radius.circular(AppSize.s5))),
-      ));
+      ),
+      colorScheme: isDarkTheme
+          ? const ColorScheme.dark()
+          : const ColorScheme.light().copyWith(
+              background: isDarkTheme
+                  ? ColorManager.gray_bg_color
+                  : ColorManager.white));
 }

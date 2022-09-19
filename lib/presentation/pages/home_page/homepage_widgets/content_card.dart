@@ -23,7 +23,7 @@ class ContentCard extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-          color: color ?? Theme.of(context).backgroundColor,
+          color: color ?? Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(5),
           border: Border.all(
             color: (Theme.of(context).brightness == Brightness.dark)

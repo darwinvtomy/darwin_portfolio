@@ -69,7 +69,7 @@ class MyServices extends StatelessWidget {
           children: [
             for (Servicedummy service in servicesdummy)
               ServiceCard(
-                      color: Theme.of(context).backgroundColor,
+                      color: Theme.of(context).cardColor,
                       width: sizeInfo.isMobile
                           ? sizeInfo.screenSize.width * 0.99
                           : halfsize,
