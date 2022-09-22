@@ -107,21 +107,25 @@
         ],
         "services": [
             {
+                "index": "01",
                 "icon": "0xe209",
                 "title": "Mobile App Development",
                 "description": "Service Description"
             },
             {
+                "index": "02",
                 "icon": "0xf09b",
                 "title": "Desktop App Development",
                 "description": "Service Description"
             },
             {
+                "index": "03",
                 "icon": "0xe209",
                 "title": "Smart TV App Development",
                 "description": "Service Description"
             },
             {
+                "index": "04",
                 "icon": "0xf09b",
                 "title": "Web App Development",
                 "description": "Service Description"

@@ -6,13 +6,14 @@ import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../homepage_models/resume_model.dart';
 import 'drawer_icon.dart';
 
 class TopDrawer extends StatelessWidget {
   final double drawerwidth;
-  final isamobileScreen;
+  final bool? isamobileScreen;
   final GlobalKey<ScaffoldState> scaffoldKey;
   final List<Profile>? profiles;
   const TopDrawer(
@@ -26,12 +27,13 @@ class TopDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final navigationItems = context.watch<List<NavigationItem>>();
     final scrollController = context.watch<ScrollController>();
-    if (isamobileScreen) {
+    if (isamobileScreen ?? false) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           DrawerContent(
+              profiles: profiles,
               drawerwidth: drawerwidth,
               navigationItems: navigationItems,
               scrollController: scrollController),
@@ -46,6 +48,7 @@ class TopDrawer extends StatelessWidget {
       );
     } else {
       return DrawerContent(
+          profiles: profiles,
           drawerwidth: drawerwidth,
           navigationItems: navigationItems,
           scrollController: scrollController);
@@ -59,12 +62,13 @@ class DrawerContent extends StatelessWidget {
     required this.drawerwidth,
     required this.navigationItems,
     required this.scrollController,
+    this.profiles,
   });
 
   final double drawerwidth;
   final List<NavigationItem> navigationItems;
   final ScrollController scrollController;
-
+  final List<Profile>? profiles;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -114,11 +118,13 @@ class DrawerContent extends StatelessWidget {
               ],
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 0,
             left: 0,
             right: 0,
-            child: LinkButtons(),
+            child: LinkButtons(
+              profiles: profiles,
+            ),
           )
         ],
       ),
@@ -127,33 +133,28 @@ class DrawerContent extends StatelessWidget {
 }
 
 class LinkButtons extends StatelessWidget {
-  const LinkButtons({Key? key}) : super(key: key);
+  final List<Profile>? profiles;
+  const LinkButtons({Key? key, this.profiles}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(gradient: GradientManager.commonGradient),
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          LinkIconButton(
-            iconData: FontAwesomeIcons.facebook,
-            onPressed: () {},
-          ),
-          LinkIconButton(
-            iconData: FontAwesomeIcons.linkedin,
-            onPressed: () {},
-          ),
-          LinkIconButton(
-            iconData: FontAwesomeIcons.stackOverflow,
-            onPressed: () {},
-          ),
-          LinkIconButton(
-            iconData: FontAwesomeIcons.github,
-            onPressed: () {},
-          ),
-        ],
+      padding: const EdgeInsets.symmetric(vertical: AppPadding.p16),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: AppPadding.p16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            for (Profile profile in profiles!)
+              LinkIconButton(
+                iconData: IconDataBrands(int.parse(profile.icon!)),
+                onPressed: () {
+                  launchUrl(Uri.parse(profile.url!));
+                },
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -171,8 +172,11 @@ class LinkIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      padding: const EdgeInsets.all(AppPadding.p8),
-      icon: FaIcon(iconData),
+      constraints: const BoxConstraints(),
+      padding: const EdgeInsets.all(0),
+      icon: FaIcon(
+        iconData,
+      ),
       onPressed: onPressed,
       color: Colors.white,
       iconSize: 16,

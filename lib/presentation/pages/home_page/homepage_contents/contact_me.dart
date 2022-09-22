@@ -51,14 +51,14 @@ class ContactMe extends StatelessWidget {
                 height: 500,
                 child: FlutterMap(
                   options: MapOptions(
-                    center: LatLng(10.550762, 76.534538),
+                    center:
+                        LatLng(currentLocation!.lat!, currentLocation!.long!),
                     zoom: 18.2,
                   ),
                   layers: [
                     TileLayerOptions(
                       urlTemplate:
                           "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      userAgentPackageName: 'com.example.app',
                     ),
                   ],
                   nonRotatedChildren: [

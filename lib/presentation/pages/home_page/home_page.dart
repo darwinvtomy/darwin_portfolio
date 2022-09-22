@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
               print(
                   "Get the DATE From JSON ${value.resume.dob} \n  ${DateTime.fromMillisecondsSinceEpoch(value.resume.dob!)}");
               print(
-                  "Get LabelFrom Data ${value.resume.getlabelfromData('de')}");
+                  "Get LabelFrom Data ${value.resume.getlabelfromData('en')}");
               return ResponsiveBuilder(builder: (_, sizeInfo) {
                 final double width = sizeInfo.screenSize.width;
                 double drawerwidth = width * 0.18;
@@ -114,6 +114,7 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                           drawerwidth: drawerWidth,
                           isamobileScreen: false,
                           scaffoldKey: _scaffoldKey,
+                          profiles: value.resume.profiles,
                         ),
                       SizedBox(
                         height: sizeInfo.screenSize.height,
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                                     name: value.resume.name!,
                                     phNo: value.resume.pno1!,
                                     summery: value.resume
-                                        .getProfessionalSummery('de')!,
+                                        .getProfessionalSummery('en')!,
                                   ),
                                   MyServices(
                                     key: myServiceskey,

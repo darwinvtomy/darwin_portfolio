@@ -13,8 +13,8 @@ void main() async {
   runApp(EasyLocalization(
       supportedLocales: [ENGLISH_LOCAL, DEUTSCHE_LOCAL],
       path: ASSETS_PATH_LOCALISATIONS,
-      fallbackLocale: DEUTSCHE_LOCAL,
-      startLocale: DEUTSCHE_LOCAL,
+      fallbackLocale: ENGLISH_LOCAL,
+      startLocale: ENGLISH_LOCAL,
       child: const MyApp()));
 }
 

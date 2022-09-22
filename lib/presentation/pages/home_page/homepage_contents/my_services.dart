@@ -39,7 +39,7 @@ class MyServices extends StatelessWidget {
                       title: service.title!,
                       description: service.description!,
                       icon: FaIcon(IconDataSolid(int.parse(service.icon!))),
-                      index: '05')
+                      index: service.index)
                   .moveUpOnHover
           ],
         ),

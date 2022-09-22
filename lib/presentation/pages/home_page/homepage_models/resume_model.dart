@@ -376,6 +376,7 @@ class Profile {
 
 class Service {
   Service({
+    this.index,
     this.icon,
     this.title,
     this.description,
@@ -384,12 +385,13 @@ class Service {
   final String? icon;
   final String? title;
   final String? description;
+  final String? index;
 
   factory Service.fromJson(Map<String, dynamic> json) => Service(
-        icon: json["icon"],
-        title: json["title"],
-        description: json["description"],
-      );
+      icon: json["icon"],
+      title: json["title"],
+      description: json["description"],
+      index: json["index"]);
 }
 
 class Testimonial {
