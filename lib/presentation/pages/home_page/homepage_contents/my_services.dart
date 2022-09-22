@@ -12,44 +12,7 @@ import '../homepage_models/resume_model.dart';
 class MyServices extends StatelessWidget {
   final List<Service>? services;
   MyServices({Key? key, this.services}) : super(key: key);
-  final List<Servicedummy> servicesdummy = [
-    Servicedummy(
-        index: '01',
-        icondata: FontAwesomeIcons.paintbrush,
-        title: 'Graphic Design',
-        description:
-            'Modern and mobile-ready website that will help of your marketing.'),
-    Servicedummy(
-        index: '02',
-        icondata: FontAwesomeIcons.paintbrush,
-        title: 'Graphic Design',
-        description:
-            'Modern and mobile-ready website that will help of your marketing.'),
-    Servicedummy(
-        index: '03',
-        icondata: FontAwesomeIcons.paintbrush,
-        title: 'Graphic Design',
-        description:
-            'Modern and mobile-ready website that will help of your marketing.'),
-    Servicedummy(
-        index: '04',
-        icondata: FontAwesomeIcons.paintbrush,
-        title: 'Graphic Design',
-        description:
-            'Modern and mobile-ready website that will help of your marketing.'),
-    Servicedummy(
-        index: '05',
-        icondata: FontAwesomeIcons.paintbrush,
-        title: 'Graphic Design',
-        description:
-            'Modern and mobile-ready website that will help of your marketing.'),
-    Servicedummy(
-        index: '06',
-        icondata: FontAwesomeIcons.paintbrush,
-        title: 'Graphic Design',
-        description:
-            'Modern and mobile-ready website that will help of your marketing.'),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
@@ -67,33 +30,20 @@ class MyServices extends StatelessWidget {
             mainAxisExtent: sizeInfo.isMobile ? 240 : 240, //
           ),
           children: [
-            for (Servicedummy service in servicesdummy)
+            for (Service service in services!)
               ServiceCard(
                       color: Theme.of(context).cardColor,
                       width: sizeInfo.isMobile
                           ? sizeInfo.screenSize.width * 0.99
                           : halfsize,
-                      title: service.title,
-                      description: service.description,
-                      icon: FaIcon(service.icondata),
-                      index: service.index)
+                      title: service.title!,
+                      description: service.description!,
+                      icon: FaIcon(IconDataSolid(int.parse(service.icon!))),
+                      index: '05')
                   .moveUpOnHover
           ],
         ),
       );
     });
   }
-}
-
-class Servicedummy {
-  final IconData icondata;
-  final String title;
-  final String description;
-  final String index;
-
-  Servicedummy(
-      {required this.index,
-      required this.icondata,
-      required this.title,
-      required this.description});
 }

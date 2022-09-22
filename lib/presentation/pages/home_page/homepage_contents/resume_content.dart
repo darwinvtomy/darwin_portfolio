@@ -13,98 +13,141 @@ import '../homepage_widgets/experience_card.dart';
 class ResumeContent extends StatelessWidget {
   final List<WorkHistory>? workHistory;
   final List<Education>? education;
-  final List<Coding>? coding;
-  const ResumeContent({Key? key, this.workHistory, this.education, this.coding})
+  final List<Coding>? codingSkills;
+  final List<LanguageSkill>? languageSkills;
+  const ResumeContent(
+      {Key? key,
+      this.workHistory,
+      this.education,
+      this.codingSkills,
+      this.languageSkills})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
+      double halfsize = (sizeInfo.screenSize.width / 2) - 50;
       return ContentPlaceHolder(
           bgColor: Theme.of(context).canvasColor,
           title: AppStrings.my_resume.tr(),
           subTitle: AppStrings.my_expertises.tr(),
-          child: Flex(
-            mainAxisSize: MainAxisSize.min,
-            direction: sizeInfo.isMobile ? Axis.vertical : Axis.horizontal,
+          child: Column(
             children: [
-              Flexible(
-                flex: sizeInfo.isMobile ? 0 : 1,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: AppPadding.p24),
-                      child: Text(
-                        AppStrings.my_experience.tr(),
-                        style: Theme.of(context).textTheme.titleMedium,
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    for (int i = 0; i <= 3; i++)
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: AppPadding.p24),
-                        child: ExperienceCard(
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                          //     width: (sizeInfo.screenSize.width - 90) / 2,
-                          year: '2013 - 2015 | Facebook Inc',
-                          title: 'Senior Architect',
-                          description:
-                              'Collaborate with creative and development teams on the execution of ideas.',
-                        ).moveUpOnHover,
-                      ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: AppPadding.p24),
-                      child: Text(
-                        'Design Skills',
-                        style: Theme.of(context).textTheme.titleMedium,
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    const SkillsCard().moveUpOnHover
-                  ],
+              Container(
+                width: sizeInfo.screenSize.width,
+                padding: const EdgeInsets.only(bottom: AppPadding.p24),
+                child: Text(
+                  AppStrings.my_experience.tr(),
+                  style: Theme.of(context).textTheme.titleMedium,
+                  textAlign: TextAlign.left,
                 ),
               ),
-              sizeInfo.isMobile ? verticalSpace(30) : horizontalSpace(30),
-              Flexible(
-                flex: sizeInfo.isMobile ? 0 : 1,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: AppPadding.p24),
-                      child: Text(
-                        AppStrings.my_experience.tr(),
-                        style: Theme.of(context).textTheme.titleMedium,
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    for (int i = 0; i <= 3; i++)
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: AppPadding.p24),
-                        child: ExperienceCard(
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                          //  width: (sizeInfo.screenSize.width - 90) / 2,
-                          year: '2013 - 2015 | Facebook Inc',
-                          title: 'Senior Architect',
-                          description:
-                              'Collaborate with creative and development teams on the execution of ideas.',
-                        ).moveUpOnHover,
-                      ),
+              GridView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: sizeInfo.isMobile ? 1 : 2,
+                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 30,
+                  mainAxisExtent: sizeInfo.isMobile ? 240 : 240,
+                ),
+                children: [
+                  for (WorkHistory service in workHistory!)
                     Padding(
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
-                      child: Text(
-                        'Design Skills',
-                        style: Theme.of(context).textTheme.titleMedium,
-                        textAlign: TextAlign.left,
+                      child: ExperienceCard(
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                        //     width: (sizeInfo.screenSize.width - 90) / 2,
+                        year:
+                            '${service.startDate} - ${service.endDate} | ${service.companyName}',
+                        title: service.role!,
+                        description: service.descripton.toString(),
+                      ).moveUpOnHover,
+                    ),
+                ],
+              ),
+              Container(
+                width: sizeInfo.screenSize.width,
+                padding: const EdgeInsets.only(bottom: AppPadding.p24),
+                child: Text(
+                  AppStrings.my_education.tr(),
+                  style: Theme.of(context).textTheme.titleMedium,
+                  textAlign: TextAlign.left,
+                ),
+              ),
+              GridView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: sizeInfo.isMobile ? 1 : 2,
+                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 30,
+                  mainAxisExtent: sizeInfo.isMobile ? 240 : 240,
+                ),
+                children: [
+                  for (Education service in education!)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: AppPadding.p24),
+                      child: ExperienceCard(
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                        year: 'START DATE - END DATE | ${service.instution!}',
+                        title: service.degree!,
+                        description: service.instution!,
+                      ).moveUpOnHover,
+                    ),
+                ],
+              ),
+              Flex(
+                mainAxisSize: MainAxisSize.min,
+                direction: sizeInfo.isMobile ? Axis.vertical : Axis.horizontal,
+                children: [
+                  if (codingSkills != null)
+                    Flexible(
+                      flex: sizeInfo.isMobile ? 0 : 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(bottom: AppPadding.p24),
+                            child: Text(
+                              AppStrings.coding_skills.tr(),
+                              style: Theme.of(context).textTheme.titleMedium,
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          SkillsCard(
+                            codingSkills: codingSkills,
+                          ).moveUpOnHover
+                        ],
                       ),
                     ),
-                    const SkillsCard().moveUpOnHover
-                  ],
-                ),
-              )
+                  sizeInfo.isMobile ? verticalSpace(30) : horizontalSpace(30),
+                  if (languageSkills != null)
+                    Flexible(
+                      flex: sizeInfo.isMobile ? 0 : 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(bottom: AppPadding.p24),
+                            child: Text(
+                              AppStrings.language_skills.tr(),
+                              style: Theme.of(context).textTheme.titleMedium,
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          SkillsCard(
+                            languageSkills: languageSkills,
+                          ).moveUpOnHover
+                        ],
+                      ),
+                    )
+                ],
+              ),
             ],
           ));
     });

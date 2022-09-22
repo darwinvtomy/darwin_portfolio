@@ -96,6 +96,11 @@ class Resume {
         getLanguageList![AppStrings.defaultLanguage]?.education;
   }
 
+  List<LanguageSkill>? getLanguageSkills(String languageId) {
+    return getLanguageList![languageId]!.languages ??
+        getLanguageList![AppStrings.defaultLanguage]?.languages;
+  }
+
   List<Portfolio>? getPortfolioList(String languageId) {
     return getLanguageList![languageId]!.portfolio ??
         getLanguageList![AppStrings.defaultLanguage]?.portfolio;
@@ -231,21 +236,19 @@ class Blog {
     this.image,
     this.name,
     this.description,
-    this.imageurl,
     this.url,
   });
 
   final String? image;
   final String? name;
   final String? description;
-  final String? imageurl;
   final String? url;
 
   factory Blog.fromJson(Map<String, dynamic> json) => Blog(
         image: json["image"],
         name: json["name"],
         description: json["description"],
-        imageurl: json["imageurl"],
+        url: json["url"],
       );
 }
 

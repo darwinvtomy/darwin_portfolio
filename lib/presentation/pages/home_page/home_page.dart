@@ -155,7 +155,9 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                                         value.resume.getWorkHistory('de'),
                                     education:
                                         value.resume.getEducationHistory('de'),
-                                    coding: value.resume.coding,
+                                    codingSkills: value.resume.coding,
+                                    languageSkills:
+                                        value.resume.getLanguageSkills('de'),
                                   ),
                                   PortFolio(
                                       key: portFoliokey,
@@ -163,12 +165,12 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                                           value.resume.getPortfolioList('de')),
                                   TestimonialSection(
                                       key: testimonialkey,
-                                      testimonial:
+                                      testimonials:
                                           value.resume.getTestimonials('de')),
                                   HireMeWidget(key: hireMeWidget),
                                   PersonalBlog(
                                     key: personalBlogkey,
-                                    blog: value.resume.getPersonalBlogs('de'),
+                                    blogs: value.resume.getPersonalBlogs('de'),
                                   ),
                                   ContactMe(
                                     key: contactMekey,

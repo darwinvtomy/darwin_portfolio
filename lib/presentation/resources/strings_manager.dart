@@ -29,6 +29,9 @@ class AppStrings {
   static const String my_resume = 'my_resume';
   static const String my_expertises = 'my_expertises';
   static const String my_experience = 'my_experience';
+  static const String my_education = 'my_education';
+  static const String coding_skills = 'coding_skills';
+  static const String language_skills = 'language_skills';
   static const String design_skills = 'design_skills';
   static const String kind_words = 'kind_words';
   static const String download_cv = 'download_cv';
