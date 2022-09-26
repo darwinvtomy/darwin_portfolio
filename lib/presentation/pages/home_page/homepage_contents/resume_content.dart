@@ -61,7 +61,7 @@ class ResumeContent extends StatelessWidget {
                         year:
                             '${service.startDate} - ${service.endDate} | ${service.companyName}',
                         title: service.role!,
-                        description: service.descripton.toString(),
+                        description: service.summary!,
                       ).moveUpOnHover,
                     ),
                 ],

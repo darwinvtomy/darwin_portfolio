@@ -8,6 +8,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter_map/flutter_map.dart'; // Suitable for most situations
 import 'package:flutter_map/plugin_api.dart'; // Only import if required functionality is not exposed by 'flutter_map.dart'
 import 'package:latlong2/latlong.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../resources/values_manager.dart';
 import '../homepage_models/resume_model.dart';
 import '../homepage_widgets/contact_form.dart';
@@ -55,12 +56,12 @@ class ContactMe extends StatelessWidget {
                         LatLng(currentLocation!.lat!, currentLocation!.long!),
                     zoom: 18.2,
                   ),
-                  layers: [
-                    TileLayerOptions(
-                      urlTemplate:
-                          "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                    ),
-                  ],
+                  // layers: [
+                  //   TileLayerOptions(
+                  //     urlTemplate:
+                  //         "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                  //   ),
+                  // ],
                   nonRotatedChildren: [
                     AttributionWidget.defaultWidget(
                       source: 'Chittady, Palakkad',
@@ -92,10 +93,13 @@ class ContactMe extends StatelessWidget {
                       Flexible(
                         flex: sizeInfo.isMobile ? 0 : 1,
                         child: ContactWidget(
+                          onClick: () {
+                            launchUrl(Uri.parse("tel://$contactNo"));
+                          },
                           width: sizeInfo.isMobile
                               ? halfsize
                               : (sizeInfo.screenSize.width / 2) - 50,
-                          contact: '+91-9895007888',
+                          contact: contactNo,
                           title: AppStrings.call_us.tr(),
                           icon: FontAwesomeIcons.mobileScreen,
                         ).moveUpOnHover,
@@ -106,10 +110,16 @@ class ContactMe extends StatelessWidget {
                       Flexible(
                         flex: sizeInfo.isMobile ? 0 : 1,
                         child: ContactWidget(
+                          onClick: () {
+                            launchUrl(Uri(
+                              scheme: 'mailto',
+                              path: email,
+                            ));
+                          },
                           width: sizeInfo.isMobile
                               ? halfsize
                               : (sizeInfo.screenSize.width / 2) - 50,
-                          contact: 'darwinvtomy@gmail.com',
+                          contact: email,
                           title: AppStrings.email_us.tr(),
                           icon: FontAwesomeIcons.solidEnvelope,
                         ).moveUpOnHover,

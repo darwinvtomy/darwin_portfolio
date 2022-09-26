@@ -53,43 +53,43 @@
     "profiles": [
         {
             "network": "Website",
-            "icon": "0xf09b",
+            "icon": "0xe007",
             "username": "darwinvtomy",
             "url": "https://darwinvtomy.xyz"
         },
         {
             "network": "Skype",
-            "icon": "0xf482",
+            "icon": "0xf17e",
             "username": "darwinvtomy",
             "url": "skype:live:darwin?chat"
         },
         {
             "network": "Whatsapp",
-            "icon": "0xf09b",
+            "icon": "0xf232",
             "username": "darwinvtomy",
             "url": "https://wa.me/9895007888"
         },
         {
             "network": "Stackoverflow",
-            "icon": "0xf09b",
+            "icon": "0xf16c",
             "username": "darwinvtomy",
             "url": "https://stackoverflow.com/users/5662389/darwin-v-tomy"
         },
         {
             "network": "Facebook",
-            "icon": "0xe209",
+            "icon": "0xf082",
             "username": "darwinvtomy",
             "url": "https://www.facebook.com/darwin.v.tomy"
         },
         {
             "network": "Github",
-            "icon": "0xf09b",
+            "icon": "0xf092",
             "username": "darwinvtomy",
             "url": "https://github.com/darwinvtomy"
         },
         {
             "network": "LinkedIn",
-            "icon": "0xf09b",
+            "icon": "0xf08c",
             "username": "darwinvtomy",
             "url": "https://www.linkedin.com/in/darwin-v-tomy-15177711"
         }
@@ -108,25 +108,37 @@
         "services": [
             {
                 "index": "01",
-                "icon": "0xe209",
+                "icon": "0xf3ce",
                 "title": "Mobile App Development",
                 "description": "Service Description"
             },
             {
                 "index": "02",
-                "icon": "0xf09b",
+                "icon": "0xf390",
                 "title": "Desktop App Development",
                 "description": "Service Description"
             },
             {
                 "index": "03",
-                "icon": "0xe209",
+                "icon": "0xf26c",
                 "title": "Smart TV App Development",
                 "description": "Service Description"
             },
             {
                 "index": "04",
-                "icon": "0xf09b",
+                "icon": "0xf04b",
+                "title": "OTT App Development",
+                "description": "Service Description"
+            },
+            {
+                "index": "05",
+                "icon": "0xe012",
+                "title": "IOT App Development",
+                "description": "Service Description"
+            },
+            {
+                "index": "06",
+                "icon": "0xf37e",
                 "title": "Web App Development",
                 "description": "Service Description"
             }
@@ -159,8 +171,8 @@
                 "end_date": "January 2022",
                 "company_name": "LEAD School",
                 "location": "Bengaluru , Karnataka",
-                "summary": "Company Summery",
-                "website": "https://company.co",
+                "summary": "LEAD School provides an integrated, transformational school SaaS platform. It is a full-stack assessment, education and remediation platform. LEAD also provides a separate app for parents, which allows them to track their children's progress and enables their students to learn from home.",
+                "website": "https://leadschool.in/",
                 "role": "Senior Software Engineer",
                 "descripton": [
                     "Adjusted design parameters to boost performance and incorporate new features.",
@@ -173,8 +185,8 @@
                 "end_date": "March 2021",
                 "company_name": "Wiked Ride (Bounce)",
                 "location": "Bengaluru , Karnataka",
-                "summary": "Company Summery",
-                "website": "https://company.co",
+                "summary": "Bounce is India's first smart mobility solution, with a mission of making daily commute stress-free, time-saving, reliable and convenient.",
+                "website": "https://www.bounceshare.com/",
                 "role": "Senior Software Engineer",
                 "descripton": [
                     "Gathered and defined customer requirements to develop clear specifications for project plans.",
@@ -187,8 +199,8 @@
                 "end_date": "August 2019",
                 "company_name": "Orion Digital Edutainment Pvt Ltd",
                 "location": "Bengaluru , Karnataka",
-                "summary": "Company Summery",
-                "website": "https://company.co",
+                "summary": "Orion Digital is Bangalore Based VOD based company, Delivering First Day First Show of newly movies through OTT TV Box",
+                "website": "http://www.oriondigi.com/",
                 "role": "Senior Software Engineer",
                 "descripton": [
                     "Trained and mentored junior developers and engineers, teaching skills in Android and working to improve overall team performance.",
@@ -200,8 +212,8 @@
                 "end_date": "March 2016",
                 "company_name": "PlanetSurf Creations Pvt Ltd",
                 "location": "Bengaluru , Karnataka",
-                "summary": "Company Summery",
-                "website": "https://company.co",
+                "summary": "Bangalore based design and technology driven team of professionals offering web, application, print, multimedia, and identity design solutions to a diverse set of clients from all industries",
+                "website": "http://www.planetsurfcreations.com/",
                 "role": "Junior Android Developer",
                 "descripton": [
                     "Created custom mobile applications using native technologies.",
@@ -213,8 +225,8 @@
                 "end_date": "September 2015",
                 "company_name": "Tenet Technetronics",
                 "location": "Bengaluru , Karnataka",
-                "summary": "Company Summery",
-                "website": "https://company.co",
+                "summary": "Tenet Technetronics is one of the leading electronic development tools distributor in India.",
+                "website": "https://www.tenettech.com/",
                 "role": "Junior Android Developer",
                 "descripton": [
                     "Utilized comprehensive knowledge of mobile landscape, emerging technologies and innovations to remain on cutting edge of Android market."

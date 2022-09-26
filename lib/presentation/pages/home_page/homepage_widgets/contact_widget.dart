@@ -8,17 +8,20 @@ class ContactWidget extends StatelessWidget {
   final String title;
   final IconData icon;
   final double? width;
+  final Function? onClick;
   const ContactWidget(
       {Key? key,
       required this.contact,
       required this.title,
       required this.icon,
-      this.width})
+      this.width,
+      this.onClick})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ContentCard(
+        onclick: onClick,
         color: Theme.of(context).cardColor,
         width: width,
         padding: 25,

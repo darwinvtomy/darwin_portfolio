@@ -151,8 +151,9 @@ class LinkButtons extends StatelessWidget {
                 iconData: IconDataBrands(int.parse(profile.icon!)),
                 onPressed: () {
                   launchUrl(Uri.parse(profile.url!));
+                  // FontAwesomeIcons.internetExplorer
                 },
-              ),
+              ).moveUpOnHover,
           ],
         ),
       ),
