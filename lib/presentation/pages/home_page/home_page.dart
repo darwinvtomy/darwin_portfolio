@@ -179,6 +179,7 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                                     email: value.resume.email!,
                                     currentLocation:
                                         value.resume.currentLocation,
+                                    markerImage: value.resume.aboutPicture,
                                   ),
                                   Credits(
                                     sizeInfo.screenSize.width,

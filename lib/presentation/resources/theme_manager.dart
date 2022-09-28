@@ -10,7 +10,9 @@ ThemeData getApplicationTheme(
     {required bool isDarkTheme, required BuildContext context}) {
   return ThemeData(
       // main colors of the app
-      primaryColor: ColorManager.primary,
+      primaryColor: isDarkTheme
+          ? ColorManager.darkgray_bg_color
+          : ColorManager.lightgray_bg_color,
       primaryColorLight: ColorManager.primaryOpacity70,
       primaryColorDark: ColorManager.darkPrimary,
       disabledColor: ColorManager.grey1,

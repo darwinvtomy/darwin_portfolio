@@ -9,6 +9,7 @@ import 'package:flutter_map/flutter_map.dart'; // Suitable for most situations
 import 'package:flutter_map/plugin_api.dart'; // Only import if required functionality is not exposed by 'flutter_map.dart'
 import 'package:latlong2/latlong.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../resources/color_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../homepage_models/resume_model.dart';
 import '../homepage_widgets/contact_form.dart';
@@ -19,11 +20,13 @@ class ContactMe extends StatelessWidget {
   final String contactNo;
   final String email;
   final CurrentLocation? currentLocation;
+  final String? markerImage;
   const ContactMe(
       {Key? key,
       required this.contactNo,
       required this.email,
-      this.currentLocation})
+      this.currentLocation,
+      this.markerImage})
       : super(key: key);
 
   @override
@@ -54,19 +57,48 @@ class ContactMe extends StatelessWidget {
                   options: MapOptions(
                     center:
                         LatLng(currentLocation!.lat!, currentLocation!.long!),
-                    zoom: 18.2,
+                    zoom: 15,
                   ),
-                  // layers: [
-                  //   TileLayerOptions(
-                  //     urlTemplate:
-                  //         "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                  //   ),
-                  // ],
                   nonRotatedChildren: [
                     AttributionWidget.defaultWidget(
                       source: 'Chittady, Palakkad',
-                      onSourceTapped: null,
+                      onSourceTapped: () {},
                     ),
+                  ],
+                  children: [
+                    TileLayer(
+                      urlTemplate:
+                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                      userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+                    ),
+                    MarkerLayer(markers: [
+                      Marker(
+                        width: 80,
+                        height: 80,
+                        point: LatLng(
+                            currentLocation!.lat!, currentLocation!.long!),
+                        builder: (ctx) => Container(
+                          margin: const EdgeInsets.all(AppPadding.p2),
+                          padding: const EdgeInsets.all(AppPadding.p2),
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(80),
+                              border: Border.all(
+                                color: ColorManager.photo_border_color,
+                                style: BorderStyle.solid,
+                                width: 1.0,
+                              )),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(80),
+                              child: Image.asset(
+                                markerImage!,
+                                height: 160,
+                                width: 160,
+                              )),
+                        ),
+                      )
+                    ]),
                   ],
                 ),
               )
