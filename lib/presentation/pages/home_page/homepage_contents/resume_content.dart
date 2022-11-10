@@ -90,7 +90,8 @@ class ResumeContent extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: AppPadding.p24),
                       child: ExperienceCard(
                         color: Theme.of(context).scaffoldBackgroundColor,
-                        year: 'START DATE - END DATE | ${service.instution!}',
+                        year:
+                            '${service.startDate} - ${service.endDate} | ${service.instution!}',
                         title: service.degree!,
                         description: service.instution!,
                       ).moveUpOnHover,

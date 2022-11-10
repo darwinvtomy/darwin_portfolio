@@ -301,6 +301,8 @@ class CurrentLocstion {
 
 class Education {
   Education({
+    this.startDate,
+    this.endDate,
     this.instution,
     this.degree,
     this.location,
@@ -309,11 +311,15 @@ class Education {
   final String? instution;
   final String? degree;
   final String? location;
+  final String? startDate;
+  final String? endDate;
 
   factory Education.fromJson(Map<String, dynamic> json) => Education(
         instution: json["instution"],
         degree: json["degree"],
         location: json["location"],
+        startDate: json["start_date"],
+        endDate: json["end_date"],
       );
 }
 

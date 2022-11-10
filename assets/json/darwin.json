@@ -48,6 +48,10 @@
         {
             "skill": "Kotlin",
             "level": 2
+        },
+        {
+            "skill": "Java",
+            "level": 4
         }
     ],
     "profiles": [
@@ -163,6 +167,10 @@
             {
                 "language": "Telugu",
                 "level": 1
+            },
+            {
+                "language": "German",
+                "level": 1
             }
         ],
         "work_history": [
@@ -243,10 +251,24 @@
             },
             {
                 "start_date": "August 2007",
-                "end_date": "April 2011",
-                "instution": " ",
+                "end_date": "May 2011",
+                "instution": "Vinayaka Missions Kirupanandha Variyar Engineering College",
                 "degree": "Bachelor of Engineering Computer Science",
                 "location": "Salem-India"
+            },
+            {
+                "start_date": "August 2005",
+                "end_date": "March 2007",
+                "instution": "Technical Higher Secondary School Ayalur",
+                "degree": "Higher Secondary Examination",
+                "location": "Palakkad-India"
+            },
+            {
+                "start_date": "June 2004",
+                "end_date": "March 2005",
+                "instution": "Viswadeepthi Matriculation HR Secondary School Pollachi",
+                "degree": "X Standard",
+                "location": "Pollachi-India"
             }
         ],
         "interests": [
