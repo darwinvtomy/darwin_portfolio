@@ -5,7 +5,7 @@
     "pno2": "919-911-3835612",
     "email": "darwinvtomy@gmail.com",
     "dob": 593289000000,
-    "age": 33,
+    "age": 34,
     "about_picture": "assets/images/about.jpg",
     "avatar_picture": "assets/images/avatar.jpg",
     "banner_picture": "assets/images/banner.jpg",
@@ -59,7 +59,7 @@
             "network": "Website",
             "icon": "0xe007",
             "username": "darwinvtomy",
-            "url": "https://darwinvtomy.xyz"
+            "url": "https://portfolio-darwin-web.web.app/#/"
         },
         {
             "network": "Skype",
@@ -100,8 +100,10 @@
     ],
     "en_US": {
         "label": "Senior Software Engineer (Flutter)",
-        "professional_summary": "Senior Software Engineer offering 9 years of expertise in App Development. Seasoned professional with background in full software development lifecycle. Quickly learns and masters new technologies while working in both team and self-directed settings.",
+        "professional_summary": "Senior Software Engineer offering 9 years of expertise in App Development. A seasoned professional with a background in full software development lifecycle. Quickly learns and masters new technologies while working in both teams and self-directed settings.",
         "skills": [
+            "Dart",
+            "Flutter",
             "OTT",
             "Smart TV App Development",
             "IOT",
@@ -114,37 +116,37 @@
                 "index": "01",
                 "icon": "0xf3ce",
                 "title": "Mobile App Development",
-                "description": "Service Description"
+                "description": "Have experience on working on Native Android App for 5 yerars, Currently using Flutter Framework for developing Android and IOS Apps"
             },
             {
                 "index": "02",
                 "icon": "0xf390",
                 "title": "Desktop App Development",
-                "description": "Service Description"
+                "description": "Have experience in developing apps for Windows, Mac and Linux using Flutter Framework"
             },
             {
                 "index": "03",
                 "icon": "0xf26c",
                 "title": "Smart TV App Development",
-                "description": "Service Description"
+                "description": "Have 3 Years of Experience in VOD, Android TV, On board Entertainment Systems and can develop Smart TV apps using Flutter Framework"
             },
             {
                 "index": "04",
                 "icon": "0xf04b",
                 "title": "OTT App Development",
-                "description": "Service Description"
+                "description": "Experience on working on Streaming platforms, DRM, HLS, HTTP Live Streaming, DASH and Widewine"
             },
             {
                 "index": "05",
                 "icon": "0xe012",
                 "title": "IOT App Development",
-                "description": "Service Description"
+                "description": "Have Experience on working on DRDO projects, Home Automations and Apps for Commute EV bikes"
             },
             {
                 "index": "06",
                 "icon": "0xf37e",
                 "title": "Web App Development",
-                "description": "Service Description"
+                "description": "Have Experience on Developing PWA and portals using Flutter Framework"
             }
         ],
         "languages": [
@@ -175,12 +177,14 @@
         ],
         "work_history": [
             {
-                "start_date": "March 2021",
-                "end_date": "January 2022",
+                "start_date": "17th March 2021",
+                "end_date": "15th January 2022",
                 "company_name": "LEAD School",
                 "location": "Bengaluru , Karnataka",
+                "emp_id": "LBPL1673",
                 "summary": "LEAD School provides an integrated, transformational school SaaS platform. It is a full-stack assessment, education and remediation platform. LEAD also provides a separate app for parents, which allows them to track their children's progress and enables their students to learn from home.",
                 "website": "https://leadschool.in/",
+                "address": "Indiqube Lexington, A Wing, 2nd Floor Municipal, 18, 2nd Cross Rd, Chikka Adugodi, Bengaluru, Karnataka 560029",
                 "role": "Senior Software Engineer",
                 "descripton": [
                     "Adjusted design parameters to boost performance and incorporate new features.",
@@ -189,55 +193,65 @@
                 ]
             },
             {
-                "start_date": "August 2019",
-                "end_date": "March 2021",
+                "start_date": "22nd July 2019",
+                "end_date": "15th March 2021",
                 "company_name": "Wiked Ride (Bounce)",
                 "location": "Bengaluru , Karnataka",
+                "emp_id": "WR1637",
                 "summary": "Bounce is India's first smart mobility solution, with a mission of making daily commute stress-free, time-saving, reliable and convenient.",
                 "website": "https://www.bounceshare.com/",
+                "address": "Ward No. 57, 2nd and 3rd Floor, Artisane RPS TECH Centre No. 32, 1st Main Road, Corporation, 3rd Phase, J. P. Nagar, Bengaluru, Karnataka 560078",
                 "role": "Senior Software Engineer",
                 "descripton": [
                     "Gathered and defined customer requirements to develop clear specifications for project plans.",
-                    "Developed UI For Entire Front End App",
+                    "Developed UI For Entire Front End App for both Android and IOS platforms",
                     "Communicated with product managers and UX designers to translate project requirements and business objectives into polished user interfaces"
                 ]
             },
             {
-                "start_date": "March 2016",
-                "end_date": "August 2019",
+                "start_date": "21st March 2016",
+                "end_date": "18th August 2019",
                 "company_name": "Orion Digital Edutainment Pvt Ltd",
                 "location": "Bengaluru , Karnataka",
+                "emp_id": "OD-008",
                 "summary": "Orion Digital is Bangalore Based VOD based company, Delivering First Day First Show of newly movies through OTT TV Box",
                 "website": "http://www.oriondigi.com/",
+                "address": "# 205  206, Suraj Ganga Arcade,14th Cross, 7th main, 2nd Block Jayanagar., 2nd Block, Jaya Nagar East, Jayanagar, Bengaluru, Karnataka 560011",
                 "role": "Senior Software Engineer",
                 "descripton": [
                     "Trained and mentored junior developers and engineers, teaching skills in Android and working to improve overall team performance.",
-                    "Revised, modularized and updated old code bases to modern development standards, reducing operating costs and improving functionality."
+                    "Revised, modularized and updated old code bases to modern development standards, reducing operating costs and improving functionality.",
+                    "Worked on OTT Streaming using DRM on Smart TV's and Mobiles"
                 ]
             },
             {
-                "start_date": "October 2015",
-                "end_date": "March 2016",
+                "start_date": "22nd October 2015",
+                "end_date": "18th March 2016",
                 "company_name": "PlanetSurf Creations Pvt Ltd",
                 "location": "Bengaluru , Karnataka",
                 "summary": "Bangalore based design and technology driven team of professionals offering web, application, print, multimedia, and identity design solutions to a diverse set of clients from all industries",
                 "website": "http://www.planetsurfcreations.com/",
+                "address": "26A , 1st Floor, Hegmel House KPTCL Main Road, Off Sarjapur Rd, Kasavanahalli, Karnataka 560035",
                 "role": "Junior Android Developer",
                 "descripton": [
                     "Created custom mobile applications using native technologies.",
-                    "Designed user interfaces that engaged multiple senses and produced immersive experiences."
+                    "Designed user interfaces that engaged multiple senses and produced immersive experiences.",
+                    "Developed custom libraries for supporting Cordova Framework-oriented Apps"
                 ]
             },
             {
-                "start_date": "September 2013",
-                "end_date": "September 2015",
+                "start_date": "27th September 2013",
+                "end_date": "27th September 2015",
                 "company_name": "Tenet Technetronics",
                 "location": "Bengaluru , Karnataka",
                 "summary": "Tenet Technetronics is one of the leading electronic development tools distributor in India.",
                 "website": "https://www.tenettech.com/",
+                "address": "2514U,7th A Main Road, Opp B.B.M.P. Swimming Pool, Chowdappa Layout, Vijayanagar, Bengaluru, Karnataka 560104",
                 "role": "Junior Android Developer",
                 "descripton": [
-                    "Utilized comprehensive knowledge of mobile landscape, emerging technologies and innovations to remain on cutting edge of Android market."
+                    "Utilized comprehensive knowledge of mobile landscape, emerging technologies and innovations to remain on cutting edge of Android market.",
+                    "Worked on IOT projects like Home-Automation and On-board Entertainment System",
+                    "Worked on OTT Streaming"
                 ]
             }
         ],
@@ -247,17 +261,21 @@
                 "end_date": "July 2013",
                 "instution": "Anna University Chennai Coimbatore",
                 "degree": "Master of Engineering Software Engineering",
+                "website": "https://www.tenettech.com/",
+                "address": "SNS College of Technology, Sathy Rd, SNS Kalvi Nagar Vazhiyampalayam, Coimbatore, Tamil Nadu 641035",
                 "location": "Coimbatore-India"
             },
             {
                 "start_date": "August 2007",
                 "end_date": "May 2011",
                 "instution": "Vinayaka Missions Kirupanandha Variyar Engineering College",
+                "website": "https://www.vmkvmc.edu.in/",
+                "address": "H3P7+8FR, Chinnasiragapadi, Tamil Nadu 636308",
                 "degree": "Bachelor of Engineering Computer Science",
                 "location": "Salem-India"
             },
             {
-                "start_date": "August 2005",
+                "start_date": "August 2006",
                 "end_date": "March 2007",
                 "instution": "Technical Higher Secondary School Ayalur",
                 "degree": "Higher Secondary Examination",
