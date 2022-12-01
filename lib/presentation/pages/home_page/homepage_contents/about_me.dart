@@ -1,13 +1,17 @@
-import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/custom_iconbutton.dart';
-import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
+import 'package:universal_html/html.dart' as html;
+
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/content_card.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/contents_placeholder.dart';
+import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/custom_iconbutton.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
+import 'package:darwin_portfolio/presentation/resources/strings_manager.dart';
 import 'package:darwin_portfolio/presentation/resources/values_manager.dart';
 
 class AboutMe extends StatelessWidget {
@@ -75,7 +79,7 @@ class AboutMe extends StatelessWidget {
                   children: [
                     verticalSpace(sizeInfo.isMobile ? AppPadding.p40 : 0.0),
                     Text(
-                      '${AppStrings.i_am.tr()} ${name} ',
+                      '${AppStrings.i_am.tr()} $name ',
                       style: Theme.of(context).textTheme.headlineMedium,
                       textAlign: TextAlign.left,
                     ),
@@ -121,7 +125,11 @@ class AboutMe extends StatelessWidget {
                     ),
                     verticalSpace(30),
                     CustomIconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (kIsWeb) {
+                          downloadFile(url: "assets/docs/cv_darwin_v_tomy.pdf");
+                        }
+                      },
                       buttonText: AppStrings.download_cv.tr(),
                       icon: const FaIcon(
                         FontAwesomeIcons.download,
@@ -135,6 +143,12 @@ class AboutMe extends StatelessWidget {
             ],
           ));
     });
+  }
+
+  void downloadFile({required String url}) {
+    html.AnchorElement anchorElement = html.AnchorElement(href: url);
+    anchorElement.download = url;
+    anchorElement.click();
   }
 }
 
