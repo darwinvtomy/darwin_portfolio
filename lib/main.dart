@@ -11,10 +11,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
-      supportedLocales: [ENGLISH_LOCAL, DEUTSCHE_LOCAL],
+      supportedLocales: const [ENGLISH_LOCAL, DEUTSCHE_LOCAL],
       path: ASSETS_PATH_LOCALISATIONS,
       fallbackLocale: ENGLISH_LOCAL,
       startLocale: ENGLISH_LOCAL,
+      saveLocale: true,
       child: const MyApp()));
 }
 
@@ -46,11 +47,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // loadJsonData();
     return MultiProvider(
-      // create: (BuildContext context) {
-      //   return themeChangeProvider;
-      // },
       providers: [
         ChangeNotifierProvider<DarkThemeProvider>(create: (_) {
           return themeChangeProvider;

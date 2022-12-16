@@ -1,5 +1,13 @@
 import 'dart:async';
+
 import 'package:after_layout/after_layout.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:responsive_builder/responsive_builder.dart';
+
 import 'package:darwin_portfolio/presentation/common/space.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/my_services.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/personal_blog.dart';
@@ -7,14 +15,10 @@ import 'package:darwin_portfolio/presentation/pages/home_page/homepage_contents/
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_providers/resume_provider.dart';
 import 'package:darwin_portfolio/presentation/pages/home_page/homepage_widgets/top_banner.dart';
 import 'package:darwin_portfolio/presentation/resources/color_manager.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+
 import '../../../models/navigation_item.dart';
 import '../../../notifiers/dark_theme_provider.dart';
+import '../../resources/language_manager.dart';
 import '../../resources/strings_manager.dart';
 import 'homepage_contents/about_me.dart';
 import 'homepage_contents/contact_me.dart';
@@ -43,6 +47,7 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
   final hireMeWidget = GlobalKey();
   final personalBlogkey = GlobalKey();
   final contactMekey = GlobalKey();
+  String languageCode = 'en';
   List<NavigationItem> navigationItems = [];
   final ScrollController controller = ScrollController(
     initialScrollOffset: 0,
@@ -87,10 +92,6 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                 size: 70.0,
               )));
             } else {
-              print(
-                  "Get the DATE From JSON ${value.resume.dob} \n  ${DateTime.fromMillisecondsSinceEpoch(value.resume.dob!)}");
-              print(
-                  "Get LabelFrom Data ${value.resume.getlabelfromData('en')}");
               return ResponsiveBuilder(builder: (_, sizeInfo) {
                 final double width = sizeInfo.screenSize.width;
                 double drawerwidth = width * 0.18;
@@ -143,35 +144,36 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                                     name: value.resume.name!,
                                     phNo: value.resume.pno1!,
                                     summery: value.resume
-                                        .getProfessionalSummery('en')!,
+                                        .getProfessionalSummery(languageCode)!,
                                   ),
                                   MyServices(
                                     key: myServiceskey,
-                                    services:
-                                        value.resume.getServicesList('de'),
+                                    services: value.resume
+                                        .getServicesList(languageCode),
                                   ),
                                   ResumeContent(
                                     key: resumeContentkey,
-                                    workHistory:
-                                        value.resume.getWorkHistory('de'),
-                                    education:
-                                        value.resume.getEducationHistory('de'),
+                                    workHistory: value.resume
+                                        .getWorkHistory(languageCode),
+                                    education: value.resume
+                                        .getEducationHistory(languageCode),
                                     codingSkills: value.resume.coding,
-                                    languageSkills:
-                                        value.resume.getLanguageSkills('de'),
+                                    languageSkills: value.resume
+                                        .getLanguageSkills(languageCode),
                                   ),
                                   PortFolio(
                                       key: portFoliokey,
-                                      portfolio:
-                                          value.resume.getPortfolioList('de')),
+                                      portfolio: value.resume
+                                          .getPortfolioList(languageCode)),
                                   TestimonialSection(
                                       key: testimonialkey,
-                                      testimonials:
-                                          value.resume.getTestimonials('de')),
+                                      testimonials: value.resume
+                                          .getTestimonials(languageCode)),
                                   HireMeWidget(key: hireMeWidget),
                                   PersonalBlog(
                                     key: personalBlogkey,
-                                    blogs: value.resume.getPersonalBlogs('de'),
+                                    blogs: value.resume
+                                        .getPersonalBlogs(languageCode),
                                   ),
                                   ContactMe(
                                     key: contactMekey,
@@ -206,8 +208,22 @@ class _HomePageState extends State<HomePage> with AfterLayoutMixin {
                                   ),
                                   verticalSpace(10),
                                   TextButton(
-                                      onPressed: () {},
-                                      child: Text('EN',
+                                      onPressed: () {
+                                        //context.setLocale(Locale('de', 'DE'));
+
+                                        print(context.locale.languageCode);
+                                        setState(() {
+                                          if (context.locale.languageCode ==
+                                              'de') {
+                                            languageCode = 'en';
+                                            context.setLocale(ENGLISH_LOCAL);
+                                          } else {
+                                            languageCode = 'de';
+                                            context.setLocale(DEUTSCHE_LOCAL);
+                                          }
+                                        });
+                                      },
+                                      child: Text('EN/DE',
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodySmall!))

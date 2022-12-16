@@ -39,7 +39,7 @@ class AppPreferences {
   Future<Locale> getLocal() async {
     String currentLanguage = await getAppLanguage();
     if (currentLanguage == LanguageType.GERMAN.getValue()) {
-      // return arabic local
+      // return german local
       return DEUTSCHE_LOCAL;
     } else {
       // return english local

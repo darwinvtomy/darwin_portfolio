@@ -116,37 +116,37 @@
                 "index": "01",
                 "icon": "0xf3ce",
                 "title": "Mobile App Development",
-                "description": "Have experience on working on Native Android App for 5 yerars, Currently using Flutter Framework for developing Android and IOS Apps"
+                "description": "Have experience working on Native Android App for 5 years, Currently use Flutter Framework for developing Android and IOS Apps"
             },
             {
                 "index": "02",
                 "icon": "0xf390",
                 "title": "Desktop App Development",
-                "description": "Have experience in developing apps for Windows, Mac and Linux using Flutter Framework"
+                "description": "Have experience in developing apps for Windows, Mac, and Linux using Flutter Framework"
             },
             {
                 "index": "03",
                 "icon": "0xf26c",
                 "title": "Smart TV App Development",
-                "description": "Have 3 Years of Experience in VOD, Android TV, On board Entertainment Systems and can develop Smart TV apps using Flutter Framework"
+                "description": "Have 3 Years of Experience in VOD, Android TV, Onboard Entertainment (Infotainment) Systems and can develop Smart TV apps using Flutter Framework"
             },
             {
                 "index": "04",
                 "icon": "0xf04b",
                 "title": "OTT App Development",
-                "description": "Experience on working on Streaming platforms, DRM, HLS, HTTP Live Streaming, DASH and Widewine"
+                "description": "Experience working on Streaming platforms, DRM, HLS, HTTP Live Streaming, DASH and Widevine"
             },
             {
                 "index": "05",
                 "icon": "0xe012",
-                "title": "IOT App Development",
-                "description": "Have Experience on working on DRDO projects, Home Automations and Apps for Commute EV bikes"
+                "title": "IoT App Development",
+                "description": "Have Experience working on DRDO projects, Home Automation, Industrial Automations and Apps for Commute EV bikes"
             },
             {
                 "index": "06",
                 "icon": "0xf37e",
                 "title": "Web App Development",
-                "description": "Have Experience on Developing PWA and portals using Flutter Framework"
+                "description": "Have Experience in Developing PWA and portals using Flutter Framework"
             }
         ],
         "languages": [
@@ -204,7 +204,7 @@
                 "role": "Senior Software Engineer",
                 "descripton": [
                     "Gathered and defined customer requirements to develop clear specifications for project plans.",
-                    "Developed UI For Entire Front End App for both Android and IOS platforms",
+                    "Developed UI For the Entire Front End App for both Android and IOS platforms",
                     "Communicated with product managers and UX designers to translate project requirements and business objectives into polished user interfaces"
                 ]
             },
@@ -497,6 +497,87 @@
             "DRM in VOD",
             "Firebase",
             "Flutter-Plugins für Android"
+        ],
+        "services": [
+            {
+                "index": "01",
+                "icon": "0xf3ce",
+                "title": "Mobile App-Entwicklung",
+                "description": "Habe 5 Jahre Erfahrung in der Arbeit an nativen Android-Apps und verwende derzeit Flutter Framework für die Entwicklung von Android- und IOS-Apps"
+            },
+            {
+                "index": "02",
+                "icon": "0xf390",
+                "title": "Desktop-App-Entwicklung",
+                "description": "Erfahrung in der Entwicklung von Apps für Windows, Mac und Linux mit Flutter Framework"
+            },
+            {
+                "index": "03",
+                "icon": "0xf26c",
+                "title": "Entwicklung von Smart-TV-Apps",
+                "description": "Haben 3 Jahre Erfahrung in VOD, Android TV, Onboard Entertainment (Infotainment) Systemen und können Smart TV Apps mit Flutter Framework entwickeln"
+            },
+            {
+                "index": "04",
+                "icon": "0xf04b",
+                "title": "OTT-App-Entwicklung",
+                "description": "Erfahrung in der Arbeit mit Streaming-Plattformen, DRM, HLS, HTTP-Live-Streaming, DASH und Widevine"
+            },
+            {
+                "index": "05",
+                "icon": "0xe012",
+                "title": "IoT-App-Entwicklung",
+                "description": "Haben Sie Erfahrung in der Arbeit an DRDO-Projekten, Heimautomatisierung, Industrieautomatisierung und Apps für Pendler-EV-Fahrräder"
+            },
+            {
+                "index": "06",
+                "icon": "0xf37e",
+                "title": "Web-App-Entwicklung",
+                "description": "Erfahrung in der Entwicklung von PWA und Portalen mit Flutter Framework haben"
+            }
+        ],
+        "languages": [
+            {
+                "language": "Englisch",
+                "level": 5
+            },
+            {
+                "language": "Malayalam",
+                "level": 5
+            },
+            {
+                "language": "Hindi",
+                "level": 2
+            },
+            {
+                "language": "Kannada",
+                "level": 1
+            },
+            {
+                "language": "Telugu",
+                "level": 1
+            },
+            {
+                "language": "Deutsch",
+                "level": 1
+            }
+        ],
+        "interests": [
+            "Mobile App-Entwicklung",
+            "Entwicklung von Smart-TV-Apps",
+            "Quanten-Computing",
+            "Künstliche Intelligenz und maschinelles Lernen",
+            "Spielentwicklung",
+            "virtuelle Realität",
+            "IoT"
+        ],
+        "hobbies": [
+            "Schwimmen",
+            "Reisen",
+            "Zeichnung",
+            "Garten und Landschaft",
+            "Filme anschauen",
+            "Fotografie"
         ]
     }
 }

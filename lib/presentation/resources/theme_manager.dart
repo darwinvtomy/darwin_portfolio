@@ -9,6 +9,7 @@ import 'values_manager.dart';
 ThemeData getApplicationTheme(
     {required bool isDarkTheme, required BuildContext context}) {
   return ThemeData(
+      useMaterial3: true,
       // main colors of the app
       primaryColor: isDarkTheme
           ? ColorManager.darkgray_bg_color
