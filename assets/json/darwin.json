@@ -25,8 +25,8 @@
         }
     ],
     "current_location": {
-        "lat": 10.550762,
-        "long": 76.534538
+        "lat": 48.6960964,
+        "long": 9.1981242
     },
     "coding": [
         {
@@ -326,16 +326,16 @@
                 "url": "Salem-India"
             },
             {
-                "image": "https://i.pinimg.com/originals/47/7e/15/477e155db1f8f981c4abb6b2f0092836.jpg",
-                "title": "Title",
+                "image": "https://user-images.githubusercontent.com/10060131/182918276-3ae0f70b-76d1-4581-8dc9-2afea33a9b9b.gif",
+                "title": "Vismaya OTT",
                 "type": "Mobile App",
-                "url": "Salem-India"
+                "url": "https://github.com/darwinvtomy/vismaya"
             },
             {
-                "image": "https://images.saatchiart.com/saatchi/770124/art/3760260/2830144-QFPTZRUH-7.jpg",
-                "title": "Title",
+                "image": "https://raw.githubusercontent.com/darwinvtomy/pokedex_darwin/master/screens/giphy.gif",
+                "title": "PokeDex",
                 "type": "Mobile App",
-                "url": "Salem-India"
+                "url": "https://github.com/darwinvtomy/pokedex_darwin"
             },
             {
                 "image": "https://images.unsplash.com/photo-1471943311424-646960669fbc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c3RpbGwlMjBsaWZlfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80",
