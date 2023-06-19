@@ -8,8 +8,6 @@ import 'package:infinite_carousel/infinite_carousel.dart';
 //import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import '../../../../utils/horizontal_carouseal.dart';
-import '../../../../utils/list_wheel_scroll_view.dart';
 import '../homepage_models/resume_model.dart';
 import '../homepage_widgets/contents_placeholder.dart';
 import '../homepage_widgets/portfolio_item.dart';

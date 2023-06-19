@@ -59,7 +59,7 @@ class ContactMe extends StatelessWidget {
                         LatLng(currentLocation!.lat!, currentLocation!.long!),
                     zoom: 15,
                   ),
-                  nonRotatedChildren: [
+                  nonRotatedChildren: const [
                     // AttributionWidget.defaultWidget( //TODO-Check this on later
                     //   source: 'Chittady, Palakkad',
                     //   onSourceTapped: () {},

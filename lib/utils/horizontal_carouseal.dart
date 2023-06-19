@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HorizontalCarousel extends StatefulWidget {
+  const HorizontalCarousel({super.key});
+
   @override
   _HorizontalCarouselState createState() => _HorizontalCarouselState();
 }
@@ -63,7 +65,7 @@ class _HorizontalCarouselState extends State<HorizontalCarousel> {
             return Container(
               width: 10.0,
               height: 10.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+              margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: _currentIndex == index ? Colors.white : Colors.grey),

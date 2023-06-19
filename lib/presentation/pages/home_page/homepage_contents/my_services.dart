@@ -11,7 +11,7 @@ import '../homepage_models/resume_model.dart';
 
 class MyServices extends StatelessWidget {
   final List<Service>? services;
-  MyServices({Key? key, this.services}) : super(key: key);
+  const MyServices({Key? key, this.services}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -96,6 +96,12 @@
             "icon": "0xf08c",
             "username": "darwinvtomy",
             "url": "https://www.linkedin.com/in/darwin-v-tomy-15177711"
+        },
+        {
+            "network": "Xing",
+            "icon": "0xf168",
+            "username": "DARWIN_VTOMY",
+            "url": "https://www.xing.com/profile/DARWIN_VTOMY/cv"
         }
     ],
     "en_US": {
@@ -144,7 +150,7 @@
             },
             {
                 "index": "06",
-                "icon": "0xe007",
+                "icon": "0xf26b",
                 "title": "Web App Development",
                 "description": "Have Experience in Developing PWA and portals using Flutter Framework"
             }

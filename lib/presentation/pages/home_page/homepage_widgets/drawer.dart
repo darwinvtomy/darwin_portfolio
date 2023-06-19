@@ -147,13 +147,18 @@ class LinkButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             for (Profile profile in profiles!)
-              LinkIconButton(
-                iconData: IconDataBrands(int.parse(profile.icon!)),
-                onPressed: () {
-                  launchUrl(Uri.parse(profile.url!));
-                  // FontAwesomeIcons.internetExplorer
-                },
-              ).moveUpOnHover,
+              Tooltip(
+                triggerMode: TooltipTriggerMode.manual,
+                showDuration: const Duration(milliseconds: 500),
+                message: profile.network,
+                child: LinkIconButton(
+                  iconData: IconDataBrands(int.parse(profile.icon!)),
+                  onPressed: () {
+                    launchUrl(Uri.parse(profile.url!));
+                    // FontAwesomeIcons.internetExplorer
+                  },
+                ).moveUpOnHover,
+              ),
           ],
         ),
       ),
