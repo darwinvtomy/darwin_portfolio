@@ -60,10 +60,10 @@ class ContactMe extends StatelessWidget {
                     zoom: 15,
                   ),
                   nonRotatedChildren: [
-                    AttributionWidget.defaultWidget(
-                      source: 'Chittady, Palakkad',
-                      onSourceTapped: () {},
-                    ),
+                    // AttributionWidget.defaultWidget( //TODO-Check this on later
+                    //   source: 'Chittady, Palakkad',
+                    //   onSourceTapped: () {},
+                    // ),
                   ],
                   children: [
                     TileLayer(

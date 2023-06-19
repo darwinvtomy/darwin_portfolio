@@ -1,6 +1,6 @@
 {
     "name": "DARWIN V TOMY",
-    "address1": "Bengaluru , India 560068",
+    "address1": "Langwiesen 70771 Stuttgart, Germany",
     "pno1": "919-895-007888",
     "pno2": "919-911-3835612",
     "email": "darwinvtomy@gmail.com",
@@ -144,7 +144,7 @@
             },
             {
                 "index": "06",
-                "icon": "0xf37e",
+                "icon": "0xe007",
                 "title": "Web App Development",
                 "description": "Have Experience in Developing PWA and portals using Flutter Framework"
             }
@@ -195,7 +195,7 @@
             {
                 "start_date": "22nd July 2019",
                 "end_date": "15th March 2021",
-                "company_name": "Wiked Ride (Bounce)",
+                "company_name": "Wicked Ride Adventure Services Private Limited (Bounce)",
                 "location": "Bengaluru , Karnataka",
                 "emp_id": "WR1637",
                 "summary": "Bounce is India's first smart mobility solution, with a mission of making daily commute stress-free, time-saving, reliable and convenient.",
@@ -259,7 +259,7 @@
             {
                 "start_date": "August 2011",
                 "end_date": "July 2013",
-                "instution": "Anna University Chennai Coimbatore",
+                "instution": "Anna University Chennai",
                 "degree": "Master of Engineering Software Engineering",
                 "website": "https://www.tenettech.com/",
                 "address": "SNS College of Technology, Sathy Rd, SNS Kalvi Nagar Vazhiyampalayam, Coimbatore, Tamil Nadu 641035",
@@ -270,7 +270,7 @@
                 "end_date": "May 2011",
                 "instution": "Vinayaka Missions Kirupanandha Variyar Engineering College",
                 "website": "https://www.vmkvmc.edu.in/",
-                "address": "H3P7+8FR, Chinnasiragapadi, Tamil Nadu 636308",
+                "address": "Vinayaka Missions Kirupanandha Variyar Engineering College, H3P7+8FR, Chinnasiragapadi, Tamil Nadu 636308",
                 "degree": "Bachelor of Engineering Computer Science",
                 "location": "Salem-India"
             },
