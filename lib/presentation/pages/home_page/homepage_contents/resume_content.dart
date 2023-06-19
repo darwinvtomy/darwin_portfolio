@@ -26,7 +26,6 @@ class ResumeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizeInfo) {
-      double halfsize = (sizeInfo.screenSize.width / 2) - 50;
       return ContentPlaceHolder(
           bgColor: Theme.of(context).canvasColor,
           title: AppStrings.my_resume.tr(),
